@@ -6,20 +6,28 @@ public abstract class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
-    // [SerializeField] GameObject healthContainer;
     [SerializeField] Healthbar healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
-        // healthbar = healthContainer.GetComponent<Healthbar>();
         currentHealth = maxHealth;
         healthbar.SetHealth(currentHealth, maxHealth);
     }
 
-    public void ChangeHealth(float amount)
+    void ChangeHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthbar.SetHealth(currentHealth, maxHealth);
+    }
+
+    public void DealDamage(float amount)
+    {
+        ChangeHealth(-amount);
+    }
+
+    public void Heal(float amount)
+    {
+        ChangeHealth(amount);
     }
 }
