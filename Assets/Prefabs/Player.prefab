@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59035426042de67418872a8311f613ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseAttack: 100
+  attackSpeed: 1
   layermask:
     serializedVersion: 2
     m_Bits: 128

@@ -21,7 +21,7 @@ public class CombatMechanics : MonoBehaviour
         Debug.Log(point + " " + radius + " " + layerMask);
         foreach (Collider2D entity in entities)
         {
-            Debug.Log("HIT: " + entity);
+            Debug.Log("Dealt " + damage + " damage to "+ entity);
             // EntityMain temp = entity.GetComponent<EntityMain>();
             // temp.TakeDamage(damage);
         }

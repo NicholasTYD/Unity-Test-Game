@@ -11,7 +11,8 @@ public class PlayerCombat : Combat
     private Animator playerAnim;
     private PlayerMovement playerMovement;
 
-    private float attackSpeed = 1;
+    private bool isInterrupted;
+    [SerializeField] private float attackSpeed = 1;
     // Time given to continue the attack string before combo resets
     private float maxComboTime = 0.5f;
 
@@ -64,15 +65,22 @@ public class PlayerCombat : Combat
 
         PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
         float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
+        float currentTimeBeforeHit = currentAttack.timeBeforeHit / attackSpeed;
         Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (currentAttack.hurtboxCenterOffset * playerToMouseUnitDirection);
 
         StartCoroutine(executeAttack());
 
         IEnumerator executeAttack()
         {
+            isInterrupted = false;
             playerMain.lockoutDuration = currentAttackDuration;
+            playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
             playerAnim.SetTrigger(currentAttack.name);
-            yield return new WaitForSeconds(currentAttack.timeBeforeHit);
+            yield return new WaitForSeconds(currentTimeBeforeHit);
+            if (isInterrupted)
+            {
+                yield break;
+            }
             CombatMechanics.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
                 layermask,
@@ -81,5 +89,16 @@ public class PlayerCombat : Combat
             comboTimeLeft = maxComboTime;
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
         }
+    }
+
+    public void Roll()
+    {
+
+    }
+
+    public void interruptCombat()
+    {
+        this.isInterrupted = true;
+        currentAttackSequence = 0;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Combat : MonoBehaviour
 {
-    protected float baseAttack;
+    [SerializeField] protected float baseAttack;
 
     public abstract void Attack();
 }

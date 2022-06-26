@@ -30,7 +30,7 @@ public class PlayerMovement : Movement
 
     private bool isFacingCorrectDirection(float horizontalInput)
     {
-        return (horizontalInput > 0 && facingRight()) ||
+        return (horizontalInput >= 0 && facingRight()) ||
             (horizontalInput < 0 && !facingRight());
     }
 

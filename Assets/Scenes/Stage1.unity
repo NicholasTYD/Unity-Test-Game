@@ -11169,6 +11169,11 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1233312468}
+    - target: {fileID: 7689998204045113688, guid: b29306470820b154197d0d9202ac15a1,
+        type: 3}
+      propertyPath: hurtInvulnerabilityDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113691, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_RootOrder

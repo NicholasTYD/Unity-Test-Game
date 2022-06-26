@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack2
   m_EditorClassIdentifier: 
   name: Attack2
-  damageMultiplier: 1.05
+  damageMultiplier: 1.15
   durationPerFrame: 0.07142857
   baseAttackDuration: 0.42857143
   timeBeforeHit: 0.07142857

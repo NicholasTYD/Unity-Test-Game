@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerCombat))]
 public class PlayerMain : EntityMain
 {
+    Animator playerAnim;
     PlayerCombat playerCombat;
 
     protected override void Start()
@@ -25,6 +26,11 @@ public class PlayerMain : EntityMain
         if (Input.GetMouseButton(0))
         {
             playerCombat.Attack();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            playerCombat.Roll();
         }
     }
 }

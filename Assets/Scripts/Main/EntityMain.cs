@@ -40,7 +40,7 @@ public abstract class EntityMain : MonoBehaviour
         return lockoutDuration <= 0;
     }
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         health.TakeDamage(amount);
     }
