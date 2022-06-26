@@ -13,22 +13,30 @@ public class PlayerCombat : Combat
     private PlayerMovement playerMovement;
 
     private bool isInterrupted;
-    [SerializeField] private float attackSpeed = 1;
-    // Time given to continue the attack string before combo resets
-    private float maxComboTime = 0.5f;
 
+    [SerializeField] private float attackSpeed = 1;
+    private float maxComboTime = 0.5f; // Time given to continue the attack string before combo resets
     private int currentAttackSequence = 0;
     private float comboTimeLeft = 0;
 
+    private bool blockReady;
+    private bool inBlockState;
+    
+    private float maxParryDamageBonusDuration = 2;
+    private float currentParryDamageBonusMultiplier = 1;
+    private float parryDamageBonusTimeLeft = 0;
+
     // Center offset of the player's sprite
-    private Vector2 playerCenterOffset = new Vector2(0, 0.65f); 
+    private Vector2 playerCenterOffset = new Vector2(0, 0.65f);
     private Vector2 playerWorldCenterPosition;
     Vector2 mouseWorldPosition;
     Vector2 playerToMouseUnitDirection;
     float angleOfAttack;
-    [SerializeField] LayerMask layermask;
+    [SerializeField] LayerMask enemyLayerMask;
+    [SerializeField] LayerMask enemyProjectileLayerMask;
 
     [SerializeField] List<PlayerBasicAttackScriptableObject> playerBasicAttacks;
+    [SerializeField] PlayerBlockScriptableObject playerBlock;
 
 
     // Start is called before the first frame update
@@ -42,13 +50,7 @@ public class PlayerCombat : Combat
     // Update is called once per frame
     void Update()
     {
-        if (comboTimeLeft > 0)
-        {
-            comboTimeLeft -= Time.deltaTime;
-        } else
-        {
-            currentAttackSequence = 0;
-        }
+        this.handleCooldowns();
     }
 
     public override void Attack()
@@ -58,11 +60,7 @@ public class PlayerCombat : Combat
 
     void basicAttack()
     {
-        this.playerMovement.FaceMouseDirection();
-        this.playerWorldCenterPosition = this.transform.position + (Vector3)this.playerCenterOffset;
-        this.mouseWorldPosition = General.GetCurrentMouseWorldPosition();
-        this.playerToMouseUnitDirection = General.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
-        this.angleOfAttack = Vector2.SignedAngle(Vector2.right, playerToMouseUnitDirection);
+        updateAimDirection();
 
         PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
         float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
@@ -84,17 +82,87 @@ public class PlayerCombat : Combat
             }
             CombatMechanics.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
-                layermask,
-                baseAttack * currentAttack.damageMultiplier);
+                enemyLayerMask,
+                baseAttack * currentParryDamageBonusMultiplier * currentAttack.damageMultiplier);
 
             comboTimeLeft = maxComboTime;
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
         }
     }
+    public void Block()
+    {
+        updateAimDirection();
+
+        PlayerBlockScriptableObject block = playerBlock;
+
+        StartCoroutine(executeParry());
+
+        IEnumerator executeParry()
+        {
+            inBlockState = true;
+            playerMain.lockoutDuration = block.baseBlockDuration;
+            playerAnim.SetTrigger(block.name);
+            yield return new WaitForSeconds(block.baseBlockDuration);
+            inBlockState = false;
+        }
+    }
+
+    public bool Parried()
+    {
+        if (inBlockState)
+        {
+            PlayerBlockScriptableObject block = playerBlock;
+            Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (block.hurtboxCenterOffset * playerToMouseUnitDirection);
+            LayerMask layersToTest = General.CombineLayerMask(enemyLayerMask, enemyProjectileLayerMask);
+            Collider2D entityCheck = Physics2D.OverlapCircle(hurtboxWorldCenterPostiion,
+                block.hurtboxRadius,
+                layersToTest);
+            if (entityCheck != null)
+            {
+                playerMain.lockoutDuration = block.baseParryDuration;
+                parryDamageBonusTimeLeft = maxParryDamageBonusDuration + block.baseParryDuration;
+                currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier;
+                playerAnim.SetTrigger(block.parryName);
+                inBlockState = false;
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void interruptCombat()
     {
         this.isInterrupted = true;
+        inBlockState = false;
         currentAttackSequence = 0;
+    }
+
+    private void updateAimDirection()
+    {
+        this.playerMovement.FaceMouseDirection();
+        this.playerWorldCenterPosition = this.transform.position + (Vector3)this.playerCenterOffset;
+        this.mouseWorldPosition = General.GetCurrentMouseWorldPosition();
+        this.playerToMouseUnitDirection = General.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
+        this.angleOfAttack = Vector2.SignedAngle(Vector2.right, playerToMouseUnitDirection);
+    }
+
+    private void handleCooldowns()
+    {
+        if (comboTimeLeft > 0)
+        {
+            comboTimeLeft -= Time.deltaTime;
+        }
+        else
+        {
+            currentAttackSequence = 0;
+        }
+
+        if (parryDamageBonusTimeLeft > 0)
+        {
+            parryDamageBonusTimeLeft -= Time.deltaTime;
+        } else
+        {
+            currentParryDamageBonusMultiplier = 1;
+        }
     }
 }

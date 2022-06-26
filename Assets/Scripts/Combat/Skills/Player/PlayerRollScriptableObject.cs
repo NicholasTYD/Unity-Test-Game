@@ -7,4 +7,5 @@ public class PlayerRollScriptableObject : ScriptableObject
     public new string name;
     // How long the entire animation lasts.
     public float rollDuration;
+    public float rollCooldown;
 }

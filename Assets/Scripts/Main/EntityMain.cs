@@ -8,7 +8,7 @@ public abstract class EntityMain : MonoBehaviour
 {
     protected Health health;
     protected Movement movement;
-    public float lockoutDuration { private get; set; }
+    public float lockoutDuration { get; set; }
 
     // Start is called before the first frame update
     protected virtual void Start()

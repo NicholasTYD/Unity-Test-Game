@@ -13,9 +13,7 @@ public class PlayerMovement : Movement
     public float horizontalInput { get; private set; }
     public float verticalInput { get; private set; }
     private bool inRollState;
-    private bool canRoll = true;
-    [SerializeField] private float rollCooldown;
-
+    private bool rollReady = true;
     [SerializeField] PlayerRollScriptableObject playerRoll;
 
     protected override void Start()
@@ -63,7 +61,7 @@ public class PlayerMovement : Movement
 
     public void Roll()
     {
-        if (!canRoll)
+        if (!rollReady)
         {
             return;
         }
@@ -78,7 +76,7 @@ public class PlayerMovement : Movement
         IEnumerator lockInputs()
         {
             inRollState = true;
-            canRoll = false;
+            rollReady = false;
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
             if (horizontalInput == 0 && verticalInput == 0)
@@ -87,8 +85,8 @@ public class PlayerMovement : Movement
             }
             yield return new WaitForSeconds(playerRoll.rollDuration);
             inRollState = false;
-            yield return new WaitForSeconds(rollCooldown);
-            canRoll = true;
+            yield return new WaitForSeconds(playerRoll.rollCooldown);
+            rollReady = true;
         }
     }
 

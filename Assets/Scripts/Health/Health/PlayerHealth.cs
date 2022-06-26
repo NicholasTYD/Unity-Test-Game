@@ -11,6 +11,7 @@ public class PlayerHealth : Health
     // 11 samples, 3 frames
     private float staggerDuration = 1f / 11 * 3;
     [SerializeField] private float hurtInvulnerabilityDuration;
+    [SerializeField] private float blockInvulnerabilityDuration;
 
     protected override void Start()
     {
@@ -24,9 +25,14 @@ public class PlayerHealth : Health
     {
         if (!isInvulnerable())
         {
+            if (playerCombat.Parried())
+            {
+                grantInvulnerability = blockInvulnerabilityDuration;
+                return;
+            }
             base.TakeDamage(amount);
             playerMain.lockoutDuration = staggerDuration;
-            invulnerabilityTimeLeft = hurtInvulnerabilityDuration;
+            grantInvulnerability = hurtInvulnerabilityDuration;
             playerAnim.SetTrigger("Hurt");
             playerCombat.interruptCombat();
         }

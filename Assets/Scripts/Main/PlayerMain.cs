@@ -36,5 +36,10 @@ public class PlayerMain : EntityMain
             // Roll cooldowns governed by the playerMovement script.
             playerMovement.Roll();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            playerCombat.Block();
+        }
     }
 }

@@ -18,4 +18,9 @@ public class General : MonoBehaviour
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
+
+    public static LayerMask CombineLayerMask(LayerMask a, LayerMask b)
+    {
+        return a | b;
+    }
 }
