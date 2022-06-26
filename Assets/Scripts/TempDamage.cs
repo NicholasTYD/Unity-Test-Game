@@ -6,6 +6,6 @@ public class TempDamage : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Health>().DealDamage(1);
+        collision.gameObject.GetComponent<Health>().TakeDamage(1);
     }
 }

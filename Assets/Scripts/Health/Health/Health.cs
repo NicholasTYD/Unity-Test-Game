@@ -15,19 +15,19 @@ public abstract class Health : MonoBehaviour
         healthbar.SetHealth(currentHealth, maxHealth);
     }
 
-    void ChangeHealth(float amount)
+    void changeHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthbar.SetHealth(currentHealth, maxHealth);
     }
 
-    public void DealDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
-        ChangeHealth(-amount);
+        changeHealth(-amount);
     }
 
     public void Heal(float amount)
     {
-        ChangeHealth(amount);
+        changeHealth(amount);
     }
 }
