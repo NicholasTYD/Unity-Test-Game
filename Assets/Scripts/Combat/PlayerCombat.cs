@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMain))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerMain))]
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerHealth))]
 public class PlayerCombat : Combat
 {
     private PlayerMain playerMain;
@@ -28,7 +29,7 @@ public class PlayerCombat : Combat
     [SerializeField] LayerMask layermask;
 
     [SerializeField] List<PlayerBasicAttackScriptableObject> playerBasicAttacks;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class PlayerCombat : Combat
     void basicAttack()
     {
         this.playerMovement.FaceMouseDirection();
-        this.playerWorldCenterPosition = this.transform.position + (Vector3) this.playerCenterOffset;
+        this.playerWorldCenterPosition = this.transform.position + (Vector3)this.playerCenterOffset;
         this.mouseWorldPosition = General.GetCurrentMouseWorldPosition();
         this.playerToMouseUnitDirection = General.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
         this.angleOfAttack = Vector2.SignedAngle(Vector2.right, playerToMouseUnitDirection);
@@ -89,11 +90,6 @@ public class PlayerCombat : Combat
             comboTimeLeft = maxComboTime;
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
         }
-    }
-
-    public void Roll()
-    {
-
     }
 
     public void interruptCombat()

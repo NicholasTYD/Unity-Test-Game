@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerCombat))]
 public class PlayerMain : EntityMain
 {
     Animator playerAnim;
     PlayerCombat playerCombat;
+    PlayerMovement playerMovement;
 
     protected override void Start()
     {
         base.Start();
         this.playerCombat = this.GetComponent<PlayerCombat>();
+        this.playerMovement = this.GetComponent<PlayerMovement>();
     }
 
     protected override void Update()
@@ -28,9 +31,10 @@ public class PlayerMain : EntityMain
             playerCombat.Attack();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            playerCombat.Roll();
+            // Roll cooldowns governed by the playerMovement script.
+            playerMovement.Roll();
         }
     }
 }

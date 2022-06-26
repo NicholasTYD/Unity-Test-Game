@@ -2,18 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMain))]
 public class PlayerMovement : Movement
 {
-    float horizontalInput;
-    float verticalInput;
+    private PlayerMain playerMain;
+    private Animator playerAnim;
+    private PlayerMovement playerMovement;
+    private PlayerHealth playerHealth;
+
+    public float horizontalInput { get; private set; }
+    public float verticalInput { get; private set; }
+    private bool inRollState;
+    private bool canRoll = true;
+    [SerializeField] private float rollCooldown;
+
+    [SerializeField] PlayerRollScriptableObject playerRoll;
+
+    protected override void Start()
+    {
+        base.Start();
+        this.playerMain = this.GetComponent<PlayerMain>();
+        this.playerAnim = this.GetComponent<Animator>();
+        this.playerMovement = this.GetComponent<PlayerMovement>();
+        this.playerHealth = this.GetComponent<PlayerHealth>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        if (!inRollState)
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+        }
     }
-    
+
+    private void FixedUpdate()
+    {
+        if (inRollState)
+        {
+            move();
+        }
+    }
+
     public override void move()
     {
         Vector2 position = this.transform.position;
@@ -21,6 +52,8 @@ public class PlayerMovement : Movement
         position.y += speed * verticalInput * Time.deltaTime;
 
         entityRb.MovePosition(position);
+        playerAnim.SetFloat("InputProduct",
+            Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
 
         if (!isFacingCorrectDirection(horizontalInput))
         {
@@ -28,16 +61,49 @@ public class PlayerMovement : Movement
         }
     }
 
+    public void Roll()
+    {
+        if (!canRoll)
+        {
+            return;
+        }
+
+        playerMain.lockoutDuration = playerRoll.rollDuration;
+        playerHealth.grantInvulnerability = playerRoll.rollDuration;
+        playerAnim.SetTrigger(playerRoll.name);
+
+
+        StartCoroutine(lockInputs());
+
+        IEnumerator lockInputs()
+        {
+            inRollState = true;
+            canRoll = false;
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+            if (horizontalInput == 0 && verticalInput == 0)
+            {
+                horizontalInput = facingRight() ? 1 : -1;
+            }
+            yield return new WaitForSeconds(playerRoll.rollDuration);
+            inRollState = false;
+            yield return new WaitForSeconds(rollCooldown);
+            canRoll = true;
+        }
+    }
+
     private bool isFacingCorrectDirection(float horizontalInput)
     {
-        return (horizontalInput >= 0 && facingRight()) ||
-            (horizontalInput < 0 && !facingRight());
+        return (Mathf.Approximately(horizontalInput, 0) ||
+            (horizontalInput > 0 && facingRight()) ||
+            (horizontalInput < 0 && !facingRight()));
     }
 
     private bool isFacingCorrectDirection(Vector3 directionVector)
     {
-        return (directionVector.x > 0 && facingRight()) ||
-            (directionVector.x < 0 && !facingRight());
+        return (Mathf.Approximately(directionVector.x, 0) ||
+            (directionVector.x > 0 && facingRight()) ||
+            (directionVector.x < 0 && !facingRight()));
     }
 
     protected override void flip()

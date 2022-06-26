@@ -9,7 +9,7 @@ public abstract class Movement : MonoBehaviour
     [SerializeField] protected float speed;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         this.entityRb = this.GetComponent<Rigidbody2D>();
     }

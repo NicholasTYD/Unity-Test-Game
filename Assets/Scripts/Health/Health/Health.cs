@@ -8,6 +8,12 @@ public abstract class Health : MonoBehaviour
     [SerializeField] float currentHealth;
     [SerializeField] Healthbar healthbar;
     protected float invulnerabilityTimeLeft = 0;
+    // Safe way for external methods to grant invul but not decrease the current invul time.
+    public float grantInvulnerability
+    {
+        get { return invulnerabilityTimeLeft; }
+        set { invulnerabilityTimeLeft = Mathf.Max(invulnerabilityTimeLeft, value); }
+    }
 
     // Start is called before the first frame update
     protected virtual void Start()
