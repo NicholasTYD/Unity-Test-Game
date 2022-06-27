@@ -5,7 +5,9 @@ using UnityEngine;
 public class CombatMechanics : MonoBehaviour
 {
     public static CombatMechanics Instance;
-    public GameObject damageText;
+    public GameObject DamageText;
+    public GameObject HealText;
+    public GameObject ParryText;
 
     private void Start()
     {
@@ -41,14 +43,29 @@ public class CombatMechanics : MonoBehaviour
 
     public void DealDamageTo(GameObject entity, float value)
     {
+        Vector2 offset = new Vector2(0, 1);
         EntityMain temp = entity.GetComponent<EntityMain>();
         // temp.TakeDamage(damage); (Make it return a boolean)
-        InstantiateDamageText(value, entity.transform.position);
+        InstantiateDamageText(value, (Vector2) entity.transform.position + offset);
     }
 
     public void InstantiateDamageText(float value, Vector2 position)
     {
-        DamageIndicator indicator = Instantiate(damageText, position, Quaternion.identity).GetComponent<DamageIndicator>();
-        indicator.setDamageText(value);
+        TextPopup indicator = Instantiate(DamageText, position, Quaternion.identity).GetComponent<TextPopup>();
+        indicator.setText(value);
+    }
+
+    public void InstantiateHealText(float value, Vector2 position)
+    {
+        TextPopup indicator = Instantiate(HealText, position, Quaternion.identity).GetComponent<TextPopup>();
+        indicator.setText(value);
+    }
+
+    public void InstantiateParryText(Vector2 position)
+    {
+        Vector2 offset = new Vector3(0, 1);
+        Vector2 newPosition = position + offset;
+        TextPopup indicator = Instantiate(ParryText, newPosition, Quaternion.identity).GetComponent<TextPopup>();
+        indicator.setText("Parried!");
     }
 }

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DamageIndicator : MonoBehaviour
+public class TextPopup : MonoBehaviour
 {
     public TextMeshProUGUI text;
     private float lifetime = 0.8f;
-    private float distance = 2;
-    private float fadeoutAfterPercentageLifetime = 1f;
-    private Vector3 offset = new Vector3(0, 1, 0);
+    private float distance = 1.25f;
+    private float fadeoutAfterPercentageLifetime = 0.75f;
 
     private Vector2 initialPosition;
     private Vector2 targetPosition;
@@ -20,7 +19,7 @@ public class DamageIndicator : MonoBehaviour
     {
         this.transform.LookAt(2 * transform.position - Camera.main.transform.position);
 
-        this.initialPosition = offset + transform.position;
+        this.initialPosition = transform.position;
         this.targetPosition = transform.position + new Vector3(0, distance, 0);
     }
 
@@ -44,8 +43,13 @@ public class DamageIndicator : MonoBehaviour
         this.transform.position = Vector2.Lerp(initialPosition, targetPosition, Mathf.Sin(1.5f * timer / lifetime));
     }
 
-    public void setDamageText(float value)
+    public void setText(float value)
     {
         text.text = value.ToString();
+    }
+
+    public void setText(string str)
+    {
+        text.text = str;
     }
 }

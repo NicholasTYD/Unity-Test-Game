@@ -133,7 +133,7 @@ public class PlayerCombat : Combat
                 currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier;
                 playerAnim.SetTrigger(block.parryName);
                 inBlockState = false;
-                Debug.Log("parried");
+                CombatMechanics.Instance.InstantiateParryText(this.transform.position);
                 return true;
             }
         }
