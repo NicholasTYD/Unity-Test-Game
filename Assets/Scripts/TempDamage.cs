@@ -6,6 +6,6 @@ public class TempDamage : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Health>().TakeDamage(1);
+        collision.gameObject.GetComponent<Health>().TakeDamage(1);// Remove this after adding enemy damage interaction.
     }
 }

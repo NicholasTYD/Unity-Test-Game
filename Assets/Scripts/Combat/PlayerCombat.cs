@@ -23,7 +23,7 @@ public class PlayerCombat : Combat
     private float maxBlockCooldown = 0.5f;
     private float blockCooldownTimer;
 
-    private float maxParryDamageBonusDuration = 2;
+    private float maxParryDamageBonusDuration = 3;
     private float currentParryDamageBonusMultiplier = 1;
     private float parryDamageBonusTimeLeft = 0;
 
@@ -81,7 +81,7 @@ public class PlayerCombat : Combat
             {
                 yield break;
             }
-            CombatMechanics.DamageCircleAll(hurtboxWorldCenterPostiion,
+            CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
                 enemyLayerMask,
                 baseAttack * currentParryDamageBonusMultiplier * currentAttack.damageMultiplier);
