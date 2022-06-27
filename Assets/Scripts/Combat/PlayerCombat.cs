@@ -112,6 +112,7 @@ public class PlayerCombat : Combat
             {
                 blockCooldownTimer = maxBlockCooldown;
                 inBlockState = false;
+                Debug.Log("parry over");
             }
         }
     }
