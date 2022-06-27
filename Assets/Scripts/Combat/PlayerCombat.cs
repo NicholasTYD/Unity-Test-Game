@@ -19,9 +19,10 @@ public class PlayerCombat : Combat
     private int currentAttackSequence = 0;
     private float comboTimeLeft = 0;
 
-    private bool blockReady;
     private bool inBlockState;
-    
+    private float maxBlockCooldown = 0.5f;
+    private float blockCooldownTimer;
+
     private float maxParryDamageBonusDuration = 2;
     private float currentParryDamageBonusMultiplier = 1;
     private float parryDamageBonusTimeLeft = 0;
@@ -91,6 +92,10 @@ public class PlayerCombat : Combat
     }
     public void Block()
     {
+        if (blockCooldownTimer > 0 || inBlockState)
+        {
+            return;
+        }
         updateAimDirection();
 
         PlayerBlockScriptableObject block = playerBlock;
@@ -103,7 +108,11 @@ public class PlayerCombat : Combat
             playerMain.lockoutDuration = block.baseBlockDuration;
             playerAnim.SetTrigger(block.name);
             yield return new WaitForSeconds(block.baseBlockDuration);
-            inBlockState = false;
+            if (inBlockState)
+            {
+                blockCooldownTimer = maxBlockCooldown;
+                inBlockState = false;
+            }
         }
     }
 
@@ -124,6 +133,7 @@ public class PlayerCombat : Combat
                 currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier;
                 playerAnim.SetTrigger(block.parryName);
                 inBlockState = false;
+                Debug.Log("parried");
                 return true;
             }
         }
@@ -163,6 +173,11 @@ public class PlayerCombat : Combat
         } else
         {
             currentParryDamageBonusMultiplier = 1;
+        }
+
+        if (blockCooldownTimer > 0)
+        {
+            blockCooldownTimer -= Time.deltaTime;
         }
     }
 }

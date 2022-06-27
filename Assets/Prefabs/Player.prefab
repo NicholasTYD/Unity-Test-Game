@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  playerRoll: {fileID: 11400000, guid: bec20f92143405142847b1ac664d13bf, type: 2}
 --- !u!114 &7689998204045113688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +187,8 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   healthbar: {fileID: 0}
+  hurtInvulnerabilityDuration: 1
+  blockInvulnerabilityDuration: 1
 --- !u!114 &1252719436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,10 +215,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 100
   attackSpeed: 1
-  layermask:
+  enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  enemyProjectileLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   playerBasicAttacks:
   - {fileID: 11400000, guid: 81260d3075c84ee49908e16b70d4ab52, type: 2}
   - {fileID: 11400000, guid: e6cf75ad90386ec44a5f578fcd3c9cb3, type: 2}
   - {fileID: 11400000, guid: 358eb13750a11654abb2ce510a53bd57, type: 2}
+  playerBlock: {fileID: 11400000, guid: 99a495824c6bc3a4fa83e9a9c7b74e6d, type: 2}

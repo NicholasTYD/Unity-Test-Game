@@ -37,7 +37,7 @@ public class PlayerMain : EntityMain
             playerMovement.Roll();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             playerCombat.Block();
         }

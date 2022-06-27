@@ -11159,59 +11159,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2864196504111356273, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: playerRoll
-      value: 
-      objectReference: {fileID: 11400000, guid: bec20f92143405142847b1ac664d13bf,
-        type: 2}
-    - target: {fileID: 2864196504111356273, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: playerBlock
-      value: 
-      objectReference: {fileID: 11400000, guid: 99a495824c6bc3a4fa83e9a9c7b74e6d,
-        type: 2}
-    - target: {fileID: 2864196504111356273, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: enemyLayerMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 2864196504111356273, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: enemyProjectileLayerMask.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113686, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689998204045113687, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: playerRoll
-      value: 
-      objectReference: {fileID: 11400000, guid: bec20f92143405142847b1ac664d13bf,
-        type: 2}
-    - target: {fileID: 7689998204045113687, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: rollCooldown
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113688, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1233312468}
-    - target: {fileID: 7689998204045113688, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: hurtInvulnerabilityDuration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689998204045113688, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: blockInvulnerabilityDuration
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113691, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_RootOrder
