@@ -4,7 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Movement))]
-[RequireComponent(typeof(BaseStatsScriptableObject))]
 public abstract class EntityMain : MonoBehaviour
 {
     public BaseStatsScriptableObject BasicStats;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMain : EntityMain
+public class EnemyHealthbar : Healthbar
 {
 
 }

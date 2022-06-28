@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(EntityMain))]
 public abstract class Movement : MonoBehaviour
 {
     private EntityMain entityMain;
