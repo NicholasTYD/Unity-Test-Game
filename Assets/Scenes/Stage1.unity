@@ -676,6 +676,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spear Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 4308603603948249694, guid: 8f35b348121a04c4983414f9ef96f62e,
+        type: 3}
+      propertyPath: enemySkills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308603603948249694, guid: 8f35b348121a04c4983414f9ef96f62e,
+        type: 3}
+      propertyPath: enemySkills.Array.data[0]
+      value: 
+      objectReference: {fileID: 1985842080}
     - target: {fileID: 4308603603948249695, guid: 8f35b348121a04c4983414f9ef96f62e,
         type: 3}
       propertyPath: m_RootOrder
@@ -10823,6 +10833,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1985842069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4308603603948249689, guid: 8f35b348121a04c4983414f9ef96f62e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1310230191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1985842080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985842069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4475a1c84363310458ea539ad9296335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 471ad1cbd4b730941a49d4f0c59e0070,
+    type: 2}
 --- !u!1001 &3284655341164387542
 PrefabInstance:
   m_ObjectHideFlags: 0

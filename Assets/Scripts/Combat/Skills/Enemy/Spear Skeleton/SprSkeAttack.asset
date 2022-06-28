@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Attack
   DamageMultiplier: 1
-  DurationPerFrame: 0
-  SkillDuration: 0
+  DurationPerFrame: 0.083333336
+  SkillDuration: 0.8333334
   SkillCooldown: 0
   minAttackLockoutDuration: 2
   maxAttackLockoutDuration: 2

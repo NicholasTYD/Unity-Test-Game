@@ -11,6 +11,7 @@ public class SprSkeBasicAttackSS : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
+        base.ExecuteSkill(enemy, player);
         Debug.Log("Skill used");
     }
 }
