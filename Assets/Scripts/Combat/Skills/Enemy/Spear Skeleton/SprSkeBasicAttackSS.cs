@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SprSkeBasicAttack", menuName = "ScriptableObjects/Enemy/SpearSkeleton/BasicAttack")]
-public class SprSkeBasicAttackSS : EnemySkillScriptableObject
+public class SprSkeBasicAttackSS : EnemySkill
 {
     public override bool CanUse()
     {
@@ -12,6 +11,6 @@ public class SprSkeBasicAttackSS : EnemySkillScriptableObject
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-
+        Debug.Log("Skill used");
     }
 }
