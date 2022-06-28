@@ -6,6 +6,7 @@ public class EnemyHurtbox : MonoBehaviour
 {
     private EnemyCombat enemyCombat;
     private LayerMask playerLayerMask;
+
     // Start is called before the first frame update
     void Start()
     {
