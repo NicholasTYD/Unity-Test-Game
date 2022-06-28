@@ -41,6 +41,7 @@ public class CombatMechanics : MonoBehaviour
         }
     }
 
+    // All damage dealing instances should call this method to instantiate the damage values.
     public void DealDamageTo(GameObject entity, float value)
     {
         Vector2 offset = new Vector2(0, 1);
