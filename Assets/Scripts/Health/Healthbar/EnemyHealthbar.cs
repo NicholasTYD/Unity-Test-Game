@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class EnemyHealthbar : Healthbar
 {
-
+    private void Start()
+    {
+        low = high;
+    }
 }
