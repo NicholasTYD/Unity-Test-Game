@@ -6,7 +6,6 @@ public class SprSkeBasicAttack : EnemySkill
 {
     public override bool CanUse()
     {
-        Debug.Log("base" + base.CanUse() + "dist" + distanceCheck() + "y" + yCheck());
         return base.CanUse() && distanceCheck() && yCheck();
     }
 

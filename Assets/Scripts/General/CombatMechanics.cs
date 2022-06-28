@@ -46,8 +46,10 @@ public class CombatMechanics : MonoBehaviour
     {
         Vector2 offset = new Vector2(0, 1);
         EntityMain temp = entity.GetComponent<EntityMain>();
-        temp.TakeDamage(value);
-        InstantiateDamageText(value, (Vector2) entity.transform.position + offset);
+        if(temp.TakeDamage(value))
+        {
+            InstantiateDamageText(value, (Vector2)entity.transform.position + offset);
+        }
     }
 
     public void InstantiateDamageText(float value, Vector2 position)

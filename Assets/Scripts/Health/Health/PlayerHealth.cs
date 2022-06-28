@@ -19,20 +19,22 @@ public class PlayerHealth : Health
         this.playerCombat = this.GetComponent<PlayerCombat>();
     }
 
-    public override void TakeDamage(float amount)
+    public override bool TakeDamage(float amount)
     {
         if (!isInvulnerable())
         {
             if (playerCombat.Parried())
             {
                 grantInvulnerability = blockInvulnerabilityDuration;
-                return;
+                return false;
             }
             base.TakeDamage(amount);
             entityMain.lockoutDuration = staggerDuration;
             grantInvulnerability = hurtInvulnerabilityDuration;
             playerAnim.SetTrigger("Hurt");
             playerCombat.interruptCombat();
+            return true;
         }
+        return false;
     }
 }

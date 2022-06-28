@@ -48,12 +48,14 @@ public abstract class Health : MonoBehaviour
         return invulnerabilityTimeLeft > 0;
     }
 
-    public virtual void TakeDamage(float amount)
+    public virtual bool TakeDamage(float amount)
     {
         if (!isInvulnerable())
         {
             changeHealth(-amount);
+            return true;
         }
+        return false;
     }
 
     public void Heal(float amount)
