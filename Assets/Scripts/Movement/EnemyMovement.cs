@@ -13,12 +13,15 @@ public class EnemyMovement : Movement
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
     }
 
-    protected override void flip()
+    public void flipIfNeeded(Vector2 target)
     {
-        // To be implemented
+        if (!isFacingCorrectDirection(target))
+        {
+            flip();
+        }
     }
 
-    public bool isFacingCorrectDirection(Vector2 target)
+    private bool isFacingCorrectDirection(Vector2 target)
     {
         float directionVectorXVal = General.GetDirectionVector(this.transform.position, target).x;
         return ((Mathf.Approximately(directionVectorXVal, 0) && facingRight()) ||

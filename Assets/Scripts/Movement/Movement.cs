@@ -20,7 +20,12 @@ public abstract class Movement : MonoBehaviour
 
     public abstract void Move();
 
-    protected abstract void flip();
+    protected void flip()
+    {
+        Vector3 currentScale = this.transform.localScale;
+        currentScale.x *= -1;
+        this.transform.localScale = currentScale;
+    }
 
     protected bool facingRight()
     {

@@ -104,13 +104,6 @@ public class PlayerMovement : Movement
             (directionVector.x < 0 && !facingRight()));
     }
 
-    protected override void flip()
-    {
-        Vector3 currentScale = this.transform.localScale;
-        currentScale.x *= -1;
-        this.transform.localScale = currentScale;
-    }
-
     public void FaceMouseDirection()
     {
         Vector3 directionVector = General.GetDirectionVector(this.transform.position, General.GetCurrentMouseWorldPosition());
