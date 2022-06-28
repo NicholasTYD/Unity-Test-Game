@@ -9,7 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4475a1c84363310458ea539ad9296335, type: 3}
-  m_Name: SprSkeBasicAttack
+  m_Script: {fileID: 11500000, guid: 111b41cfd036f2247b9bbe5ee0565f63, type: 3}
+  m_Name: SprSkeAttack
   m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 0}
+  name: Attack
+  DamageMultiplier: 1
+  DurationPerFrame: 0
+  SkillDuration: 0
+  SkillCooldown: 0
+  minAttackLockoutDuration: 2
+  maxAttackLockoutDuration: 2
