@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemySkillBasicStats", menuName = "ScriptableObjects/Enemy/EnemySkillBasicStats")]
 public class EnemySkillBasicStats : ScriptableObject
-{
+{ 
     public new string name;
     public float DamageMultiplier;
     public float DurationPerFrame;

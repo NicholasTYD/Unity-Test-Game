@@ -5,7 +5,23 @@ using UnityEngine;
 public abstract class EnemySkill : MonoBehaviour
 {
     [SerializeField] EnemySkillBasicStats enemySkillBasicStats;
+    private Animator anim;
     protected float skillCooldownTimer;
+
+    private EnemyMovement enemyMovement;
+    protected GameObject player;
+    protected float playerBoxColliderWidth;
+    protected float playerBoxColliderHeight;
+
+    private void Start()
+    {
+        this.anim = this.GetComponent<Animator>();
+
+        this.enemyMovement = this.GetComponent<EnemyMovement>();
+        this.player = GameObject.FindWithTag("Player");
+        playerBoxColliderWidth = this.player.GetComponent<BoxCollider2D>().size.x;
+        playerBoxColliderHeight = this.player.GetComponent<BoxCollider2D>().size.y;
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,5 +42,6 @@ public abstract class EnemySkill : MonoBehaviour
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;
         enemy.AttackLockoutDuration = enemySkillBasicStats.SkillDuration +
             Random.Range(enemySkillBasicStats.minAttackLockoutDuration, enemySkillBasicStats.maxAttackLockoutDuration);
+        anim.SetTrigger(enemySkillBasicStats.name);
     }
 }

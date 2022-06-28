@@ -26,6 +26,7 @@ public class SprSkeMovementAI : EnemyMovementAI
     private bool yCheck()
     {
         float yDifference = this.transform.position.y - player.transform.position.y;
-        return yDifference < 0 && (yDifference > - playerBoxColliderHeight/2);
+        return Mathf.Approximately(yDifference, 0) || 
+            (yDifference < 0 && (yDifference > - playerBoxColliderHeight/2));
     }
 }
