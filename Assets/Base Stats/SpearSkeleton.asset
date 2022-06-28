@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMaxHealth: 200
   BaseAttack: 20
-  BaseMovementSpeed: 5
+  BaseMovementSpeed: 1
