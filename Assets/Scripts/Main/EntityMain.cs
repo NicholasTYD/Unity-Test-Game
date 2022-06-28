@@ -9,6 +9,8 @@ public abstract class EntityMain : MonoBehaviour
     public BaseStatsScriptableObject BasicStats;
     protected Health health;
     protected Movement movement;
+    private Animator anim;
+    private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
 
     // Start is called before the first frame update
@@ -16,6 +18,8 @@ public abstract class EntityMain : MonoBehaviour
     {
         this.health = this.GetComponent<Health>();
         this.movement = this.GetComponent<Movement>();
+        this.anim = this.GetComponent<Animator>();
+        this.rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,13 @@ public abstract class EntityMain : MonoBehaviour
         {
             movement.move();
         }
+    }
+
+    public void Die()
+    {
+        lockoutDuration = 999;
+        rb.simulated = false;
+        anim.SetTrigger("Die");
     }
 
     protected bool canAct()

@@ -37,6 +37,10 @@ public abstract class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthbar.SetHealth(currentHealth, maxHealth);
+        if (currentHealth == 0)
+        {
+            entityMain.Die();
+        }
     }
 
     protected bool isInvulnerable()
