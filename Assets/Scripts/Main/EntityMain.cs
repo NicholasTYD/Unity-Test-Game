@@ -4,10 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Movement))]
-[RequireComponent(typeof(BasicStatsScriptableObject))]
+[RequireComponent(typeof(BaseStatsScriptableObject))]
 public abstract class EntityMain : MonoBehaviour
 {
-    public BasicStatsScriptableObject BasicStats;
+    public BaseStatsScriptableObject BasicStats;
     protected Health health;
     protected Movement movement;
     public float lockoutDuration { get; set; }

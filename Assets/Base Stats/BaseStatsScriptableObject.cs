@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BasicStats", menuName = "ScriptableObjects/Main/BasicStats")]
-public class BasicStatsScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "BaseStats", menuName = "ScriptableObjects/Main/BaseStats")]
+public class BaseStatsScriptableObject : ScriptableObject
 {
     public float BaseMaxHealth;
     public float BaseAttack;
