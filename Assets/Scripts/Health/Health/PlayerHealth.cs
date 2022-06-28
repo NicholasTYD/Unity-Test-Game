@@ -21,13 +21,14 @@ public class PlayerHealth : Health
 
     public override bool TakeDamage(float amount)
     {
-        if (!isInvulnerable())
+        // If something with parry breaks shift the parry code into the isInvul block. Shouldn't break tho
+        if (playerCombat.Parried())
         {
-            if (playerCombat.Parried())
-            {
-                grantInvulnerability = blockInvulnerabilityDuration;
-                return false;
-            }
+            grantInvulnerability = blockInvulnerabilityDuration;
+            return false;
+        }
+        else if (!isInvulnerable())
+        {
             base.TakeDamage(amount);
             entityMain.lockoutDuration = staggerDuration;
             grantInvulnerability = hurtInvulnerabilityDuration;

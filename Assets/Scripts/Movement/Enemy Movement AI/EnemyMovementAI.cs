@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class EnemyMovementAI : MonoBehaviour
 {
     private EnemyMovement enemyMovement;
-    private Animator enemyAnim;
+    protected Animator enemyAnim;
     protected GameObject player;
     protected float playerBoxColliderWidth;
     protected float playerBoxColliderHeight;

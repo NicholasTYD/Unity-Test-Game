@@ -9,7 +9,7 @@ public abstract class EntityMain : MonoBehaviour
     public BaseStatsScriptableObject BasicStats;
     protected Health health;
     protected Movement movement;
-    private Animator anim;
+    protected Animator anim;
     private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
     private bool isDead;
@@ -30,14 +30,6 @@ public abstract class EntityMain : MonoBehaviour
         {
             lockoutDuration -= Time.deltaTime;
             return;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (canAct())
-        {
-            movement.Move();
         }
     }
 

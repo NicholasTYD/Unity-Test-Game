@@ -39,8 +39,15 @@ public class PlayerMain : EntityMain
 
         if (Input.GetMouseButton(1))
         {
-            Debug.Log("test");
             playerCombat.Block();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (canAct())
+        {
+            movement.Move();
         }
     }
 }

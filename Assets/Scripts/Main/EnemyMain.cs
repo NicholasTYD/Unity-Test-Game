@@ -18,6 +18,12 @@ public class EnemyMain : EntityMain
     protected override void Update()
     {
         base.Update();
+
+        if (!canAct())
+        {
+            return;
+        }
+
         if (!canAttack())
         {
             AttackLockoutDuration -= Time.deltaTime;
@@ -28,8 +34,19 @@ public class EnemyMain : EntityMain
         }
     }
 
+    void FixedUpdate()
+    {
+        if (canAct())
+        {
+            movement.Move();
+        } else
+        {
+            anim.SetFloat("MoveSpeed", 0);
+        }
+    }
+
     protected bool canAttack()
     {
-        return AttackLockoutDuration <= 0;
+        return AttackLockoutDuration <= 0 && canAct();
     }
 }

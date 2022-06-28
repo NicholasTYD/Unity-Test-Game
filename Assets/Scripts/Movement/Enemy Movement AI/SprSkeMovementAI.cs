@@ -13,6 +13,7 @@ public class SprSkeMovementAI : EnemyMovementAI
     {
         if (StopCriteraFufilled())
         {
+            enemyAnim.SetFloat("MoveSpeed", 0);
             return;
         }
         base.Move(speed);

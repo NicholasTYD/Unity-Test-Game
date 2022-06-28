@@ -11,8 +11,8 @@ public class SprSkeBasicAttack : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
+        Debug.Log("Used skill");
         base.ExecuteSkill(enemy, player);
-        Debug.Log("Skill used");
     }
 
     private bool distanceCheck()
