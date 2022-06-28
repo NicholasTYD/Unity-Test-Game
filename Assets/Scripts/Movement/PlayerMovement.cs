@@ -39,11 +39,11 @@ public class PlayerMovement : Movement
     {
         if (inRollState)
         {
-            move();
+            Move();
         }
     }
 
-    public override void move()
+    public override void Move()
     {
         Vector2 position = this.transform.position;
         position.x += speed * horizontalInput * Time.deltaTime;

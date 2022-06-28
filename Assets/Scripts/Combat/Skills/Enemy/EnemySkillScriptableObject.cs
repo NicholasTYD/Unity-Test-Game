@@ -4,10 +4,14 @@ using UnityEngine;
 
 public abstract class EnemySkillScriptableObject : ScriptableObject
 {
-    public float Cooldown;
+    public float SkillCooldown;
     public float DamageMultiplier;
+    public float AttackLockoutDuration;
 
     public abstract bool CanUse();
 
-    public abstract void ExecuteSkill(EnemyMain enemy, PlayerMain player);
+    public virtual void ExecuteSkill(EnemyMain enemy, PlayerMain player)
+    {
+        enemy.AttackLockoutDuration = AttackLockoutDuration;
+    }
 }

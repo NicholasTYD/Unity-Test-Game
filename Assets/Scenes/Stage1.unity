@@ -684,12 +684,12 @@ PrefabInstance:
     - target: {fileID: 4308603603948249695, guid: 8f35b348121a04c4983414f9ef96f62e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.341
+      value: -2.179
       objectReference: {fileID: 0}
     - target: {fileID: 4308603603948249695, guid: 8f35b348121a04c4983414f9ef96f62e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.047
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4308603603948249695, guid: 8f35b348121a04c4983414f9ef96f62e,
         type: 3}
@@ -10867,12 +10867,12 @@ PrefabInstance:
     - target: {fileID: 7689998204045113685, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.7141412
+      value: 0.64814454
       objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113685, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.41140166
+      value: 0.37840334
       objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113686, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
@@ -10884,11 +10884,6 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1233312468}
-    - target: {fileID: 7689998204045113690, guid: b29306470820b154197d0d9202ac15a1,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7689998204045113691, guid: b29306470820b154197d0d9202ac15a1,
         type: 3}
       propertyPath: m_RootOrder

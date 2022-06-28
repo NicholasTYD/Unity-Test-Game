@@ -36,7 +36,7 @@ public abstract class EntityMain : MonoBehaviour
     {
         if (canAct())
         {
-            movement.move();
+            movement.Move();
         }
     }
 

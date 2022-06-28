@@ -18,7 +18,7 @@ public abstract class Movement : MonoBehaviour
         this.speed = entityMain.GetBaseMovementSpeed();
     }
 
-    public abstract void move();
+    public abstract void Move();
 
     protected abstract void flip();
 
