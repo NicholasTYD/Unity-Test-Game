@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : Movement
 {
     private PlayerMain playerMain;
-    private EnemyMovementAI specificEnemyMovement;
+    [SerializeField] private EnemyMovementAI enemyMovementAI;
 
     protected override void Start()
     {
@@ -28,6 +28,6 @@ public class EnemyMovement : Movement
 
     public override void Move()
     {
-        // specificEnemyMovement.Move();
+        enemyMovementAI.Move(speed);
     }
 }
