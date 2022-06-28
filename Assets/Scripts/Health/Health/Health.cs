@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
+    protected EntityMain entityMain;
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
     [SerializeField] Healthbar healthbar;
@@ -18,6 +19,8 @@ public abstract class Health : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        this.entityMain = this.GetComponent<EntityMain>();
+        maxHealth = entityMain.GetBaseMaxHealth();
         currentHealth = maxHealth;
         healthbar.SetHealth(currentHealth, maxHealth);
     }

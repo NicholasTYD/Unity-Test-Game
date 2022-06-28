@@ -4,8 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(BasicStatsScriptableObject))]
 public abstract class EntityMain : MonoBehaviour
 {
+    public BasicStatsScriptableObject BasicStats;
     protected Health health;
     protected Movement movement;
     public float lockoutDuration { get; set; }
@@ -48,5 +50,20 @@ public abstract class EntityMain : MonoBehaviour
     public void HealDamage(float amount)
     {
         health.Heal(amount);
+    }
+
+    public float GetBaseMaxHealth()
+    {
+        return BasicStats.BaseMaxHealth;
+    }
+
+    public float GetBaseAttack()
+    {
+        return BasicStats.BaseAttack;
+    }
+
+    public float GetBaseMovementSpeed()
+    {
+        return BasicStats.BaseMovementSpeed;
     }
 }

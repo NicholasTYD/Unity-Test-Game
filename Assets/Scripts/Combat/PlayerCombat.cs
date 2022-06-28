@@ -8,7 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerHealth))]
 public class PlayerCombat : Combat
 {
-    private PlayerMain playerMain;
     private Animator playerAnim;
     private PlayerMovement playerMovement;
 
@@ -41,9 +40,9 @@ public class PlayerCombat : Combat
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        this.playerMain = this.GetComponent<PlayerMain>();
+        base.Start();
         this.playerAnim = this.GetComponent<Animator>();
         this.playerMovement = this.GetComponent<PlayerMovement>();
     }
@@ -73,7 +72,7 @@ public class PlayerCombat : Combat
         IEnumerator executeAttack()
         {
             isInterrupted = false;
-            playerMain.lockoutDuration = currentAttackDuration;
+            entityMain.lockoutDuration = currentAttackDuration;
             playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
             playerAnim.SetTrigger(currentAttack.name);
             yield return new WaitForSeconds(currentTimeBeforeHit);
@@ -105,14 +104,13 @@ public class PlayerCombat : Combat
         IEnumerator executeParry()
         {
             inBlockState = true;
-            playerMain.lockoutDuration = block.baseBlockDuration;
+            entityMain.lockoutDuration = block.baseBlockDuration;
             playerAnim.SetTrigger(block.name);
             yield return new WaitForSeconds(block.baseBlockDuration);
             if (inBlockState)
             {
                 blockCooldownTimer = maxBlockCooldown;
                 inBlockState = false;
-                Debug.Log("parry over");
             }
         }
     }
@@ -129,7 +127,7 @@ public class PlayerCombat : Combat
                 layersToTest);
             if (entityCheck != null)
             {
-                playerMain.lockoutDuration = block.baseParryDuration;
+                entityMain.lockoutDuration = block.baseParryDuration;
                 parryDamageBonusTimeLeft = maxParryDamageBonusDuration + block.baseParryDuration;
                 currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier;
                 playerAnim.SetTrigger(block.parryName);

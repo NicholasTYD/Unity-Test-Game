@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e3668ab719bfa44a87e18d2b03610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
+  maxHealth: -1
+  currentHealth: -1
   healthbar: {fileID: 0}
   hurtInvulnerabilityDuration: 1
   blockInvulnerabilityDuration: 1
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0712aaddeb968774c8e094b96ee32cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BasicStats: {fileID: 11400000, guid: 69107c3bb12772d40b2b0d329c0fa4ae, type: 2}
 --- !u!114 &2864196504111356273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59035426042de67418872a8311f613ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 100
+  baseAttack: -1
   attackSpeed: 1
   enemyLayerMask:
     serializedVersion: 2

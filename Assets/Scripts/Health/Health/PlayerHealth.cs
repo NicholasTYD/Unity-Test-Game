@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMain))]
 public class PlayerHealth : Health
 {
-    private PlayerMain playerMain;
     private Animator playerAnim;
     private PlayerCombat playerCombat;
     // 11 samples, 3 frames
@@ -16,7 +15,6 @@ public class PlayerHealth : Health
     protected override void Start()
     {
         base.Start();
-        this.playerMain = this.GetComponent<PlayerMain>();
         this.playerAnim = this.GetComponent<Animator>();
         this.playerCombat = this.GetComponent<PlayerCombat>();
     }
@@ -31,7 +29,7 @@ public class PlayerHealth : Health
                 return;
             }
             base.TakeDamage(amount);
-            playerMain.lockoutDuration = staggerDuration;
+            entityMain.lockoutDuration = staggerDuration;
             grantInvulnerability = hurtInvulnerabilityDuration;
             playerAnim.SetTrigger("Hurt");
             playerCombat.interruptCombat();
