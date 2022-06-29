@@ -119,12 +119,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 50
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 178
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 307
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 24
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 441
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 21
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 564
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 25
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_5
       rect:
         serializedVersion: 2
-        x: 640
+        x: 697
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_6
       rect:
         serializedVersion: 2
-        x: 768
+        x: 825
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_7
       rect:
         serializedVersion: 2
-        x: 896
+        x: 953
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,12 +287,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_8
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1081
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 22
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,12 +308,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_9
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1209
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 49
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_10
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1337
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 51
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_11
       rect:
         serializedVersion: 2
-        x: 1408
+        x: 1465
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 52
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -371,12 +371,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_12
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 1593
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 53
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -392,12 +392,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_13
       rect:
         serializedVersion: 2
-        x: 1664
+        x: 1721
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 45
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_14
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1849
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 45
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -434,12 +434,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_15
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 1977
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 45
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -455,12 +455,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_16
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 2105
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 45
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -476,12 +476,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_17
       rect:
         serializedVersion: 2
-        x: 2176
+        x: 2228
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 50
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -497,12 +497,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_18
       rect:
         serializedVersion: 2
-        x: 2304
+        x: 2354
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 51
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -518,12 +518,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_19
       rect:
         serializedVersion: 2
-        x: 2432
+        x: 2481
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 53
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -539,12 +539,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_20
       rect:
         serializedVersion: 2
-        x: 2560
+        x: 2608
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 53
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -560,12 +560,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_21
       rect:
         serializedVersion: 2
-        x: 2688
+        x: 2742
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -581,12 +581,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_22
       rect:
         serializedVersion: 2
-        x: 2816
+        x: 2870
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -602,12 +602,12 @@ TextureImporter:
       name: spr_ArcherDeath_strip_NoBkg_23
       rect:
         serializedVersion: 2
-        x: 2944
+        x: 2998
         y: 52
-        width: 128
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -631,7 +631,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       spr_ArcherDeath_strip_NoBkg_8: 1916123631
-      spr_ArcherDeath_strip_NoBkg_10: -348213771
+      spr_ArcherDeath_strip_NoBkg_2: -2006537173
       spr_ArcherDeath_strip_NoBkg_0: -934334057
       spr_ArcherDeath_strip_NoBkg_6: 1242277941
       spr_ArcherDeath_strip_NoBkg_9: 1515099192
@@ -653,7 +653,7 @@ TextureImporter:
       spr_ArcherDeath_strip_NoBkg_19: -346749986
       spr_ArcherDeath_strip_NoBkg_1: 19755334
       spr_ArcherDeath_strip_NoBkg_15: -67213153
-      spr_ArcherDeath_strip_NoBkg_2: -2006537173
+      spr_ArcherDeath_strip_NoBkg_10: -348213771
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
