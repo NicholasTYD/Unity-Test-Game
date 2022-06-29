@@ -26,7 +26,7 @@ public class EnemyMovement : Movement
         enemyMovementAI.Move(speed);
     }
 
-    public void flipIfNeeded(Vector2 target)
+    public void FaceTowards(Vector2 target)
     {
         if (!isFacingCorrectDirection(target))
         {

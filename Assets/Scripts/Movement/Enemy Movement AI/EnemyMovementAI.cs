@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyMovementAI : MonoBehaviour
 {
-    private EnemyMovement enemyMovement;
+    protected EnemyMovement enemyMovement;
     protected GameObject player;
     protected float playerBoxColliderWidth;
     protected float playerBoxColliderHeight;
@@ -24,11 +24,6 @@ public abstract class EnemyMovementAI : MonoBehaviour
         Vector2 playerPosition = player.transform.position;
         this.transform.position = 
             Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
-        flipIfNeeded(playerPosition);
-    }
-
-    protected virtual void flipIfNeeded(Vector2 target)
-    {
-        enemyMovement.flipIfNeeded(target);
+        enemyMovement.FaceTowards(playerPosition);
     }
 }
