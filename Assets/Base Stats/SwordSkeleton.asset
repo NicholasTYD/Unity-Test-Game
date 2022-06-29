@@ -15,3 +15,8 @@ MonoBehaviour:
   BaseMaxHealth: 300
   BaseAttack: 20
   BaseMovementSpeed: 1
+  maxAllowableDistance: 1
+  minXDifference: -999
+  maxXDifference: 999
+  minYDifference: -0.8
+  maxYDifference: 0.7

@@ -37,6 +37,11 @@ public abstract class EnemySkill : MonoBehaviour
         return skillCooldownTimer <= 0;
     }
 
+    protected bool withinIdleRange()
+    {
+        return enemyMovement.StopCriteraFufilled();
+    }
+
     public virtual void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;

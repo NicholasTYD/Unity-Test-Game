@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwdSkeMovementAI : EnemyMovementAI
+public class SwdSkeMovementAI : EnemyMovement
 {
-    protected override bool StopCriteraFufilled()
-    {
-        return enemyMovement.playerDistanceWithin(1) &&
-            enemyMovement.enemyToPlayerYDifferenceWithin(-playerBoxColliderHeight, playerBoxColliderHeight / 2);
-    }
+
 }

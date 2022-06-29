@@ -8,7 +8,7 @@ public class EnemyMovement : Movement
     private Animator enemyAnim;
     private PlayerMain playerMain;
     private EnemyHealth enemyHealth;
-    [SerializeField] private EnemyMovementAI enemyMovementAI;
+    // [SerializeField] private EnemyMovementAI enemyMovementAI;
     private Vector2 prevPos;
 
     protected override void Start()
@@ -27,7 +27,19 @@ public class EnemyMovement : Movement
 
     public override void Move()
     {
+        /*
         enemyMovementAI.Move(speed);
+        */
+        if (StopCriteraFufilled())
+        {
+            idle();
+            return;
+        }
+
+        Vector2 playerPosition = playerMain.transform.position;
+        this.transform.position =
+            Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
+        FaceTowards(playerPosition);
     }
 
     public void FaceTowards(Vector2 target)
@@ -38,11 +50,16 @@ public class EnemyMovement : Movement
         }
     }
 
-    protected bool StopCriteraFufilled()
+    public bool StopCriteraFufilled()
     {
         return playerDistanceWithin(baseStats.maxAllowableDistance) &&
             enemyToPlayerXDifferenceWithin(baseStats.minXDifference, baseStats.maxXDifference) &&
-            enemyToPlayerXDifferenceWithin(baseStats.minYDifference, baseStats.maxYDifference);
+            enemyToPlayerYDifferenceWithin(baseStats.minYDifference, baseStats.maxYDifference);
+    }
+
+    protected void idle()
+    {
+        FaceTowards(playerMain.transform.position);
     }
 
     protected override void flip()
