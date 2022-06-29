@@ -49,4 +49,23 @@ public class EnemyMovement : Movement
         enemyAnim.SetFloat("CurrentMoveSpeed", speed);
         prevPos = currentPos;
     }
+
+    public bool playerDistanceWithin(float value)
+    {
+        return Vector2.Distance(playerMain.transform.position, this.transform.position) < value;
+    }
+
+    public bool enemyToPlayerYDifferenceWithin(float min, float max)
+    {
+        float yDifference = this.transform.position.y - playerMain.transform.position.y;
+        if (min == 0 || max == 0)
+        {
+            return Mathf.Approximately(yDifference, 0) ||
+            (min <= yDifference && yDifference <= max);
+        }
+        else
+        {
+            return min <= yDifference && yDifference <= max;
+        }
+    }
 }

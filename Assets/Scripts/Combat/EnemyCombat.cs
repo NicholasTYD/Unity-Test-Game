@@ -15,6 +15,7 @@ public class EnemyCombat : Combat
     protected override void Start()
     {
         base.Start();
+        this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
         this.enemyMain = this.GetComponent<EnemyMain>();
         currentAttack = baseAttack;
         currentAbilityDamageMultiplier = 1;

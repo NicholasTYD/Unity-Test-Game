@@ -8,7 +8,7 @@ public abstract class EnemySkill : MonoBehaviour
     private Animator anim;
     protected float skillCooldownTimer;
 
-    private EnemyMovement enemyMovement;
+    protected EnemyMovement enemyMovement;
     protected GameObject player;
     protected float playerBoxColliderWidth;
     protected float playerBoxColliderHeight;
