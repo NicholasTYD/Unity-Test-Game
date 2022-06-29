@@ -9,13 +9,4 @@ public class SwdSkeMovementAI : EnemyMovementAI
         return enemyMovement.playerDistanceWithin(1) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-playerBoxColliderHeight, playerBoxColliderHeight / 2);
     }
-
-    public override void Move(float speed)
-    {
-        if (StopCriteraFufilled())
-        {
-            return;
-        }
-        base.Move(speed);
-    }
 }

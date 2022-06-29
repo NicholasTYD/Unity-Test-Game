@@ -20,10 +20,21 @@ public abstract class EnemyMovementAI : MonoBehaviour
     protected abstract bool StopCriteraFufilled();
 
     public virtual void Move(float speed)
-    {
+    { 
+        if (StopCriteraFufilled())
+        {
+            idle();
+            return;
+        }
+
         Vector2 playerPosition = player.transform.position;
         this.transform.position = 
             Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
         enemyMovement.FaceTowards(playerPosition);
+    }
+
+    protected void idle()
+    {
+        enemyMovement.FaceTowards(player.transform.position);
     }
 }

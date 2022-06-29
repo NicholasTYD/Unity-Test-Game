@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherMovementAI : MonoBehaviour
+public class ArcherMovementAI : EnemyMovementAI
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override bool StopCriteraFufilled()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return enemyMovement.playerDistanceWithin(5);
     }
 }

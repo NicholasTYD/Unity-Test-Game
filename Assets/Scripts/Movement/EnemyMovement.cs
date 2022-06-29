@@ -63,6 +63,20 @@ public class EnemyMovement : Movement
         return Vector2.Distance(playerMain.transform.position, this.transform.position) < value;
     }
 
+    public bool enemyToPlayerXDifferenceWithin(float min, float max)
+    {
+        float xDifference = this.transform.position.x - playerMain.transform.position.x;
+        if (min == 0 || max == 0)
+        {
+            return Mathf.Approximately(xDifference, 0) ||
+            (min <= xDifference && xDifference <= max);
+        }
+        else
+        {
+            return min <= xDifference && xDifference <= max;
+        }
+    }
+
     public bool enemyToPlayerYDifferenceWithin(float min, float max)
     {
         float yDifference = this.transform.position.y - playerMain.transform.position.y;
