@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 0}
+  BasicStats: {fileID: 11400000, guid: 379d372eb02f99f4e833385d1516b7b7, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &1658787313697375870
 MonoBehaviour:
