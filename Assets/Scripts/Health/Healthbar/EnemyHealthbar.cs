@@ -3,25 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealthbar : Healthbar
-{ 
+{
+    Vector3 healthbarCurrentScale;
+
     private void Start()
     {
+        healthbarCurrentScale = this.transform.localScale;
         low = high;
     }
 
     public override void SetHealth(float health, float maxHealth)
     {
         base.SetHealth(health, maxHealth);
-        alignHealthbar();
+        AlignHealthbar();
     }
 
-    void alignHealthbar()
+    public void AlignHealthbar()
     {
-        if (transform.parent.localScale.x < 0)
+        if (!isHealthbarAlignedCorrectly())
         {
-            Vector3 healthbarCurrentScale = this.transform.localScale;
             healthbarCurrentScale.x *= -1;
             this.transform.localScale = healthbarCurrentScale;
         }
+    }
+
+    bool isHealthbarAlignedCorrectly()
+    {
+        return (healthbarCurrentScale.x >= 0 && transform.parent.localScale.x >= 0) ||
+            (healthbarCurrentScale.x < 0 && transform.parent.localScale.x < 0);
     }
 }

@@ -7,7 +7,7 @@ public abstract class Health : MonoBehaviour
     protected EntityMain entityMain;
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
-    [SerializeField] Healthbar healthbar;
+    [SerializeField] protected Healthbar healthbar;
     protected float invulnerabilityTimeLeft = 0;
     // Safe way for external methods to grant invul but not decrease the current invul time.
     public float grantInvulnerability

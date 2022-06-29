@@ -6,6 +6,7 @@ public class EnemyMovement : Movement
 {
     private Animator enemyAnim;
     private PlayerMain playerMain;
+    private EnemyHealth enemyHealth;
     [SerializeField] private EnemyMovementAI enemyMovementAI;
     private Vector2 prevPos;
 
@@ -13,6 +14,7 @@ public class EnemyMovement : Movement
     {
         base.Start();
         this.enemyAnim = this.GetComponent<Animator>();
+        this.enemyHealth = this.GetComponent<EnemyHealth>();
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
     }
 
@@ -37,7 +39,7 @@ public class EnemyMovement : Movement
     protected override void flip()
     {
         base.flip();
-
+        enemyHealth.AlignHealthbar();
     }
 
     private bool isFacingCorrectDirection(Vector2 target)
