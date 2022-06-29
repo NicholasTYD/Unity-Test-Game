@@ -39,10 +39,7 @@ public class EnemyMain : EntityMain
         if (canAct())
         {
             movement.Move();
-        } else
-        {
-            anim.SetFloat("MoveSpeed", 0);
-        }
+        } 
     }
 
     protected bool canAttack()
