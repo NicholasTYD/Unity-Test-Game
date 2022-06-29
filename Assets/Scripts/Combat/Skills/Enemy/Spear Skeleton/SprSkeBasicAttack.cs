@@ -8,9 +8,4 @@ public class SprSkeBasicAttack : EnemySkill
     {
         return base.CanUse() && withinIdleRange();
     }
-
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
-    {
-        base.ExecuteSkill(enemy, player);
-    }
 }

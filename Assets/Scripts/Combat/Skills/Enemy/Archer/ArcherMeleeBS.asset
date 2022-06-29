@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Melee
   DamageMultiplier: 1
   DurationPerFrame: 0.083333336
-  SkillDuration: 1.5000001
+  SkillDuration: 2.7500002
   SkillCooldown: 10
   minAttackLockoutDuration: 3
   maxAttackLockoutDuration: 3

@@ -11,9 +11,4 @@ public class ArcherMelee : EnemySkill
         return base.CanUse() && enemyMovement.playerDistanceWithin(1) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-ybound, ybound);
     }
-
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
-    {
-        base.ExecuteSkill(enemy, player);
-    }
 }

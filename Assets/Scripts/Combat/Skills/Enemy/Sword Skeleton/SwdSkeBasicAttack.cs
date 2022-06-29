@@ -8,10 +8,4 @@ public class SwdSkeBasicAttack : EnemySkill
     {
         return base.CanUse() && withinIdleRange();
     }
-
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
-    {
-        Debug.Log("Used skill");
-        base.ExecuteSkill(enemy, player);
-    }
 }
