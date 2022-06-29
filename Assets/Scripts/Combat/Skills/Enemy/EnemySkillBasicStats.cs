@@ -16,4 +16,6 @@ public class EnemySkillBasicStats : ScriptableObject
     // How long afterwards which enemy cannot use any attacks.
     public float minAttackLockoutDuration;
     public float maxAttackLockoutDuration;
+
+    public List<float> SpecialAttackTimings;
 }

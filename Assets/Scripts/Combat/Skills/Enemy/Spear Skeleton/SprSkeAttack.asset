@@ -19,3 +19,4 @@ MonoBehaviour:
   SkillCooldown: 0
   minAttackLockoutDuration: 2
   maxAttackLockoutDuration: 2
+  SpecialAttackTimings: []

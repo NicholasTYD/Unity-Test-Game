@@ -70,4 +70,12 @@ public class CombatMechanics : MonoBehaviour
         TextPopup indicator = Instantiate(ParryText, newPosition, Quaternion.identity).GetComponent<TextPopup>();
         indicator.setText("Parried!");
     }
+
+    public void InstantiateProjectile(Projectile projectile, Vector2 position, Vector2 rotation,
+        float damage, float speed, float lifetime)
+    {
+        Quaternion quarternion = Quaternion.Euler(rotation);
+        Projectile projectile1 = Instantiate(projectile, position, quarternion);
+        projectile1.SetStats(damage, speed, lifetime);
+    }
 }
