@@ -11,12 +11,15 @@ GameObject:
   - component: {fileID: 567396318681418110}
   - component: {fileID: 567396318681418105}
   - component: {fileID: 567396318681418104}
+  - component: {fileID: 4285235404110715525}
   - component: {fileID: 567396318681417859}
   - component: {fileID: 567396318681417858}
   - component: {fileID: 567396318681418109}
-  - component: {fileID: 567396318681418108}
   - component: {fileID: 567396318681418111}
-  m_Layer: 0
+  - component: {fileID: 1907257923}
+  - component: {fileID: 1907257924}
+  - component: {fileID: -3937076121522103220}
+  m_Layer: 7
   m_Name: Sword Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 256ee406d01592641a8c7876ce4f65b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,7 +94,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &567396318681418104
 Animator:
   serializedVersion: 4
@@ -112,6 +115,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &4285235404110715525
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567396318681418107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.030074716, y: 0.32413897}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.35, y: 0}
+    oldSize: {x: 2.6666667, y: 2}
+    newSize: {x: 2.6666667, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3876686, y: 0.68339413}
+  m_EdgeRadius: 0
 --- !u!50 &567396318681417859
 Rigidbody2D:
   serializedVersion: 4
@@ -127,12 +156,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &567396318681417858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,20 +191,6 @@ MonoBehaviour:
   maxHealth: -1
   currentHealth: -1
   healthbar: {fileID: 7357471520653975503}
---- !u!114 &567396318681418108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567396318681418107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseAttack: -1
-  enemySkills: []
 --- !u!114 &567396318681418111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +204,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  enemyMovementAI: {fileID: 0}
+  enemyMovementAI: {fileID: 1907257923}
+--- !u!114 &1907257923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567396318681418107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ac5efad57ebeb48aa73ccb08510e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1907257924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567396318681418107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAttack: 0
+  enemySkills:
+  - {fileID: -3937076121522103220}
+--- !u!114 &-3937076121522103220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567396318681418107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b177eced9791e0f49abffdb74aa2613e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 4356cf621d9df1c4ab0972f4a34ddd74,
+    type: 2}
 --- !u!1001 &567396318951319128
 PrefabInstance:
   m_ObjectHideFlags: 0
