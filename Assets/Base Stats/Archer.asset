@@ -15,3 +15,8 @@ MonoBehaviour:
   BaseMaxHealth: 250
   BaseAttack: 20
   BaseMovementSpeed: 1.8
+  PlayerDistanceWIthin: 0
+  minXEnemyToPlayerDifferenceWithin: 0
+  maxXEnemyToPlayerDifferenceWithin: 0
+  minYEnemyToPlayerDifferenceWithin: 0
+  maxYEnemyToPlayerDifferenceWithin: 0

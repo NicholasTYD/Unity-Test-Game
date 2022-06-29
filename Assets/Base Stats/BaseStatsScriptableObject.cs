@@ -8,4 +8,11 @@ public class BaseStatsScriptableObject : ScriptableObject
     public float BaseMaxHealth;
     public float BaseAttack;
     public float BaseMovementSpeed;
+
+    public float PlayerDistanceWithin;
+    // enemy pos - player pos difference.
+    public float minXDifference;
+    public float maxXDifference;
+    public float minYDifference;
+    public float maxYDifference;
 }
