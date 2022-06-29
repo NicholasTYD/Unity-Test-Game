@@ -37,7 +37,6 @@ public class CombatMechanics : MonoBehaviour
         foreach (Collider2D entity in entities)
         {
             DealDamageTo(entity.gameObject, damage);
-            Debug.Log("Dealt " + damage + " damage to "+ entity);;
         }
     }
 
