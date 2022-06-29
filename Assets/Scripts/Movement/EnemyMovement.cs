@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : Movement
 {
+    private BaseStatsScriptableObject baseStats;
     private Animator enemyAnim;
     private PlayerMain playerMain;
     private EnemyHealth enemyHealth;
@@ -13,6 +14,7 @@ public class EnemyMovement : Movement
     protected override void Start()
     {
         base.Start();
+        this.baseStats = entityMain.GetBaseStats();
         this.enemyAnim = this.GetComponent<Animator>();
         this.enemyHealth = this.GetComponent<EnemyHealth>();
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
@@ -34,6 +36,13 @@ public class EnemyMovement : Movement
         {
             flip();
         }
+    }
+
+    protected bool StopCriteraFufilled()
+    {
+        return playerDistanceWithin(baseStats.maxAllowableDistance) &&
+            enemyToPlayerXDifferenceWithin(baseStats.minXDifference, baseStats.maxXDifference) &&
+            enemyToPlayerXDifferenceWithin(baseStats.minYDifference, baseStats.maxYDifference);
     }
 
     protected override void flip()

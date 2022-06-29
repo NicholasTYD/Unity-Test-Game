@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Movement : MonoBehaviour
 {
-    private EntityMain entityMain;
+    protected EntityMain entityMain;
     protected Rigidbody2D entityRb;
     [SerializeField] protected float speed;
 
