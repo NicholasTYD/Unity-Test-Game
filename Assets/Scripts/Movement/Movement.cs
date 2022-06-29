@@ -20,7 +20,7 @@ public abstract class Movement : MonoBehaviour
 
     public abstract void Move();
 
-    protected void flip()
+    protected virtual void flip()
     {
         Vector3 currentScale = this.transform.localScale;
         currentScale.x *= -1;

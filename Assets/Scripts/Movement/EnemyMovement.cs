@@ -34,6 +34,12 @@ public class EnemyMovement : Movement
         }
     }
 
+    protected override void flip()
+    {
+        base.flip();
+
+    }
+
     private bool isFacingCorrectDirection(Vector2 target)
     {
         float directionVectorXVal = General.GetDirectionVector(this.transform.position, target).x;
