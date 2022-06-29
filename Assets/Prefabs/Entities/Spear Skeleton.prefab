@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 899044301}
   - component: {fileID: 4308603603948249667}
   - component: {fileID: 4308603603948249692}
-  - component: {fileID: 4308603603948249693}
-  - component: {fileID: 4308603603948249694}
   - component: {fileID: 1985842079}
+  - component: {fileID: 4308603603948249694}
   - component: {fileID: 1985842080}
   m_Layer: 7
   m_Name: Spear Skeleton
@@ -191,7 +190,7 @@ MonoBehaviour:
   maxHealth: -1
   currentHealth: -1
   healthbar: {fileID: 8801075764595441195}
---- !u!114 &4308603603948249693
+--- !u!114 &1985842079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,11 +199,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308603603948249689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24e8f17e3e03bd4ea472ac5d6aee3eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 800dbd25bddf4b9409262be5f3579e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  enemyMovementAI: {fileID: 1985842079}
+  speed: 0
 --- !u!114 &4308603603948249694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,18 +218,6 @@ MonoBehaviour:
   baseAttack: -1
   enemySkills:
   - {fileID: 1985842080}
---- !u!114 &1985842079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308603603948249689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800dbd25bddf4b9409262be5f3579e4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1985842080
 MonoBehaviour:
   m_ObjectHideFlags: 0
