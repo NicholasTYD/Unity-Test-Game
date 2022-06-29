@@ -56,6 +56,11 @@ public abstract class EntityMain : MonoBehaviour
         health.Heal(amount);
     }
 
+    public BaseStatsScriptableObject GetBaseStats()
+    {
+        return BasicStats;
+    }
+
     public float GetBaseMaxHealth()
     {
         return BasicStats.BaseMaxHealth;
