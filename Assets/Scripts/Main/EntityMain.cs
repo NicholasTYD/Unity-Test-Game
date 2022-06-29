@@ -38,7 +38,7 @@ public abstract class EntityMain : MonoBehaviour
         isDead = true;
         lockoutDuration = 999;
         rb.simulated = false;
-        anim.SetTrigger("Die");
+        anim.SetBool("IsDead", true);
     }
 
     protected bool canAct()
