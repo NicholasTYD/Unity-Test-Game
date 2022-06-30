@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 362ee5c2d22ee324a97bb271b4c47ee8,
     type: 2}
-  xStopBounds: 0.3
+  xStopBounds: 0.4
   yStopBounds: 0.4
 --- !u!1001 &3336332842132088948
 PrefabInstance:

@@ -12,6 +12,7 @@ public abstract class EntityMain : MonoBehaviour
     protected Animator anim;
     private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
+    public bool ForceLockout { get; set; }
     private bool isDead;
 
     // Start is called before the first frame update
@@ -37,13 +38,19 @@ public abstract class EntityMain : MonoBehaviour
     {
         isDead = true;
         lockoutDuration = 999;
+        ForceLockout = true;
         rb.simulated = false;
         anim.SetBool("IsDead", true);
     }
 
+    public void SafeSetLockoutDuration(float value)
+    {
+        lockoutDuration = Mathf.Max(lockoutDuration, value);
+    }
+
     protected bool canAct()
     {
-        return lockoutDuration <= 0 && !isDead;
+        return lockoutDuration <= 0 && !isDead && !ForceLockout;
     }
 
     public virtual bool TakeDamage(float amount)

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyMovement : Movement
 {
+    private bool _forceMove;
     private BaseStatsScriptableObject baseStats;
     private Animator enemyAnim;
     private PlayerMain playerMain;
     private EnemyHealth enemyHealth;
-    // [SerializeField] private EnemyMovementAI enemyMovementAI;
     private Vector2 prevPos;
 
     protected override void Start()
@@ -23,30 +23,21 @@ public class EnemyMovement : Movement
     private void FixedUpdate()
     {
         updateCurrentMoveSpeed();
+
+        if (_forceMove)
+        {
+            Move();
+        }
     }
 
     public override void Move()
     {
-        /*
-        enemyMovementAI.Move(speed);
-        */
-        if (StopCriteraFufilled())
+        if (StopCriteraFufilled() && !_forceMove)
         {
             idle();
             return;
         }
 
-        ForceMove();
-        /*
-        Vector2 playerPosition = playerMain.transform.position;
-        this.transform.position =
-            Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
-        FaceTowards(playerPosition);
-        */
-    }
-
-    public void ForceMove()
-    {
         Vector2 playerPosition = playerMain.transform.position;
         this.transform.position =
             Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
@@ -66,6 +57,19 @@ public class EnemyMovement : Movement
         return playerDistanceWithin(baseStats.maxAllowableDistance) &&
             enemyToPlayerXDifferenceWithin(baseStats.minXDifference, baseStats.maxXDifference) &&
             enemyToPlayerYDifferenceWithin(baseStats.minYDifference, baseStats.maxYDifference);
+    }
+
+    public void ToggleForceMove(bool input)
+    {
+        if (input)
+        {
+            entityMain.ForceLockout = true;
+            _forceMove = true;
+        } else
+        {
+            entityMain.ForceLockout = false;
+            _forceMove = false;
+        }
     }
 
     protected void idle()
