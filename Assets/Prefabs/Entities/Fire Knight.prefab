@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 130124194910592370}
   - component: {fileID: 130124194910592371}
   - component: {fileID: 8489493088880103808}
-  - component: {fileID: 410423890219961887}
+  - component: {fileID: 3380623170874785408}
   - component: {fileID: 437272159784855477}
-  - component: {fileID: 5714279124588693949}
   m_Layer: 7
   m_Name: Fire Knight
   m_TagString: Untagged
@@ -172,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 11400000, guid: fe913d35a43519147bd21c70544a669e, type: 2}
+  BasicStats: {fileID: 11400000, guid: ec5b006de97b0d1498b3d981635e02a9, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &8489493088880103808
 MonoBehaviour:
@@ -189,7 +188,7 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 0}
---- !u!114 &410423890219961887
+--- !u!114 &3380623170874785408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 130124194910592138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247227dc099ab9f4389ae3610c603fee, type: 3}
+  m_Script: {fileID: 11500000, guid: 315b59bbc63142f4da531296d6aeec6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
@@ -217,20 +216,6 @@ MonoBehaviour:
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills: []
---- !u!114 &5714279124588693949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130124194910592138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b177eced9791e0f49abffdb74aa2613e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 11400000, guid: 4356cf621d9df1c4ab0972f4a34ddd74,
-    type: 2}
 --- !u!1001 &130124195718738857
 PrefabInstance:
   m_ObjectHideFlags: 0
