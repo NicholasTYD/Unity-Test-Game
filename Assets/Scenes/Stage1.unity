@@ -338,11 +338,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8489493088880103808, guid: d5be1bc7deb3a0747a84527573274605,
-        type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 3848189115567289889}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5be1bc7deb3a0747a84527573274605, type: 3}
 --- !u!1 &519420028
@@ -9524,6 +9519,7 @@ MonoBehaviour:
     type: 3}
   ParryText: {fileID: 7803420430121516645, guid: f6c937e7b93599946a8e6185ddc910ea,
     type: 3}
+  Bosshealthbar: {fileID: 3848189115567289889}
 --- !u!114 &1954727299
 MonoBehaviour:
   m_ObjectHideFlags: 0

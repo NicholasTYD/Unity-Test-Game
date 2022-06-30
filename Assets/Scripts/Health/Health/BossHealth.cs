@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BossHealth : EnemyHealth
 {
-    BossHealthbar enemyHealthbar;
+    private BossHealthbar enemyHealthbar;
 
+    // NOTE: COMPLETE OVERRIDE OF START IN HEALTH.
     protected override void Start()
     {
-        enemyHealthbar = GameObject.FindWithTag("Boss Health UI").GetComponent<BossHealthbar>();
+        enemyHealthbar = CombatMechanics.Instance.Bosshealthbar;
         toggleBossHealthbar(true);
 
         this.healthbar = enemyHealthbar;
@@ -31,14 +32,4 @@ public class BossHealth : EnemyHealth
     {
         enemyHealthbar.gameObject.SetActive(input);
     }
-
-    /*
-    BossHealthbar enemyHealthbar;
-
-    protected override void Start()
-    {
-        base.Start();
-        enemyHealthbar = (BossHealthbar) base.healthbar;
-    }
-    */
 }

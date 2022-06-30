@@ -8,8 +8,9 @@ public class CombatMechanics : MonoBehaviour
     public GameObject DamageText;
     public GameObject HealText;
     public GameObject ParryText;
+    public BossHealthbar Bosshealthbar;
 
-    private void Start()
+    private void Awake()
     {
         if (Instance != null)
         {
