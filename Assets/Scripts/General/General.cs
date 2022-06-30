@@ -16,22 +16,22 @@ public class General : MonoBehaviour
         Instance = this;
     }
 
-    public static Vector2 GetDirectionUnitVector(Vector2 from, Vector2 to)
+    public Vector2 GetDirectionUnitVector(Vector2 from, Vector2 to)
     {
         return (to - from).normalized;
     }
 
-    public static Vector2 GetDirectionVector(Vector2 from, Vector2 to)
+    public Vector2 GetDirectionVector(Vector2 from, Vector2 to)
     {
         return to - from;
     }
 
-    public static Vector2 GetCurrentMouseWorldPosition()
+    public Vector2 GetCurrentMouseWorldPosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    public static LayerMask CombineLayerMask(LayerMask a, LayerMask b)
+    public LayerMask CombineLayerMask(LayerMask a, LayerMask b)
     {
         return a | b;
     }

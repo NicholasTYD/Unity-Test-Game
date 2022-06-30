@@ -121,7 +121,7 @@ public class PlayerCombat : Combat
         {
             PlayerBlockScriptableObject block = playerBlock;
             Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (block.hurtboxCenterOffset * playerToMouseUnitDirection);
-            LayerMask layersToTest = General.CombineLayerMask(enemyLayerMask, enemyProjectileLayerMask);
+            LayerMask layersToTest = General.Instance.CombineLayerMask(enemyLayerMask, enemyProjectileLayerMask);
             Collider2D entityCheck = Physics2D.OverlapCircle(hurtboxWorldCenterPostiion,
                 block.hurtboxRadius,
                 layersToTest);
@@ -150,8 +150,8 @@ public class PlayerCombat : Combat
     {
         this.playerMovement.FaceMouseDirection();
         this.playerWorldCenterPosition = this.transform.position + (Vector3)this.playerCenterOffset;
-        this.mouseWorldPosition = General.GetCurrentMouseWorldPosition();
-        this.playerToMouseUnitDirection = General.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
+        this.mouseWorldPosition = General.Instance.GetCurrentMouseWorldPosition();
+        this.playerToMouseUnitDirection = General.Instance.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
         this.angleOfAttack = Vector2.SignedAngle(Vector2.right, playerToMouseUnitDirection);
     }
 

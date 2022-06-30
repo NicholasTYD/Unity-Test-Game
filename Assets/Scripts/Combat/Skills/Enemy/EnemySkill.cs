@@ -8,6 +8,7 @@ public abstract class EnemySkill : MonoBehaviour
     private Animator anim;
     protected float skillCooldownTimer;
 
+    protected EnemyCombat enemyCombat;
     protected EnemyMovement enemyMovement;
     protected GameObject player;
     protected float playerBoxColliderWidth;
@@ -16,6 +17,7 @@ public abstract class EnemySkill : MonoBehaviour
     private void Start()
     {
         this.anim = this.GetComponent<Animator>();
+        this.enemyCombat = this.GetComponent<EnemyCombat>();
 
         this.enemyMovement = this.GetComponent<EnemyMovement>();
         this.player = GameObject.FindWithTag("Player");
@@ -52,6 +54,15 @@ public abstract class EnemySkill : MonoBehaviour
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;
         enemy.AttackLockoutDuration = enemySkillBasicStats.SkillDuration +
             Random.Range(enemySkillBasicStats.minAttackLockoutDuration, enemySkillBasicStats.maxAttackLockoutDuration);
+        StartCoroutine(adjustDamageMultiplierDuringSkill());
         anim.SetTrigger(enemySkillBasicStats.name);
+    }
+
+    protected IEnumerator adjustDamageMultiplierDuringSkill()
+    {
+        float amountToAdd = enemyCombat.CurrentAbilityDamageMultiplier * (enemySkillBasicStats.DamageMultiplier - 1);
+        enemyCombat.CurrentAbilityDamageMultiplier += amountToAdd;
+        yield return new WaitForSeconds(enemySkillBasicStats.SkillDuration);
+        enemyCombat.CurrentAbilityDamageMultiplier -= amountToAdd;
     }
 }

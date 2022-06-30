@@ -106,7 +106,7 @@ public class PlayerMovement : Movement
 
     public void FaceMouseDirection()
     {
-        Vector3 directionVector = General.GetDirectionVector(this.transform.position, General.GetCurrentMouseWorldPosition());
+        Vector3 directionVector = General.Instance.GetDirectionVector(this.transform.position, General.Instance.GetCurrentMouseWorldPosition());
         if (!isFacingCorrectDirection(directionVector))
         {
             flip();

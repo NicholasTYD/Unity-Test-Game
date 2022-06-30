@@ -15,7 +15,6 @@ public class Projectile : MonoBehaviour
         currentLifetime += Time.deltaTime;
         if (currentLifetime >= lifetime)
         {
-            Debug.Log("lifetime");
             destroySelf();
         }
     }

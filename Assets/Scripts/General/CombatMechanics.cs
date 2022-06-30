@@ -71,11 +71,18 @@ public class CombatMechanics : MonoBehaviour
         indicator.setText("Parried!");
     }
 
-    public void InstantiateProjectile(Projectile projectile, Vector2 position, Vector2 rotation,
+    public void InstantiateProjectile(GameObject projectile, Vector2 position, Vector2 rotation,
         float damage, float speed, float lifetime)
     {
-        Quaternion quarternion = Quaternion.Euler(rotation);
-        Projectile projectile1 = Instantiate(projectile, position, quarternion);
-        projectile1.SetStats(damage, speed, lifetime);
+        if (projectile.GetComponent<Projectile>() == null)
+        {
+            Debug.Log("You're trying to instantiate something that isn't a projectile!");
+            return;
+        }
+
+        float angle = Vector2.SignedAngle(Vector2.right, rotation);
+        Quaternion quaternion = Quaternion.Euler(0, 0, angle);
+        GameObject projectile1 = Instantiate(projectile, position, quaternion);
+        projectile1.GetComponent<Projectile>().SetStats(damage, speed, lifetime);
     }
 }

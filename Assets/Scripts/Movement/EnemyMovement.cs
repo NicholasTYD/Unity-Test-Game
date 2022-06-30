@@ -70,7 +70,7 @@ public class EnemyMovement : Movement
 
     private bool isFacingCorrectDirection(Vector2 target)
     {
-        float directionVectorXVal = General.GetDirectionVector(this.transform.position, target).x;
+        float directionVectorXVal = General.Instance.GetDirectionVector(this.transform.position, target).x;
         return ((Mathf.Approximately(directionVectorXVal, 0) && facingRight()) ||
             (directionVectorXVal > 0 && facingRight()) ||
             (directionVectorXVal < 0 && !facingRight()));

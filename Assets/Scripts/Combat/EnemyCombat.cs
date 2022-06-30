@@ -8,9 +8,8 @@ public class EnemyCombat : Combat
     private EnemyMain enemyMain;
     [SerializeField] List<EnemySkill> enemySkills;
 
-
     float currentAttack;
-    float currentAbilityDamageMultiplier;
+    public float CurrentAbilityDamageMultiplier { get; set; }
     
     protected override void Start()
     {
@@ -18,7 +17,7 @@ public class EnemyCombat : Combat
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
         this.enemyMain = this.GetComponent<EnemyMain>();
         currentAttack = baseAttack;
-        currentAbilityDamageMultiplier = 1;
+        CurrentAbilityDamageMultiplier = 1;
     }
     public override void Attack()
     {
@@ -33,6 +32,11 @@ public class EnemyCombat : Combat
 
     public void Damage(GameObject entity)
     {
-        CombatMechanics.Instance.DealDamageTo(entity, currentAttack * currentAbilityDamageMultiplier);
+        CombatMechanics.Instance.DealDamageTo(entity, GetAbilityDamage());
+    }
+
+    public float GetAbilityDamage()
+    {
+        return currentAttack * CurrentAbilityDamageMultiplier;
     }
 }
