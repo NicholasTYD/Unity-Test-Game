@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class Health : MonoBehaviour
 {
     protected EntityMain entityMain;
-    [SerializeField] float maxHealth;
-    [SerializeField] float currentHealth;
+    [SerializeField] protected float maxHealth;
+    [SerializeField] protected float currentHealth;
     [SerializeField] protected Healthbar healthbar;
     protected float invulnerabilityTimeLeft = 0;
     // Safe way for external methods to grant invul but not decrease the current invul time.
@@ -33,7 +33,7 @@ public abstract class Health : MonoBehaviour
         }
     }
 
-    void changeHealth(float amount)
+    protected virtual void changeHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthbar.SetHealth(currentHealth, maxHealth);
