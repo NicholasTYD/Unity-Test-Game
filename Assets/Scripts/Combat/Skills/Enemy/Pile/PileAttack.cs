@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PileAttack : EnemySkill
 {
-    [SerializeField] float xBounds = 0.4f;
-    [SerializeField] float yBounds = 0.5f;
+    [SerializeField] float xBounds;
+    [SerializeField] float yBounds;
 
     public override bool CanUse()
     {
