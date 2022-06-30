@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 437272159784855474}
   - component: {fileID: 437272159784855477}
   - component: {fileID: 5714279124588693949}
+  - component: {fileID: 8489493088880103808}
   m_Layer: 7
   m_Name: Fire Knight
   m_TagString: Untagged
@@ -233,6 +234,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 4356cf621d9df1c4ab0972f4a34ddd74,
     type: 2}
+--- !u!114 &8489493088880103808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130124194910592138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21d82cd5d37e5540b910d8897f9a0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  healthbar: {fileID: 0}
 --- !u!1001 &130124195718738857
 PrefabInstance:
   m_ObjectHideFlags: 0

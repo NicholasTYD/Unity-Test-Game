@@ -76,11 +76,6 @@ public class EnemyMovement : Movement
         FaceTowards(playerMain.transform.position);
     }
 
-    protected override void flip()
-    {
-        base.flip();
-    }
-
     protected bool isFacingCorrectDirection(Vector2 target)
     {
         float directionVectorXVal = General.Instance.GetDirectionVector(this.transform.position, target).x;

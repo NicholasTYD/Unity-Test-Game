@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class NormalEnemyMovement : EnemyMovement
 {
-    private EnemyHealth enemyHealth;
+    private NormalEnemyHealth enemyHealth;
 
     protected override void Start()
     {
         base.Start();
-        this.enemyHealth = this.GetComponent<EnemyHealth>();
+        this.enemyHealth = this.GetComponent<NormalEnemyHealth>();
     }
 
     protected override void flip()
