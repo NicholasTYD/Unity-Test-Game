@@ -9,7 +9,7 @@ public abstract class EnemySkill : MonoBehaviour
     protected float skillCooldownTimer;
 
     protected EnemyCombat enemyCombat;
-    protected EnemyMovement enemyMovement;
+    protected NormalEnemyMovement enemyMovement;
     protected GameObject player;
 
     private void Start()
@@ -17,7 +17,7 @@ public abstract class EnemySkill : MonoBehaviour
         this.anim = this.GetComponent<Animator>();
         this.enemyCombat = this.GetComponent<EnemyCombat>();
 
-        this.enemyMovement = this.GetComponent<EnemyMovement>();
+        this.enemyMovement = this.GetComponent<NormalEnemyMovement>();
         this.player = GameObject.FindWithTag("Player");
     }
 

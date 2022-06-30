@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : Movement
 {
-    private bool _forceMove;
-    private BaseStatsScriptableObject baseStats;
-    private Animator enemyAnim;
-    private PlayerMain playerMain;
-    private EnemyHealth enemyHealth;
-    private Vector2 prevPos;
+    protected bool _forceMove;
+    protected BaseStatsScriptableObject baseStats;
+    protected Animator enemyAnim;
+    protected PlayerMain playerMain;
+    protected Vector2 prevPos;
 
     protected override void Start()
     {
         base.Start();
         this.baseStats = entityMain.GetBaseStats();
         this.enemyAnim = this.GetComponent<Animator>();
-        this.enemyHealth = this.GetComponent<EnemyHealth>();
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
     }
 
@@ -65,7 +63,8 @@ public class EnemyMovement : Movement
         {
             entityMain.ForceLockout = true;
             _forceMove = true;
-        } else
+        }
+        else
         {
             entityMain.ForceLockout = false;
             _forceMove = false;
@@ -80,10 +79,9 @@ public class EnemyMovement : Movement
     protected override void flip()
     {
         base.flip();
-        enemyHealth.AlignHealthbar();
     }
 
-    private bool isFacingCorrectDirection(Vector2 target)
+    protected bool isFacingCorrectDirection(Vector2 target)
     {
         float directionVectorXVal = General.Instance.GetDirectionVector(this.transform.position, target).x;
         return ((Mathf.Approximately(directionVectorXVal, 0) && facingRight()) ||
@@ -91,7 +89,7 @@ public class EnemyMovement : Movement
             (directionVectorXVal < 0 && !facingRight()));
     }
 
-    private void updateCurrentMoveSpeed()
+    protected void updateCurrentMoveSpeed()
     {
         Vector2 currentPos = this.transform.position;
         float speed = Vector2.Distance(currentPos, prevPos) / Time.deltaTime;
