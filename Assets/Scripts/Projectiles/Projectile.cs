@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision");
         CombatMechanics.Instance.DealDamageTo(collision.gameObject, damage);
         destroySelf();
     }

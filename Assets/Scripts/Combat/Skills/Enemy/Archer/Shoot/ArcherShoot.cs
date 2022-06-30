@@ -23,7 +23,8 @@ public class ArcherShoot : EnemySkill
     protected virtual IEnumerator ShootProjectile()
     {
         yield return new WaitForSeconds(shootDelay);
-        CombatMechanics.Instance.InstantiateProjectile(spawnable, this.transform.position, getDirectionToPlayer(),
+        CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(), 
+            getRangedAimDirection(),
             enemyCombat.GetAbilityDamage(), projectileSpeed, projectileLifetime);
     }
 }

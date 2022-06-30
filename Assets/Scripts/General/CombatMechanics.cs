@@ -33,7 +33,6 @@ public class CombatMechanics : MonoBehaviour
     public void DamageCircleAll(Vector2 point, float radius, int layerMask, float damage)
     {
         Collider2D[] entities = Physics2D.OverlapCircleAll(point, radius, layerMask);
-        Debug.Log(point + " " + radius + " " + layerMask);
         foreach (Collider2D entity in entities)
         {
             DealDamageTo(entity.gameObject, damage);

@@ -5,6 +5,10 @@ using UnityEngine;
 public class General : MonoBehaviour
 {
     public static General Instance;
+    public GameObject Player { get; private set; }
+    public float playerBoxColliderWidth { get; private set; }
+    public float playerBoxColliderHeight { get; private set; }
+    public Vector2 PlayerHitboxOffset { get; private set; }
 
     private void Start()
     {
@@ -14,6 +18,10 @@ public class General : MonoBehaviour
             return;
         }
         Instance = this;
+        Player = GameObject.FindWithTag("Player");
+        playerBoxColliderWidth = Player.GetComponent<BoxCollider2D>().size.x;
+        playerBoxColliderHeight = Player.GetComponent<BoxCollider2D>().size.y;
+        PlayerHitboxOffset = Player.GetComponent<BoxCollider2D>().offset;
     }
 
     public Vector2 GetDirectionUnitVector(Vector2 from, Vector2 to)

@@ -11,8 +11,6 @@ public abstract class EnemySkill : MonoBehaviour
     protected EnemyCombat enemyCombat;
     protected EnemyMovement enemyMovement;
     protected GameObject player;
-    protected float playerBoxColliderWidth;
-    protected float playerBoxColliderHeight;
 
     private void Start()
     {
@@ -21,8 +19,6 @@ public abstract class EnemySkill : MonoBehaviour
 
         this.enemyMovement = this.GetComponent<EnemyMovement>();
         this.player = GameObject.FindWithTag("Player");
-        playerBoxColliderWidth = this.player.GetComponent<BoxCollider2D>().size.x;
-        playerBoxColliderHeight = this.player.GetComponent<BoxCollider2D>().size.y;
     }
 
     // Update is called once per frame
@@ -44,9 +40,17 @@ public abstract class EnemySkill : MonoBehaviour
         return enemyMovement.StopCriteraFufilled();
     }
 
-    protected Vector2 getDirectionToPlayer()
+    protected Vector2 getProjectileSpawnPoint()
     {
-        return General.Instance.GetDirectionUnitVector(this.transform.position, player.transform.position);
+        return enemyCombat.EnemyProjectileSpawnPoint.position;
+    }
+
+    // Gets the direction from spawnpoint of the projectile to the center of the player's hitbox.
+    protected Vector2 getRangedAimDirection()
+    {
+        Vector2 offset = General.Instance.PlayerHitboxOffset;
+        return General.Instance.GetDirectionUnitVector(getProjectileSpawnPoint(),
+            (Vector2) player.transform.position + offset);
     }
 
     public virtual void ExecuteSkill(EnemyMain enemy, PlayerMain player)

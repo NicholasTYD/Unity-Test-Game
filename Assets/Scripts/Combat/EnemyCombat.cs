@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : Combat
 {
+    public Transform EnemyProjectileSpawnPoint;
     private PlayerMain playerMain;
     private EnemyMain enemyMain;
     [SerializeField] List<EnemySkill> enemySkills;
@@ -26,6 +27,7 @@ public class EnemyCombat : Combat
             if (skill.CanUse())
             {
                 skill.ExecuteSkill(enemyMain, playerMain);
+                break;
             }
         }
     }
