@@ -10,6 +10,7 @@ public class PlayerHealthbar : Healthbar
     public override void SetHealth(float health, float maxHealth)
     {
         base.SetHealth(health, maxHealth);
-        healthText.text = health + " / " + maxHealth;
+        // Text displays int instead of floats.
+        healthText.text = Mathf.RoundToInt(health) + " / " + Mathf.RoundToInt(maxHealth);
     }
 }

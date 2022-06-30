@@ -19,16 +19,13 @@ public class EnemyMain : EntityMain
     {
         base.Update();
 
-        if (!canAct())
-        {
-            return;
-        }
-
+        // Watch out for the sequence of this thing, cuz attack lockout duration is calculated using skill duration
+        // + attacklockout duration in executeSkill().
         if (!canAttack())
         {
             AttackLockoutDuration -= Time.deltaTime;
         }
-        else
+        else if (canAct())
         {
             enemyCombat.Attack();
         }

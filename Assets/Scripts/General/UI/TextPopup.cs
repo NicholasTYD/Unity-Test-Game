@@ -45,7 +45,8 @@ public class TextPopup : MonoBehaviour
 
     public void setText(float value)
     {
-        text.text = value.ToString();
+        // Round off value to int. Visual only.
+        text.text = Mathf.Round(value).ToString();
     }
 
     public void setText(string str)
