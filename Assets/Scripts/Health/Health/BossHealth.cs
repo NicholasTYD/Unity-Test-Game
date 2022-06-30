@@ -8,11 +8,14 @@ public class BossHealth : EnemyHealth
 
     protected override void Start()
     {
-        base.Start();
-        enemyHealthbar = (BossHealthbar)healthbar;
-        // enemyHealthbar = GameObject.FindWithTag("Boss Health UI").GetComponent<BossHealthbar>();
+        enemyHealthbar = GameObject.FindWithTag("Boss Health UI").GetComponent<BossHealthbar>();
         toggleBossHealthbar(true);
-        
+
+        this.healthbar = enemyHealthbar;
+        this.entityMain = this.GetComponent<EntityMain>();
+        maxHealth = entityMain.GetBaseMaxHealth();
+        currentHealth = maxHealth;
+        healthbar.SetHealth(currentHealth, maxHealth);
     }
 
     protected override void changeHealth(float amount)
