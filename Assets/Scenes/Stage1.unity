@@ -11044,12 +11044,12 @@ PrefabInstance:
     - target: {fileID: 7079988691572583977, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.341
+      value: -1.412
       objectReference: {fileID: 0}
     - target: {fileID: 7079988691572583977, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.047
+      value: 0.006
       objectReference: {fileID: 0}
     - target: {fileID: 7079988691572583977, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
         type: 3}
@@ -11091,33 +11091,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7079988691572583978, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
-        type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 7957380944652001407}
     - target: {fileID: 7079988691572583983, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
         type: 3}
       propertyPath: m_Name
       value: Pile
       objectReference: {fileID: 0}
-    - target: {fileID: 7079988691572583989, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
-        type: 3}
-      propertyPath: BasicStats
-      value: 
-      objectReference: {fileID: 11400000, guid: 035b06a0e58e5fd418a73a846cf5ee64,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def, type: 3}
---- !u!114 &7957380944652001407 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2569765199153754717, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def,
-    type: 3}
-  m_PrefabInstance: {fileID: 7957380944652001406}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bdba0c2179a7b649912e189e17cd1df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

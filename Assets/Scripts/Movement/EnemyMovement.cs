@@ -36,6 +36,17 @@ public class EnemyMovement : Movement
             return;
         }
 
+        ForceMove();
+        /*
+        Vector2 playerPosition = playerMain.transform.position;
+        this.transform.position =
+            Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
+        FaceTowards(playerPosition);
+        */
+    }
+
+    public void ForceMove()
+    {
         Vector2 playerPosition = playerMain.transform.position;
         this.transform.position =
             Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
