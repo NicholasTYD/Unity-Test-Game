@@ -42,6 +42,11 @@ public abstract class EnemySkill : MonoBehaviour
         return enemyMovement.StopCriteraFufilled();
     }
 
+    protected Vector2 getDirectionToPlayer()
+    {
+        return General.Instance.GetDirectionUnitVector(this.transform.position, player.transform.position);
+    }
+
     public virtual void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;

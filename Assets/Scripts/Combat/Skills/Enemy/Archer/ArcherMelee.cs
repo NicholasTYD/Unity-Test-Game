@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArcherMelee : EnemySkill
 {
-    private float ybound = 0.75f;
+    [SerializeField] private float ybound = 0.75f;
 
     public override bool CanUse()
     {

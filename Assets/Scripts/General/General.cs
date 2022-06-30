@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class General : MonoBehaviour
 {
+    public static General Instance;
+
+    private void Start()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
     public static Vector2 GetDirectionUnitVector(Vector2 from, Vector2 to)
     {
         return (to - from).normalized;
