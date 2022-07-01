@@ -188,7 +188,7 @@ MonoBehaviour:
   currentHealth: -1
   healthbar: {fileID: 0}
   hurtInvulnerabilityDuration: 1
-  blockInvulnerabilityDuration: 1
+  blockInvulnerabilityDuration: 0.7
 --- !u!114 &1252719436
 MonoBehaviour:
   m_ObjectHideFlags: 0
