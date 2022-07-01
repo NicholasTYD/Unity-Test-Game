@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1756295444528713269}
   - component: {fileID: 6700679088679786115}
   - component: {fileID: 2269909408797816076}
+  - component: {fileID: 2038442223147483359}
   m_Layer: 7
   m_Name: Red Wizard
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 1756295444528713267}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a7a297460a8e324981dc90c62256ca9, type: 2}
+  m_Controller: {fileID: 9100000, guid: e36a9a093c222fd43b29f4bf0495ad9d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 11400000, guid: fe913d35a43519147bd21c70544a669e, type: 2}
+  BasicStats: {fileID: 11400000, guid: 2015e85121bf5474a95bc0fa5796a981, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &1756295444528713269
 MonoBehaviour:
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  xOffset: -1
 --- !u!114 &2269909408797816076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
-  enemySkills: []
+  enemySkills:
+  - {fileID: 2038442223147483359}
+--- !u!114 &2038442223147483359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756295444528713267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780f83c7c8bb5af4fa17af8804bf220c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 1ae1b7be1e7023d4faa978f6d4f14e07,
+    type: 2}
 --- !u!1001 &1756295444314647601
 PrefabInstance:
   m_ObjectHideFlags: 0

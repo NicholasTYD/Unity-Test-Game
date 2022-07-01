@@ -50,7 +50,7 @@ public class EnemyMovement : Movement
         }
     }
 
-    public bool StopCriteraFufilled()
+    public virtual bool StopCriteraFufilled()
     {
         return playerDistanceWithin(baseStats.maxAllowableDistance) &&
             enemyToPlayerXDifferenceWithin(baseStats.minXDifference, baseStats.maxXDifference) &&
