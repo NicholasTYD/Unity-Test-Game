@@ -277,6 +277,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 465922625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &311619052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 564383112, guid: d5be1bc7deb3a0747a84527573274605,
+    type: 3}
+  m_PrefabInstance: {fileID: 465922625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311619050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdde12044c2696540bffb8fa7219c2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &311619053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 564383110, guid: d5be1bc7deb3a0747a84527573274605,
+    type: 3}
+  m_PrefabInstance: {fileID: 465922625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311619050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fa5c1d8aa67f4418ad764ece03b138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &311619063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +316,35 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 0}
-  specialAttack: {fileID: 0}
+  specialAttack: {fileID: 311619064}
+--- !u!114 &311619064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311619050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842e049422ea1648b2896bda2b33bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: db25bb547e7a14f49b0d63629cc1890f,
+    type: 2}
+--- !u!114 &311619065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311619050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f775b9148d58f419a717b712f317f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 990e2024c10a5fe45a41aea5131a0e4d,
+    type: 2}
 --- !u!1001 &465922625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,6 +416,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.data[0]
+      value: 
+      objectReference: {fileID: 311619065}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.data[1]
+      value: 
+      objectReference: {fileID: 311619052}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.data[2]
+      value: 
+      objectReference: {fileID: 311619053}
     m_RemovedComponents:
     - {fileID: 8489493088880103808, guid: d5be1bc7deb3a0747a84527573274605, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5be1bc7deb3a0747a84527573274605, type: 3}

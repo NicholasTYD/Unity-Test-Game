@@ -17,6 +17,14 @@ public class FreKgtBlock : EnemySkill
         skillCooldownTimer = enemySkillBasicStats.SkillDuration +
             Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
-        anim.SetTrigger(enemySkillBasicStats.name);
+
+        StartCoroutine(toggleBlock());
+    }
+
+    IEnumerator toggleBlock()
+    {
+        anim.SetBool(enemySkillBasicStats.name, true);
+        yield return new WaitForSeconds(enemySkillBasicStats.SkillDuration);
+        anim.SetBool(enemySkillBasicStats.name, false);
     }
 }

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Block
   DamageMultiplier: 0
-  DurationPerFrame: 0
-  SkillDuration: 0
-  MinSkillCooldown: 0
-  MaxSkillCooldown: 0
+  DurationPerFrame: 0.125
+  SkillDuration: 1.25
+  MinSkillCooldown: 10
+  MaxSkillCooldown: 15
   minAttackLockoutDuration: 0
   maxAttackLockoutDuration: 0

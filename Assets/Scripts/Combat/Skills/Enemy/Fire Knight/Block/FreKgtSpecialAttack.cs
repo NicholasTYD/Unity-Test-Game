@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreKgtSpecialAttack : MonoBehaviour
+public class FreKgtSpecialAttack : EnemySkill
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool CanUse()
     {
-        
+        return base.CanUse() && anim.GetBool("Block");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        
+        anim.SetBool("Block", false);
+        base.ExecuteSkill(enemy, player);
     }
 }

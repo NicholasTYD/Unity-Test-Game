@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111b41cfd036f2247b9bbe5ee0565f63, type: 3}
   m_Name: FreKgtSpecialAttackBS
   m_EditorClassIdentifier: 
-  name: 
-  DamageMultiplier: 0
-  DurationPerFrame: 0
-  SkillDuration: 0
+  name: SpecialAttack
+  DamageMultiplier: 2
+  DurationPerFrame: 0.125
+  SkillDuration: 2.5
   MinSkillCooldown: 0
   MaxSkillCooldown: 0
   minAttackLockoutDuration: 0
-  maxAttackLockoutDuration: 0
+  maxAttackLockoutDuration: 1.5
