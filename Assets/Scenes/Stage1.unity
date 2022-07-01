@@ -343,6 +343,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437272159784855477, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: enemySkills.Array.data[0]
+      value: 
+      objectReference: {fileID: 564383110}
     - target: {fileID: 4425268577598754676, guid: d5be1bc7deb3a0747a84527573274605,
         type: 3}
       propertyPath: m_Size.x
@@ -363,6 +373,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.48105943
       objectReference: {fileID: 0}
+    - target: {fileID: 5603162361382628186, guid: d5be1bc7deb3a0747a84527573274605,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5603162361382628188, guid: d5be1bc7deb3a0747a84527573274605,
         type: 3}
       propertyPath: m_Size.x
@@ -376,7 +391,7 @@ PrefabInstance:
     - target: {fileID: 5603162361382628188, guid: d5be1bc7deb3a0747a84527573274605,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5603162361382628188, guid: d5be1bc7deb3a0747a84527573274605,
         type: 3}
@@ -509,6 +524,26 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &564383100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 130124194910592138, guid: d5be1bc7deb3a0747a84527573274605,
+    type: 3}
+  m_PrefabInstance: {fileID: 465922625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &564383110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564383100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fa5c1d8aa67f4418ad764ece03b138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: c8c52906b6e14ea49accba738ab1264f,
+    type: 2}
 --- !u!1 &618882008
 GameObject:
   m_ObjectHideFlags: 0

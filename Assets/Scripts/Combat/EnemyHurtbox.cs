@@ -16,6 +16,7 @@ public class EnemyHurtbox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("test");
         if (collidedWithPlayer(collision)) {
             enemyCombat.Damage(collision.gameObject);
         }
