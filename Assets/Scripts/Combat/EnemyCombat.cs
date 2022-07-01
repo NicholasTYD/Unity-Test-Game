@@ -32,6 +32,12 @@ public class EnemyCombat : Combat
         }
     }
 
+    public bool ManuallyExecuteSkill(EnemySkill skill)
+    {
+        skill.ExecuteSkill(enemyMain, playerMain);
+        return skill.CanUse();
+    }
+
     public void Damage(GameObject entity)
     {
         CombatMechanics.Instance.DealDamageTo(entity, GetAbilityDamage());

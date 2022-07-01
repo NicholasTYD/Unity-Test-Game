@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class EnemySkill : MonoBehaviour
 {
-    [SerializeField] EnemySkillBasicStats enemySkillBasicStats;
-    private Animator anim;
+    [SerializeField] protected EnemySkillBasicStats enemySkillBasicStats;
+    protected Animator anim;
     protected float skillCooldownTimer;
 
     protected EnemyCombat enemyCombat;
@@ -62,8 +62,6 @@ public abstract class EnemySkill : MonoBehaviour
             Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
         anim.SetTrigger(enemySkillBasicStats.name);
-        Debug.Log(enemySkillBasicStats.name);
-
     }
 
     protected IEnumerator adjustDamageMultiplierDuringSkill()
