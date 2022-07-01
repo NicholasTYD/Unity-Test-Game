@@ -58,6 +58,8 @@ public abstract class EnemySkill : MonoBehaviour
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;
         enemy.AttackLockoutDuration = enemySkillBasicStats.SkillDuration +
         Random.Range(enemySkillBasicStats.minAttackLockoutDuration, enemySkillBasicStats.maxAttackLockoutDuration);
+        skillCooldownTimer = enemySkillBasicStats.SkillDuration +
+            Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
         anim.SetTrigger(enemySkillBasicStats.name);
     }
