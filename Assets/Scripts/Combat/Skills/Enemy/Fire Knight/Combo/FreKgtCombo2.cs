@@ -17,7 +17,6 @@ public class FreKgtCombo2 : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        Debug.Log("can use");
         base.ExecuteSkill(enemy, player);
     }
 }

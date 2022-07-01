@@ -62,6 +62,8 @@ public abstract class EnemySkill : MonoBehaviour
             Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
         anim.SetTrigger(enemySkillBasicStats.name);
+        Debug.Log(enemySkillBasicStats.name);
+
     }
 
     protected IEnumerator adjustDamageMultiplierDuringSkill()
