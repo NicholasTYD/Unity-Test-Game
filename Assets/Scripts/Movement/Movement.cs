@@ -8,6 +8,7 @@ public abstract class Movement : MonoBehaviour
     protected EntityMain entityMain;
     protected Rigidbody2D entityRb;
     [SerializeField] protected float speed;
+    public float BaseSpeed { get; private set; }
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -16,9 +17,15 @@ public abstract class Movement : MonoBehaviour
         this.entityRb = this.GetComponent<Rigidbody2D>();
 
         this.speed = entityMain.GetBaseMovementSpeed();
+        this.BaseSpeed = speed;
     }
 
     public abstract void Move();
+
+    public void SetSpeed(float value)
+    {
+        speed = value;
+    }
 
     protected virtual void flip()
     {
