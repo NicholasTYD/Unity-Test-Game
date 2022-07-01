@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class FreKgtSpecialAttack : EnemySkill
 {
+    public bool isBlocking;
+
     public override bool CanUse()
     {
-        return base.CanUse() && anim.GetBool("Block");
+        return base.CanUse() && isBlocking;
     }
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        anim.SetBool("Block", false);
         base.ExecuteSkill(enemy, player);
     }
 }

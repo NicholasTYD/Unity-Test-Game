@@ -34,8 +34,12 @@ public class EnemyCombat : Combat
 
     public bool ManuallyExecuteSkill(EnemySkill skill)
     {
-        skill.ExecuteSkill(enemyMain, playerMain);
-        return skill.CanUse();
+        if (skill.CanUse())
+        {
+            skill.ExecuteSkill(enemyMain, playerMain);
+            return true;
+        }
+        return false;
     }
 
     public void Damage(GameObject entity)

@@ -9,6 +9,7 @@ public class FreKgtCombo1 : EnemySkill
     [SerializeField] float chargeDelay;
     [SerializeField] float chargeDuration;
     [SerializeField] float chargeSpeed;
+    [SerializeField] ParticleSystem sfx;
 
 
     public override bool CanUse()
@@ -34,5 +35,15 @@ public class FreKgtCombo1 : EnemySkill
         {
             FreKgtCombo2.ExecuteSkill(enemy, player);
         }
+    }
+
+    public void playSfx()
+    {
+        sfx.Play();
+    }
+
+    public void stopSfx()
+    {
+        sfx.Stop();
     }
 }
