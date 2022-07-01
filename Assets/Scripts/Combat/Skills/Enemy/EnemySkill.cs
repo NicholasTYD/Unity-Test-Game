@@ -19,6 +19,8 @@ public abstract class EnemySkill : MonoBehaviour
 
         this.enemyMovement = this.GetComponent<EnemyMovement>();
         this.player = GameObject.FindWithTag("Player");
+
+        skillCooldownTimer = enemySkillBasicStats.StartSkillCooldown;
     }
 
     // Update is called once per frame

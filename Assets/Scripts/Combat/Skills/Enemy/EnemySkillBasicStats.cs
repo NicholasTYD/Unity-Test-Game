@@ -9,6 +9,8 @@ public class EnemySkillBasicStats : ScriptableObject
     public float DamageMultiplier;
     public float DurationPerFrame;
 
+    public float StartSkillCooldown;
+
     // How long the skill lasts
     public float SkillDuration;
     public float MinSkillCooldown;

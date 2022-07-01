@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Block
   DamageMultiplier: 0
   DurationPerFrame: 0.125
+  StartSkillCooldown: 5
   SkillDuration: 1.25
   MinSkillCooldown: 7
   MaxSkillCooldown: 10
