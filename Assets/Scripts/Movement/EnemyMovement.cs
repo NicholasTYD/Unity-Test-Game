@@ -50,6 +50,14 @@ public class EnemyMovement : Movement
         }
     }
 
+    public void FaceAway(Vector2 target)
+    {
+        if (isFacingCorrectDirection(target))
+        {
+            flip();
+        }
+    }
+
     public virtual bool StopCriteraFufilled()
     {
         return playerDistanceWithin(baseStats.maxAllowableDistance) &&

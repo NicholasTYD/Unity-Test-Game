@@ -46,10 +46,11 @@ GameObject:
   - component: {fileID: 1956205736915186860}
   - component: {fileID: 1956205736915186861}
   - component: {fileID: 1956205736915187026}
-  - component: {fileID: 3411157957730378086}
+  - component: {fileID: 717996982896613655}
   - component: {fileID: 2088013480981007979}
-  - component: {fileID: 873949588493257809}
-  - component: {fileID: 873949588130477597}
+  - component: {fileID: 8575348630455449390}
+  - component: {fileID: 5670618115908211932}
+  - component: {fileID: 8021583011133549236}
   m_Layer: 7
   m_Name: Huntress
   m_TagString: Untagged
@@ -157,7 +158,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.023751259, y: 0.2979312}
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 11400000, guid: 379d372eb02f99f4e833385d1516b7b7, type: 2}
+  BasicStats: {fileID: 11400000, guid: be99e993109381b4e90f88fa9eb98ea9, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &1956205736915187026
 MonoBehaviour:
@@ -223,7 +224,7 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 8854323635227583456}
---- !u!114 &3411157957730378086
+--- !u!114 &717996982896613655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956205736915187028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0e8a772bf0fac47ac96519edbf4965, type: 3}
+  m_Script: {fileID: 11500000, guid: ab859c4d5f1010844b406e88aae373fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
@@ -251,9 +252,8 @@ MonoBehaviour:
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 873949588082717752}
   enemySkills:
-  - {fileID: 873949588493257809}
-  - {fileID: 873949588130477597}
---- !u!114 &873949588493257809
+  - {fileID: 8575348630455449390}
+--- !u!114 &8575348630455449390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,13 +262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956205736915187028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b7d37aa88a1d448a65c163eb609a2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 844a565e497bbbe4fbea79937624aba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 11400000, guid: fdcd2d5df9d941342a3a360870e1b0cf,
+  enemySkillBasicStats: {fileID: 11400000, guid: 3a0440e95aee4514abd6013fd3fb39ed,
     type: 2}
-  ybound: 0.75
---- !u!114 &873949588130477597
+  HntrssAttack2: {fileID: 5670618115908211932}
+--- !u!114 &5670618115908211932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,16 +277,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956205736915187028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e9ecec0c089654fb7ada54405654b8, type: 3}
+  m_Script: {fileID: 11500000, guid: a1bac2659df5d774c90245fb57dee236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 11400000, guid: cfeb49511fa732340905ec9b9f15f480,
+  enemySkillBasicStats: {fileID: 11400000, guid: bdc1708a714c71f418c8789ca25f8532,
     type: 2}
-  spawnable: {fileID: 1288231620162006732, guid: 026e7790917b9c84990d08466caeac4b,
+  HntrssAttack3: {fileID: 8021583011133549236}
+--- !u!114 &8021583011133549236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956205736915187028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5ab8a9d5043e147b7c852f176a7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 539116a769907024495731f3bfa3f899,
+    type: 2}
+  huntressMovementAI: {fileID: 717996982896613655}
+  spawnable: {fileID: 4161556517402868373, guid: 8f501201dfd4d534e8c26777de9acc89,
     type: 3}
-  projectileSpeed: 3
-  projectileLifetime: 4
-  shootDelay: 1
+  projectileSpeed: 1
+  projectileLifetime: 10
+  shootDelay: 0.75
+  runTime: 2
 --- !u!1001 &1956205736181536598
 PrefabInstance:
   m_ObjectHideFlags: 0
