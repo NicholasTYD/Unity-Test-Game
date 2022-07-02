@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 3a0440e95aee4514abd6013fd3fb39ed,
     type: 2}
-  HntrssAttack2: {fileID: 5670618115908211932}
+  followupSkill: {fileID: 5670618115908211932}
 --- !u!114 &5670618115908211932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: bdc1708a714c71f418c8789ca25f8532,
     type: 2}
-  HntrssAttack3: {fileID: 8021583011133549236}
+  followupSkill: {fileID: 8021583011133549236}
 --- !u!114 &8021583011133549236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 539116a769907024495731f3bfa3f899,
     type: 2}
+  followupSkill: {fileID: 0}
   huntressMovementAI: {fileID: 717996982896613655}
   spawnable: {fileID: 4161556517402868373, guid: 8f501201dfd4d534e8c26777de9acc89,
     type: 3}
