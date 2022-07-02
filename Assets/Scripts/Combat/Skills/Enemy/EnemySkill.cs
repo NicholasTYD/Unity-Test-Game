@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class EnemySkill : MonoBehaviour
 {
     [SerializeField] protected EnemySkillBasicStats enemySkillBasicStats;
+    [SerializeField] protected EnemySkill followupSkill;
     protected Animator anim;
     protected float skillCooldownTimer;
 
@@ -64,6 +65,11 @@ public abstract class EnemySkill : MonoBehaviour
             Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
         anim.SetTrigger(enemySkillBasicStats.name);
+
+        if (followupSkill != null)
+        {
+            StartCoroutine(AttemptFollowupSkill(enemy, player));
+        }
     }
 
     protected IEnumerator adjustDamageMultiplierDuringSkill()
@@ -72,5 +78,14 @@ public abstract class EnemySkill : MonoBehaviour
         enemyCombat.CurrentAbilityDamageMultiplier += amountToAdd;
         yield return new WaitForSeconds(enemySkillBasicStats.SkillDuration);
         enemyCombat.CurrentAbilityDamageMultiplier -= amountToAdd;
+    }
+
+    private IEnumerator AttemptFollowupSkill(EnemyMain enemy, PlayerMain player)
+    {
+        yield return new WaitForSeconds(enemySkillBasicStats.SkillDuration);
+        if (followupSkill.CanUse())
+        {
+            followupSkill.ExecuteSkill(enemy, player);
+        }
     }
 }
