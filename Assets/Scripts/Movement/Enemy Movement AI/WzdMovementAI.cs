@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WzdMovementAI : EnemyMovement
+public class WzdMovementAI : NormalEnemyMovement
 {
     [SerializeField] float xOffset;
-
+    
     public override void Move()
     {
         if (StopCriteraFufilled() && !_forceMove)

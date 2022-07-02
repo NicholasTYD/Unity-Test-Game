@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 1914412182751866809}
   - component: {fileID: 1914412182751866808}
   - component: {fileID: 1914412182751866439}
+  - component: {fileID: 2379392038496675580}
   - component: {fileID: 2111783943705089406}
-  - component: {fileID: 8641469580148911320}
   - component: {fileID: 11600830852009463}
   m_Layer: 7
   m_Name: Witch
@@ -190,6 +190,19 @@ MonoBehaviour:
   maxHealth: -1
   currentHealth: -1
   healthbar: {fileID: 8886847895209654517}
+--- !u!114 &2379392038496675580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914412182751866433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0e8a772bf0fac47ac96519edbf4965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!114 &2111783943705089406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,19 +219,6 @@ MonoBehaviour:
   EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills:
   - {fileID: 11600830852009463}
---- !u!114 &8641469580148911320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914412182751866433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a08471adf68b049a50a81b61abbae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
 --- !u!114 &11600830852009463
 MonoBehaviour:
   m_ObjectHideFlags: 0
