@@ -18,6 +18,6 @@ public class WzdMovementAI : EnemyMovement
         Vector2 targetPosition = playerPosition + new Vector2(xOffset, 0);
         this.transform.position =
             Vector2.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed);
-        FaceTowards(playerPosition);
+        FaceTowards(targetPosition);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedWzdAttack : EnemySkill
+public class PpeWzdAttack : EnemySkill
 {
     public override bool CanUse()
     {
@@ -13,5 +13,5 @@ public class RedWzdAttack : EnemySkill
     {
         enemyMovement.FaceTowards(player.transform.position);
         base.ExecuteSkill(enemy, player);
-    } 
+    }
 }

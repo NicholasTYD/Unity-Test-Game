@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
-  m_Name: RedWizard
+  m_Name: PurpleWizard
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 800
-  BaseAttack: 40
-  BaseMovementSpeed: 2.5
+  BaseMaxHealth: 700
+  BaseAttack: 50
+  BaseMovementSpeed: 3
   maxAllowableDistance: 999
-  minXDifference: -1.5
-  maxXDifference: -1
+  minXDifference: 0.5
+  maxXDifference: 2.5
   minYDifference: -1
   maxYDifference: 0.6
