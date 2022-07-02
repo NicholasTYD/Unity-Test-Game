@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 130124194910592370}
   - component: {fileID: 130124194910592371}
   - component: {fileID: 311619063}
-  - component: {fileID: 3380623170874785408}
+  - component: {fileID: 2902097745210177583}
   - component: {fileID: 437272159784855477}
   - component: {fileID: 564383110}
   - component: {fileID: 564383112}
@@ -227,7 +227,7 @@ MonoBehaviour:
   currentHealth: 0
   healthbar: {fileID: 0}
   specialAttack: {fileID: 311619064}
---- !u!114 &3380623170874785408
+--- !u!114 &2902097745210177583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

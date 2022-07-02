@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 567396318681417859}
   - component: {fileID: 567396318681417858}
   - component: {fileID: 567396318681418109}
-  - component: {fileID: 1907257923}
+  - component: {fileID: -7962151857346591695}
   - component: {fileID: 1907257924}
   - component: {fileID: -3937076121522103220}
   m_Layer: 7
@@ -190,7 +190,7 @@ MonoBehaviour:
   maxHealth: -1
   currentHealth: -1
   healthbar: {fileID: 7357471520653975503}
---- !u!114 &1907257923
+--- !u!114 &-7962151857346591695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 567396318681418107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ac5efad57ebeb48aa73ccb08510e4c, type: 3}
+  m_Script: {fileID: 11500000, guid: eb0e8a772bf0fac47ac96519edbf4965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttack: 0
+  EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills:
   - {fileID: -3937076121522103220}
 --- !u!114 &-3937076121522103220
