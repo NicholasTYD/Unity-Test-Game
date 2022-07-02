@@ -10,6 +10,9 @@ public class General : MonoBehaviour
     public float playerBoxColliderHeight { get; private set; }
     public Vector2 PlayerHitboxOffset { get; private set; }
 
+    public float StageXBound { get; private set; }
+    public float StageYBound { get; private set; }
+
     private void Start()
     {
         if (Instance != null)
@@ -22,6 +25,8 @@ public class General : MonoBehaviour
         playerBoxColliderWidth = Player.GetComponent<BoxCollider2D>().size.x;
         playerBoxColliderHeight = Player.GetComponent<BoxCollider2D>().size.y;
         PlayerHitboxOffset = Player.GetComponent<BoxCollider2D>().offset;
+        StageXBound = 16;
+        StageYBound = 12;
     }
 
     public Vector2 GetDirectionUnitVector(Vector2 from, Vector2 to)
@@ -42,5 +47,10 @@ public class General : MonoBehaviour
     public LayerMask CombineLayerMask(LayerMask a, LayerMask b)
     {
         return a | b;
+    }
+
+    public bool RandomBool()
+    {
+        return Random.Range(0, 2) == 0;
     }
 }
