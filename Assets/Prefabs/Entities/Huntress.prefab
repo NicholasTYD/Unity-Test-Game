@@ -300,10 +300,10 @@ MonoBehaviour:
   huntressMovementAI: {fileID: 717996982896613655}
   spawnable: {fileID: 4161556517402868373, guid: 8f501201dfd4d534e8c26777de9acc89,
     type: 3}
-  projectileSpeed: 1
+  projectileSpeed: 1.5
   projectileLifetime: 10
   shootDelay: 0.75
-  runTime: 2
+  runTime: 1.5
 --- !u!1001 &1956205736181536598
 PrefabInstance:
   m_ObjectHideFlags: 0

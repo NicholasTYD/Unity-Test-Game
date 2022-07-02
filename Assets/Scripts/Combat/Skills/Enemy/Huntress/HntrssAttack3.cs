@@ -28,8 +28,11 @@ public class HntrssAttack3 : EnemySkill
         enemyMovement.FaceTowards(player.transform.position);
         base.ExecuteSkill(enemy, player);
         yield return new WaitForSeconds(shootDelay);
-        CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(),
+        if (!enemy.isDead)
+        {
+            CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(),
             getRangedAimDirection(),
             enemyCombat.GetAbilityDamage(), projectileSpeed, projectileLifetime);
+        }
     }
 }

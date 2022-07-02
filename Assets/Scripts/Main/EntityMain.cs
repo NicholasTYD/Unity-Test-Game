@@ -13,7 +13,7 @@ public abstract class EntityMain : MonoBehaviour
     private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
     public bool ForceLockout { get; set; }
-    private bool isDead;
+    public bool isDead { get; private set; }
 
     // Start is called before the first frame update
     protected virtual void Start()
