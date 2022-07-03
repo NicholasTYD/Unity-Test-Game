@@ -104,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 486506191882090001}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4aa962c1a8ec5734bbca4821252278d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.030074716, y: 0.32413897}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 11400000, guid: fe913d35a43519147bd21c70544a669e, type: 2}
+  BasicStats: {fileID: 11400000, guid: 1b7cfe92bbdca7c459288ca88f21b7ad, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &486506191882090007
 MonoBehaviour:
@@ -217,8 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
-  enemySkills:
-  - {fileID: 5207026619561452326}
+  enemySkills: []
 --- !u!114 &5207026619561452326
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class FreKgtCombo1 : EnemySkill
 
     public override bool CanUse()
     {
-        return base.CanUse() && enemyMovement.playerDistanceWithin(maxCastRange);
+        return base.CanUse() && enemyMovement.playerDistanceWithin(0, maxCastRange);
     }
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)

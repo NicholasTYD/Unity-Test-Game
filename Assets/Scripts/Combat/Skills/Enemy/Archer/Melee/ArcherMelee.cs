@@ -8,7 +8,7 @@ public class ArcherMelee : EnemySkill
 
     public override bool CanUse()
     {
-        return base.CanUse() && enemyMovement.playerDistanceWithin(1) &&
+        return base.CanUse() && enemyMovement.playerDistanceWithin(0, 1) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-ybound, ybound);
     }
 }

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMaxHealth: 1000
   BaseAttack: 55
-  BaseMovementSpeed: 2
+  BaseMovementSpeed: 1
+  minAllowableDistance: 4
   maxAllowableDistance: 5
   minXDifference: -999
   maxXDifference: 999

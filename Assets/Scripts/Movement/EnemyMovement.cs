@@ -37,9 +37,18 @@ public class EnemyMovement : Movement
         }
 
         Vector2 playerPosition = playerMain.transform.position;
-        this.transform.position =
-            Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
-        FaceTowards(playerPosition);
+        if (!playerDistanceWithin(0, baseStats.minAllowableDistance))
+        {
+            this.transform.position =
+                Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * speed);
+            FaceTowards(playerPosition);
+        }
+        else
+        {
+            this.transform.position =
+                Vector2.MoveTowards(this.transform.position, playerPosition, Time.deltaTime * -speed);
+            FaceAway(playerPosition);
+        }
     }
 
     public void FaceTowards(Vector2 target)
@@ -60,7 +69,7 @@ public class EnemyMovement : Movement
 
     public virtual bool StopCriteraFufilled()
     {
-        return playerDistanceWithin(baseStats.maxAllowableDistance) &&
+        return playerDistanceWithin(baseStats.minAllowableDistance, baseStats.maxAllowableDistance) &&
             enemyToPlayerXDifferenceWithin(baseStats.minXDifference, baseStats.maxXDifference) &&
             enemyToPlayerYDifferenceWithin(baseStats.minYDifference, baseStats.maxYDifference);
     }
@@ -100,9 +109,14 @@ public class EnemyMovement : Movement
         prevPos = currentPos;
     }
 
-    public bool playerDistanceWithin(float value)
+    public bool playerDistanceWithin(float min, float max)
     {
-        return Vector2.Distance(playerMain.transform.position, this.transform.position) < value;
+        if (min == 0)
+        {
+            return Vector2.Distance(playerMain.transform.position, this.transform.position) < max;
+        }
+        return Vector2.Distance(playerMain.transform.position, this.transform.position) > min &&
+            Vector2.Distance(playerMain.transform.position, this.transform.position) < max;
     }
 
     public bool enemyToPlayerXDifferenceWithin(float min, float max)

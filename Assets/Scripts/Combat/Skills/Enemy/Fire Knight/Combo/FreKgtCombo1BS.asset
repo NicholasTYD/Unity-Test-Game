@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Combo1
   DamageMultiplier: 1.1
   DurationPerFrame: 0.125
-  StartSkillCooldown: 10
+  StartSkillCooldown: 2
   SkillDuration: 2.875
   MinSkillCooldown: 10
   MaxSkillCooldown: 15
