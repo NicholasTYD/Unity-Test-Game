@@ -172,12 +172,13 @@ GameObject:
   - component: {fileID: 4893320695664197286}
   - component: {fileID: 4893320695664197287}
   - component: {fileID: 7786404215966395144}
-  - component: {fileID: 7665277193873988603}
+  - component: {fileID: 9080073253020388120}
   - component: {fileID: 4915497356043027553}
   - component: {fileID: 8659888549371431887}
   - component: {fileID: 7926419195994986857}
   - component: {fileID: 2992128051045238997}
   - component: {fileID: 992526012}
+  - component: {fileID: 7658368947509697614}
   m_Layer: 7
   m_Name: Priestess
   m_TagString: Untagged
@@ -351,7 +352,7 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 0}
---- !u!114 &7665277193873988603
+--- !u!114 &9080073253020388120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,10 +361,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4893320695664197470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 315b59bbc63142f4da531296d6aeec6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 13da9b14dbc59fb468315f05a636504c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  runSpeed: 8
 --- !u!114 &4915497356043027553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +381,7 @@ MonoBehaviour:
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 4766737478034826228}
   enemySkills:
+  - {fileID: 7658368947509697614}
   - {fileID: 8659888549371431887}
   - {fileID: 992526012}
 --- !u!114 &8659888549371431887
@@ -410,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 95e4c1bedf8534e4181ec91437261bfd,
     type: 2}
-  followupSkill: {fileID: 992526012}
+  followupSkill: {fileID: 2992128051045238997}
 --- !u!114 &2992128051045238997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +444,22 @@ MonoBehaviour:
   enemySkillBasicStats: {fileID: 11400000, guid: 4818b320332bc8447a22990dc7113f51,
     type: 2}
   followupSkill: {fileID: 0}
+--- !u!114 &7658368947509697614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893320695664197470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852d25f79b8ddc4780991a3cf1bac74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 7cf5a826b871e6a40afa9f1e9fa8239c,
+    type: 2}
+  followupSkill: {fileID: 0}
+  prtsBossMovementAI: {fileID: 9080073253020388120}
 --- !u!1001 &4893320695394226301
 PrefabInstance:
   m_ObjectHideFlags: 0

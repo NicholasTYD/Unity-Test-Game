@@ -271,18 +271,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &404624303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2992128051045238997, guid: e1415894a8c76054d9076e714327bc6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5455004679513408878}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c08c40c6120054689aa9d5c188f75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -11049,11 +11037,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3326451908417434219, guid: e1415894a8c76054d9076e714327bc6c,
-        type: 3}
-      propertyPath: followupSkill
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4893320695664197467, guid: e1415894a8c76054d9076e714327bc6c,
         type: 3}
       propertyPath: m_RootOrder
@@ -11114,11 +11097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Priestess
       objectReference: {fileID: 0}
-    - target: {fileID: 7926419195994986857, guid: e1415894a8c76054d9076e714327bc6c,
-        type: 3}
-      propertyPath: followupSkill
-      value: 
-      objectReference: {fileID: 404624303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1415894a8c76054d9076e714327bc6c, type: 3}
 --- !u!1001 &7689998204945482258
