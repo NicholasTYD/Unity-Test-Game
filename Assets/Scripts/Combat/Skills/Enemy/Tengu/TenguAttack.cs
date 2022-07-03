@@ -26,7 +26,6 @@ public class TenguAttack : EnemySkill
         yield return new WaitForSeconds(chargeStart);
         tenguMovementAI.ToggleCharge(true, chargeSpeed);
         yield return new WaitForSeconds(chargeEnd - chargeStart);
-        Debug.Log("end");
         tenguMovementAI.ToggleCharge(false, chargeSpeed);
     }
 }
