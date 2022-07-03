@@ -16,6 +16,7 @@ public class TenguAttack : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
+        tenguMovementAI.FaceTowards(player.transform.position);
         base.ExecuteSkill(enemy, player);
         StartCoroutine(ExecuteCharge(enemy, player));
     }
