@@ -113,6 +113,7 @@ public class EnemyMovement : Movement
     {
         Vector2 currentPos = this.transform.position;
         float speed = Vector2.Distance(currentPos, prevPos) / Time.deltaTime;
+
         enemyAnim.SetFloat("CurrentMoveSpeed", speed);
         prevPos = currentPos;
     }

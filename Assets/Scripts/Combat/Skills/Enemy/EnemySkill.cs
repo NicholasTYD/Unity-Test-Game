@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemySkill : MonoBehaviour
+public class EnemySkill : MonoBehaviour
 {
     [SerializeField] protected EnemySkillBasicStats enemySkillBasicStats;
     [SerializeField] protected EnemySkill followupSkill;
