@@ -88,6 +88,14 @@ public class EnemyMovement : Movement
         }
     }
 
+    public void MoveTowards(Vector2 directionVector)
+    {
+        Vector2 targetPos = (Vector2)this.transform.position + directionVector;
+        this.transform.position =
+            Vector2.MoveTowards(this.transform.position, targetPos, Time.deltaTime * speed);
+        FaceTowards(targetPos);
+    }
+
     protected void idle()
     {
         FaceTowards(playerMain.transform.position);

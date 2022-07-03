@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 486506191882090473}
   - component: {fileID: 486506191882090472}
   - component: {fileID: 486506191882090007}
-  - component: {fileID: 1197781776434854747}
+  - component: {fileID: 4012981776897573467}
   - component: {fileID: 80960613095329070}
-  - component: {fileID: 5207026619561452326}
+  - component: {fileID: 3717982585503625426}
   m_Layer: 7
   m_Name: Tengu
   m_TagString: Untagged
@@ -190,7 +190,7 @@ MonoBehaviour:
   maxHealth: -1
   currentHealth: -1
   healthbar: {fileID: 7423441136906412197}
---- !u!114 &1197781776434854747
+--- !u!114 &4012981776897573467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 486506191882090001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0e8a772bf0fac47ac96519edbf4965, type: 3}
+  m_Script: {fileID: 11500000, guid: 50285245eed2aab49a19775d830d509f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
@@ -217,8 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
-  enemySkills: []
---- !u!114 &5207026619561452326
+  enemySkills:
+  - {fileID: 3717982585503625426}
+--- !u!114 &3717982585503625426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,12 +228,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 486506191882090001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b177eced9791e0f49abffdb74aa2613e, type: 3}
+  m_Script: {fileID: 11500000, guid: f1f411e397700ee40ba74e9e13cf4d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 11400000, guid: 4356cf621d9df1c4ab0972f4a34ddd74,
+  enemySkillBasicStats: {fileID: 11400000, guid: 149386bb36505134f94f5d0917bf99b6,
     type: 2}
   followupSkill: {fileID: 0}
+  tenguMovementAI: {fileID: 4012981776897573467}
+  chargeDelay: 0.5
 --- !u!1001 &486506191559545875
 PrefabInstance:
   m_ObjectHideFlags: 0
