@@ -62,4 +62,22 @@ public class General : MonoBehaviour
     {
         return Vector2.Distance(position, StageCenter) <= 0.01;
     }
+
+    public Quaternion ConvertRotationToQuaternion(Vector2 rotation)
+    {
+        float angle = Vector2.SignedAngle(Vector2.right, rotation);
+        Quaternion quaternion = Quaternion.Euler(0, 0, angle);
+        return quaternion;
+    }
+
+    public Vector2 GetLocalScale(Vector2 globalScale, GameObject gameObject)
+    {
+        if (gameObject.transform.localScale.x < 0)
+        {
+            Vector2 toReturn = globalScale;
+            toReturn.x *= -1;
+            return toReturn;
+        }
+        return globalScale;
+    }
 }

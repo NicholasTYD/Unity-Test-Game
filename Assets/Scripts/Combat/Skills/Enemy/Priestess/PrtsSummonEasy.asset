@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 111b41cfd036f2247b9bbe5ee0565f63, type: 3}
-  m_Name: PrtsRangedBS
+  m_Name: PrtsSummonEasy
   m_EditorClassIdentifier: 
-  name: Ranged
-  DamageMultiplier: 1.5
+  name: Summon
+  DamageMultiplier: 1
   DurationPerFrame: 0.125
-  StartSkillCooldown: 15
-  SkillDuration: 3.875
-  MinSkillCooldown: 15
-  MaxSkillCooldown: 20
+  StartSkillCooldown: 8
+  SkillDuration: 1.5
+  MinSkillCooldown: 25
+  MaxSkillCooldown: 35
   minAttackLockoutDuration: 0
   maxAttackLockoutDuration: 0

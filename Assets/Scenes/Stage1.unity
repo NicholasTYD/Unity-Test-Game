@@ -9451,6 +9451,8 @@ MonoBehaviour:
   ParryText: {fileID: 7803420430121516645, guid: f6c937e7b93599946a8e6185ddc910ea,
     type: 3}
   Bosshealthbar: {fileID: 3848189115567289889}
+  spawnVfx: {fileID: 3529735878017131587, guid: 03fdd3e92c73d2e4dbc4a17452888812,
+    type: 3}
 --- !u!114 &1954727299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11096,6 +11098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Priestess
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708101440127436632, guid: e1415894a8c76054d9076e714327bc6c,
+        type: 3}
+      propertyPath: healthPercentageThreshold
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1415894a8c76054d9076e714327bc6c, type: 3}

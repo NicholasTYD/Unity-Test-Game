@@ -9,6 +9,7 @@ public class CombatMechanics : MonoBehaviour
     public GameObject HealText;
     public GameObject ParryText;
     public BossHealthbar Bosshealthbar;
+    public ParticleSystem spawnVfx;
 
     private void Awake()
     {
@@ -84,5 +85,11 @@ public class CombatMechanics : MonoBehaviour
         Quaternion quaternion = Quaternion.Euler(0, 0, angle);
         GameObject projectile1 = Instantiate(projectile, position, quaternion);
         projectile1.GetComponent<Projectile>().SetStats(damage, speed, lifetime);
+    }
+
+    public void Spawn(GameObject enemy, Vector3 position, Quaternion quaternion)
+    {
+        Instantiate(enemy, position, quaternion);
+        Instantiate(spawnVfx, position, quaternion);
     }
 }

@@ -13,7 +13,7 @@ public class EnemySkill : MonoBehaviour
     protected EnemyMovement enemyMovement;
     protected GameObject player;
 
-    private void Start()
+    protected virtual void Start()
     {
         this.anim = this.GetComponent<Animator>();
         this.enemyCombat = this.GetComponent<EnemyCombat>();
@@ -54,6 +54,12 @@ public class EnemySkill : MonoBehaviour
         Vector2 offset = General.Instance.PlayerHitboxOffset;
         return General.Instance.GetDirectionUnitVector(getProjectileSpawnPoint(),
             (Vector2) player.transform.position + offset);
+    }
+
+    protected float getRangedAimDistance()
+    {
+        Vector2 offset = General.Instance.PlayerHitboxOffset;
+        return Vector2.Distance(getProjectileSpawnPoint(), (Vector2)player.transform.position + offset);
     }
 
     public virtual void ExecuteSkill(EnemyMain enemy, PlayerMain player)

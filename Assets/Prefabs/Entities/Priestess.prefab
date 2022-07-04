@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 4766737478034826187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770882210}
@@ -174,11 +174,14 @@ GameObject:
   - component: {fileID: 7786404215966395144}
   - component: {fileID: 9080073253020388120}
   - component: {fileID: 4915497356043027553}
+  - component: {fileID: 7658368947509697614}
+  - component: {fileID: 6708101440127436632}
+  - component: {fileID: 6071679470491840933}
+  - component: {fileID: 1148296494299204604}
   - component: {fileID: 8659888549371431887}
   - component: {fileID: 7926419195994986857}
   - component: {fileID: 2992128051045238997}
   - component: {fileID: 992526012}
-  - component: {fileID: 7658368947509697614}
   m_Layer: 7
   m_Name: Priestess
   m_TagString: Untagged
@@ -381,9 +384,92 @@ MonoBehaviour:
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 4766737478034826228}
   enemySkills:
+  - {fileID: 6708101440127436632}
+  - {fileID: 6071679470491840933}
+  - {fileID: 1148296494299204604}
   - {fileID: 7658368947509697614}
   - {fileID: 8659888549371431887}
   - {fileID: 992526012}
+--- !u!114 &7658368947509697614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893320695664197470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852d25f79b8ddc4780991a3cf1bac74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 7cf5a826b871e6a40afa9f1e9fa8239c,
+    type: 2}
+  followupSkill: {fileID: 0}
+  prtsBossMovementAI: {fileID: 9080073253020388120}
+  attackTimings:
+  - 1
+  - 1.75
+  - 2.625
+--- !u!114 &6708101440127436632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893320695664197470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691b0facbbe391e4298fa388524e2c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 2b7f864b8f409774a8be4bf1f6a1218f,
+    type: 2}
+  followupSkill: {fileID: 0}
+  enemy1: {fileID: 486506191882090001, guid: 49bb21f36b398cc49bb164f28bb3d4a6, type: 3}
+  enemy2: {fileID: 486506191882090001, guid: 49bb21f36b398cc49bb164f28bb3d4a6, type: 3}
+  healthPercentageThreshold: 0.4
+  spawnXOffset: 4
+  spawnTime: 1.25
+--- !u!114 &6071679470491840933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893320695664197470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691b0facbbe391e4298fa388524e2c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 7023f115de801ef409ae36fce160e12f,
+    type: 2}
+  followupSkill: {fileID: 0}
+  enemy1: {fileID: 1756295444528713267, guid: 63fa9ee4533d5a54687210c67d76dade, type: 3}
+  enemy2: {fileID: 2190003332176663817, guid: f369db596513dd74f8ec36251bbc9b92, type: 3}
+  healthPercentageThreshold: 0.75
+  spawnXOffset: 4
+  spawnTime: 1.25
+--- !u!114 &1148296494299204604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893320695664197470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691b0facbbe391e4298fa388524e2c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 997592f4169d18f40981236bd45db005,
+    type: 2}
+  followupSkill: {fileID: 0}
+  enemy1: {fileID: 1956205736915187028, guid: f68798883710c994c99815e0b61b036d, type: 3}
+  enemy2: {fileID: 1914412182751866433, guid: 3e3b1f974a1b557478e77e857fe9f471, type: 3}
+  healthPercentageThreshold: 1
+  spawnXOffset: 4
+  spawnTime: 1.25
 --- !u!114 &8659888549371431887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,22 +530,6 @@ MonoBehaviour:
   enemySkillBasicStats: {fileID: 11400000, guid: 4818b320332bc8447a22990dc7113f51,
     type: 2}
   followupSkill: {fileID: 0}
---- !u!114 &7658368947509697614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4893320695664197470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8852d25f79b8ddc4780991a3cf1bac74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySkillBasicStats: {fileID: 11400000, guid: 7cf5a826b871e6a40afa9f1e9fa8239c,
-    type: 2}
-  followupSkill: {fileID: 0}
-  prtsBossMovementAI: {fileID: 9080073253020388120}
 --- !u!1001 &4893320695394226301
 PrefabInstance:
   m_ObjectHideFlags: 0
