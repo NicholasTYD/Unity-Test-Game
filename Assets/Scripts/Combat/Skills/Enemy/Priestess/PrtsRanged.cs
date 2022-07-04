@@ -33,7 +33,9 @@ public class PrtsRanged : EnemySkill
 
     IEnumerator ExecuteAttack(EnemyMain enemy, PlayerMain player)
     {
-        float prevAttackTime = 0;
+        // The small 0.01f delay is to prevent occasional instances where the beam appears to
+        // teleport due to frame update times.
+        float prevAttackTime = 0.01f;
         foreach (float time in attackTimings)
         {
             yield return new WaitForSeconds(time - prevAttackTime);

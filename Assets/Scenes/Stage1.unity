@@ -11099,11 +11099,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Priestess
       objectReference: {fileID: 0}
-    - target: {fileID: 6708101440127436632, guid: e1415894a8c76054d9076e714327bc6c,
-        type: 3}
-      propertyPath: healthPercentageThreshold
-      value: 0.35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1415894a8c76054d9076e714327bc6c, type: 3}
 --- !u!1001 &7689998204945482258
