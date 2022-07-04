@@ -25,7 +25,7 @@ public abstract class Health : MonoBehaviour
         healthbar.SetHealth(currentHealth, maxHealth);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (isInvulnerable())
         {

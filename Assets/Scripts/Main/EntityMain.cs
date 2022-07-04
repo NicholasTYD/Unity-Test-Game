@@ -39,7 +39,7 @@ public abstract class EntityMain : MonoBehaviour
         isDead = true;
         lockoutDuration = 999;
         ForceLockout = true;
-        rb.simulated = false;
+        health.grantInvulnerability = 999;
         anim.SetBool("IsDead", true);
     }
 
