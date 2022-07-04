@@ -17,7 +17,7 @@ MonoBehaviour:
   BaseMovementSpeed: 8
   minAllowableDistance: 0
   maxAllowableDistance: 999
-  minXDifference: -1.5
-  maxXDifference: 1.5
+  minXDifference: -2
+  maxXDifference: 2
   minYDifference: -1
   maxYDifference: 1
