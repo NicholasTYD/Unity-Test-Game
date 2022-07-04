@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Shaman
   m_EditorClassIdentifier: 
   BaseMaxHealth: 4000
-  BaseAttack: 160
-  BaseMovementSpeed: 5
+  BaseAttack: 300
+  BaseMovementSpeed: 8
   minAllowableDistance: 0
   maxAllowableDistance: 999
   minXDifference: -1.5
