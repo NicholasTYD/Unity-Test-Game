@@ -16,7 +16,7 @@ MonoBehaviour:
   BaseAttack: 80
   BaseMovementSpeed: 2
   minAllowableDistance: 15
-  maxAllowableDistance: 20
+  maxAllowableDistance: 19
   minXDifference: -999
   maxXDifference: 999
   minYDifference: -999
