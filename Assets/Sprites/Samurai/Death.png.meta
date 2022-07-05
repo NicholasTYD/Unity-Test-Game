@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: dafba786f4f5b8242bc098edbf954165
+guid: 1db9a306592ac9545975fcdd51459943
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7500690451134026123
-    second: Take Hit_0
+      213: 6991849013916550155
+    second: Death_0
   - first:
-      213: -889859373511162655
-    second: Take Hit_1
+      213: -276728812324164698
+    second: Death_1
   - first:
-      213: -3088938797480143695
-    second: Take Hit_2
+      213: 3156895337291164288
+    second: Death_2
   - first:
-      213: -9206091644520726168
-    second: Take Hit_3
+      213: 1400002288684528572
+    second: Death_3
+  - first:
+      213: -1891625820773287384
+    second: Death_4
+  - first:
+      213: -5789737788129074030
+    second: Death_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +65,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,89 +142,143 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Take Hit_0
+      name: Death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 200
         height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8825231ebd244904d9b5d34362515633
-      internalID: -7500690451134026123
+      spriteID: 1241006749e522e4ca577e075619debd
+      internalID: 6991849013916550155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Take Hit_1
+      name: Death_1
       rect:
         serializedVersion: 2
         x: 200
         y: 0
         width: 200
         height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45b16a5448a10e9409f45db5bcc32401
-      internalID: -889859373511162655
+      spriteID: 1908167410a326f44b9432d96f7dc9f8
+      internalID: -276728812324164698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Take Hit_2
+      name: Death_2
       rect:
         serializedVersion: 2
         x: 400
         y: 0
         width: 200
         height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85b00174507798e429dbdd52b7c2cacf
-      internalID: -3088938797480143695
+      spriteID: 63cc157cdaae30248a03872c5d935403
+      internalID: 3156895337291164288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Take Hit_3
+      name: Death_3
       rect:
         serializedVersion: 2
         x: 600
         y: 0
         width: 200
         height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d63cf4e4847315b4da19c355f5e4385d
-      internalID: -9206091644520726168
+      spriteID: a3d23ab659547ca4db260cb98c926de9
+      internalID: 1400002288684528572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a07db581131ff44397cb7950a42ac56
+      internalID: -1891625820773287384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5a4644edb16d24481daf9370cc9404
+      internalID: -5789737788129074030
       vertices: []
       indices: 
       edges: []
@@ -234,10 +294,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Take Hit_2: -3088938797480143695
-      Take Hit_1: -889859373511162655
-      Take Hit_0: -7500690451134026123
-      Take Hit_3: -9206091644520726168
+      Death_1: -276728812324164698
+      Death_5: -5789737788129074030
+      Death_0: 6991849013916550155
+      Death_4: -1891625820773287384
+      Death_2: 3156895337291164288
+      Death_3: 1400002288684528572
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
