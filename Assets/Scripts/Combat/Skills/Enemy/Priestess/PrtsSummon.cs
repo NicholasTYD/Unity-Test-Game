@@ -5,7 +5,6 @@ using UnityEngine;
 public class PrtsSummon : EnemySkill
 {
     PrtsBossMovementAI prtsBossMovementAI;
-    Health health;
     [SerializeField] GameObject enemy1;
     [SerializeField] GameObject enemy2;
     [SerializeField] float healthPercentageThreshold;
@@ -15,14 +14,13 @@ public class PrtsSummon : EnemySkill
     protected override void Start()
     {
         this.prtsBossMovementAI = this.GetComponent<PrtsBossMovementAI>();
-        this.health = this.GetComponent<Health>();
         base.Start();
     }
 
     public override bool CanUse()
     {
         return base.CanUse() && 
-            ((health.GetCurrentHealth() / health.GetMaxtHealth()) < healthPercentageThreshold);
+            (enemyHealth.GetHealthPercentage() < healthPercentageThreshold);
     }
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {

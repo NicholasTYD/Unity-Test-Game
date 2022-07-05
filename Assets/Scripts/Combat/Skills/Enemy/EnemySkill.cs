@@ -11,12 +11,17 @@ public class EnemySkill : MonoBehaviour
 
     protected EnemyCombat enemyCombat;
     protected EnemyMovement enemyMovement;
+    protected EnemyHealth enemyHealth;
+    protected Rigidbody2D enemyRb;
     protected GameObject player;
+    
 
     protected virtual void Start()
     {
         this.anim = this.GetComponent<Animator>();
         this.enemyCombat = this.GetComponent<EnemyCombat>();
+        this.enemyHealth = this.GetComponent<EnemyHealth>();
+        this.enemyRb = this.GetComponent<Rigidbody2D>();
 
         this.enemyMovement = this.GetComponent<EnemyMovement>();
         this.player = GameObject.FindWithTag("Player");

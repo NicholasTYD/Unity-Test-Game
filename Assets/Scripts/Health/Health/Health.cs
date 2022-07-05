@@ -72,4 +72,9 @@ public abstract class Health : MonoBehaviour
     {
         return maxHealth;
     }
+
+    public float GetHealthPercentage()
+    {
+        return currentHealth / maxHealth;
+    }
 }
