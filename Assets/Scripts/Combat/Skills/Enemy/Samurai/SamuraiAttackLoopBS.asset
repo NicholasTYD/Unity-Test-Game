@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 111b41cfd036f2247b9bbe5ee0565f63, type: 3}
-  m_Name: SamuraiAttackBS
+  m_Name: SamuraiAttackLoopBS
   m_EditorClassIdentifier: 
-  name: Attack
-  DamageMultiplier: 1
+  name: AttackLoop
+  DamageMultiplier: 1.2
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
-  SkillDuration: 1.375
-  MinSkillCooldown: 2
-  MaxSkillCooldown: 3
+  SkillDuration: 1.125
+  MinSkillCooldown: 0
+  MaxSkillCooldown: 0
   minAttackLockoutDuration: 0
   maxAttackLockoutDuration: 0

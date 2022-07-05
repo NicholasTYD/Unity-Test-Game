@@ -15,8 +15,11 @@ GameObject:
   - component: {fileID: 2222551357140657222}
   - component: {fileID: 2222551357140657223}
   - component: {fileID: 3548373549662613992}
-  - component: {fileID: 2536196277759218168}
   - component: {fileID: 1803653569117609601}
+  - component: {fileID: 8000958344309759917}
+  - component: {fileID: 8000958344309759918}
+  - component: {fileID: 8000958344309759919}
+  - component: {fileID: 8000958344309759920}
   m_Layer: 7
   m_Name: Samurai
   m_TagString: Untagged
@@ -108,7 +111,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 75a110fd8fb3460489ea67464c72726f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -154,7 +157,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -174,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03a7c25d2825574f9eb5f5774e2d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicStats: {fileID: 11400000, guid: 756d470a2c640c84597d8e65f761a936, type: 2}
+  BasicStats: {fileID: 11400000, guid: ae1dafb72e8f15247be5010fc3acb022, type: 2}
   AttackLockoutDuration: 0
 --- !u!114 &3548373549662613992
 MonoBehaviour:
@@ -191,20 +194,6 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 0}
---- !u!114 &2536196277759218168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2222551357140657598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13da9b14dbc59fb468315f05a636504c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  runSpeed: 8
 --- !u!114 &1803653569117609601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +208,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 2240081128688023828}
-  enemySkills: []
+  enemySkills:
+  - {fileID: 8000958344309759917}
+--- !u!114 &8000958344309759917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222551357140657598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e94d91d6f88fd41bb09172dca77720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: f4111479399ca23499a021af710b103a,
+    type: 2}
+  followupSkill: {fileID: 8000958344309759919}
+  samuraiBossMovementAI: {fileID: 8000958344309759918}
+  dashHealthPercentageThreshold: 0.75
+  dashForce: 10
+  attackTimings:
+  - 0.5
+  - 1.125
+--- !u!114 &8000958344309759918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222551357140657598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45f6700e8fbdc14ba1fb33bc9d513d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+--- !u!114 &8000958344309759919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222551357140657598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf06b4f28fcf3724d98a398f9c3515fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 6ee24612fd124d14392c50927bb44bcf,
+    type: 2}
+  followupSkill: {fileID: 8000958344309759920}
+  samuraiBossMovementAI: {fileID: 8000958344309759918}
+  healthPercentageThreshold: 0.6
+  loopChance: 0.75
+  dashForce: 50
+  attackTimings:
+  - 0.25
+  - 0.875
+--- !u!114 &8000958344309759920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222551357140657598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf06b4f28fcf3724d98a398f9c3515fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 6ee24612fd124d14392c50927bb44bcf,
+    type: 2}
+  followupSkill: {fileID: 8000958344309759920}
+  samuraiBossMovementAI: {fileID: 8000958344309759918}
+  healthPercentageThreshold: 0.3
+  loopChance: 0.5
+  dashForce: 80
+  attackTimings:
+  - 0.25
+  - 0.875
 --- !u!1 &2240081128688023851
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glowing Eyes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141417828430446593, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64c46be72afbc1c459ef95b8fdd3fd6d, type: 3}
