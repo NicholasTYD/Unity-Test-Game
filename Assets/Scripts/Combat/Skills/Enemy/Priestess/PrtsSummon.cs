@@ -20,7 +20,7 @@ public class PrtsSummon : EnemySkill
     public override bool CanUse()
     {
         return base.CanUse() && 
-            (enemyHealth.GetHealthPercentage() < healthPercentageThreshold);
+            (enemyHealth.isHealthPercentageEqualOrBelow(healthPercentageThreshold));
     }
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {

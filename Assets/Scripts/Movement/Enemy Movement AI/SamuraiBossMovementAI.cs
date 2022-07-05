@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SamuraiBossMovementAI : BossMovement
 {
-    public void initiateCharge(EnemyMain enemy, PlayerMain player, float dashForce, List<float> attackTimings)
+    public void initiateDashes(EnemyMain enemy, PlayerMain player, float dashForce, List<float> attackTimings)
     {
-        StartCoroutine(ExecuteChargeCombo(enemy, player, dashForce, attackTimings));
+        StartCoroutine(ExecuteDashes(enemy, player, dashForce, attackTimings));
     }
 
-    IEnumerator ExecuteChargeCombo(EnemyMain enemy, PlayerMain player, float dashForce, List<float> attackTimings)
+    IEnumerator ExecuteDashes(EnemyMain enemy, PlayerMain player, float dashForce, List<float> attackTimings)
     {
         float prevAttackTime = 0.0f;
         foreach (float time in attackTimings)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
     private float damage;
     private float speed;
@@ -23,10 +23,9 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector2.right * Time.deltaTime * speed, this.transform);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         CombatMechanics.Instance.DealDamageTo(collision.gameObject, damage);
-        destroySelf();
     }
 
     public void SetStats(float damage, float speed, float lifetime)
@@ -36,7 +35,7 @@ public class Projectile : MonoBehaviour
         this.lifetime = lifetime;
     }
 
-    private void destroySelf()
+    protected void destroySelf()
     {
         Destroy(gameObject);
     }

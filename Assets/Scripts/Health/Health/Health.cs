@@ -77,4 +77,9 @@ public abstract class Health : MonoBehaviour
     {
         return currentHealth / maxHealth;
     }
+
+    public bool isHealthPercentageEqualOrBelow(float percentage)
+    {
+        return GetHealthPercentage() <= percentage;
+    }
 }

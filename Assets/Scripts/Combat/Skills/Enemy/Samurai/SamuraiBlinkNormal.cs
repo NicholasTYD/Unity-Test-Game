@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SamuraiAttack : EnemySkill
+public class SamuraiBlinkNormal : EnemySkill
 {
     [SerializeField] SamuraiBossMovementAI samuraiBossMovementAI;
-    [SerializeField] float dashHealthPercentageThreshold;
     [SerializeField] float dashForce;
-    [SerializeField] List<float> attackTimings;
+    [SerializeField] float dashDelay;
 
     public override bool CanUse()
     {
@@ -16,11 +15,10 @@ public class SamuraiAttack : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        Debug.Log("casting skill1");
         base.ExecuteSkill(enemy, player);
-        if (enemyHealth.GetHealthPercentage() <= dashHealthPercentageThreshold)
-        {
-            samuraiBossMovementAI.initiateCharge(enemy, player, dashForce, attackTimings);
-        }
+
+        List<float> temp = new List<float>(1);
+        temp.Add(dashDelay);
+        samuraiBossMovementAI.initiateDashes(enemy, player, -dashForce, temp);
     }
 }

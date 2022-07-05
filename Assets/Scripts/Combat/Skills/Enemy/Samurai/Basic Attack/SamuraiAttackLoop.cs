@@ -12,13 +12,13 @@ public class SamuraiAttackLoop : EnemySkill
 
     public override bool CanUse()
     {
-        return base.CanUse() && (enemyHealth.GetHealthPercentage() <= healthPercentageThreshold) &&
+        return base.CanUse() && (enemyHealth.isHealthPercentageEqualOrBelow(healthPercentageThreshold)) &&
             (Random.Range(0f, 1) <= loopChance);
     }
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
         base.ExecuteSkill(enemy, player);
-        samuraiBossMovementAI.initiateCharge(enemy, player, dashForce, attackTimings);
+        samuraiBossMovementAI.initiateDashes(enemy, player, dashForce, attackTimings);
     }
 }
