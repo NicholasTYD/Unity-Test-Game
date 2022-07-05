@@ -87,6 +87,18 @@ public class CombatMechanics : MonoBehaviour
         projectile1.GetComponent<Projectile>().SetStats(damage, speed, lifetime);
     }
 
+    public void InstantiateEnvHazard(GameObject envHazard, Vector2 position, float damage, float lifetime)
+    {
+        if (envHazard.GetComponent<EnvironmentalHazard>() == null)
+        {
+            Debug.Log("You're trying to instantiate something that isn't a Environmental Hazard!");
+            return;
+        }
+
+        GameObject hazard = Instantiate(envHazard, position, Quaternion.identity);
+        hazard.GetComponent<EnvironmentalHazard>().SetStats(damage, lifetime);
+    }
+
     public void Spawn(GameObject enemy, Vector3 position, Quaternion quaternion)
     {
         Instantiate(enemy, position, quaternion);

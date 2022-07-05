@@ -242,7 +242,7 @@ MonoBehaviour:
     type: 2}
   followupSkill: {fileID: 1129331107648894408}
   samuraiBossMovementAI: {fileID: 8000958344309759918}
-  dashForce: 60
+  dashForce: 40
   dashDelay: 0.125
 --- !u!114 &1129331107648894408
 MonoBehaviour:
@@ -263,7 +263,7 @@ MonoBehaviour:
     type: 3}
   healthPercentageThreshold: 0.6
   projectileSpeed: 15
-  projectileLifetime: 10
+  projectileLifetime: 2
   attackTimings:
   - 0.875
   - 1.25

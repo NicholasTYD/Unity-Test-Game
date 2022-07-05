@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
-  m_Name: Samurai
+  m_Script: {fileID: 11500000, guid: 1ed9ba2dd36f1214582932595d25e0b2, type: 3}
+  m_Name: SamuraiSlashFire
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 600
-  BaseAttack: 110
-  BaseMovementSpeed: 3
-  minAllowableDistance: 0
-  maxAllowableDistance: 999
-  minXDifference: -2
-  maxXDifference: 2
-  minYDifference: -1
-  maxYDifference: 1
+  Prefab: {fileID: 6237803071505653685, guid: 44d8def876974c94aa0f5b9aa0448d4f, type: 3}
+  Damage: 80
+  Lifetime: 10
