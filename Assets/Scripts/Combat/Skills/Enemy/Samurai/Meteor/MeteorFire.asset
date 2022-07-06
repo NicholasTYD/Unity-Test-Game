@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed9ba2dd36f1214582932595d25e0b2, type: 3}
+  m_Name: MeteorFire
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 6237803071505653685, guid: 44d8def876974c94aa0f5b9aa0448d4f, type: 3}
+  Damage: 50
+  Lifetime: 20
