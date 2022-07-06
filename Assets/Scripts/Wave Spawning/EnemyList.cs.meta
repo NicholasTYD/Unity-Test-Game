@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 8586cb75a7a9ede41b669e8c82aef4e2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - SprSke: {fileID: 4308603603948249689, guid: 8f35b348121a04c4983414f9ef96f62e,
+      type: 3}
+  - SwdSke: {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20, type: 3}
+  - Archer: {fileID: 1658787313697375864, guid: 8692fdf22bd1e674b89e71915cdc8746,
+      type: 3}
+  - Pile: {fileID: 7079988691572583983, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def, type: 3}
+  - FreKgt: {fileID: 130124194910592138, guid: d5be1bc7deb3a0747a84527573274605, type: 3}
+  - Witch: {fileID: 1914412182751866433, guid: 3e3b1f974a1b557478e77e857fe9f471, type: 3}
+  - RedWzd: {fileID: 1756295444528713267, guid: 63fa9ee4533d5a54687210c67d76dade,
+      type: 3}
+  - PpeWzd: {fileID: 2190003332176663817, guid: f369db596513dd74f8ec36251bbc9b92,
+      type: 3}
+  - Hntrss: {fileID: 1956205736915187028, guid: f68798883710c994c99815e0b61b036d,
+      type: 3}
+  - Prts: {fileID: 4893320695664197470, guid: e1415894a8c76054d9076e714327bc6c, type: 3}
+  - Tengu: {fileID: 486506191882090001, guid: 49bb21f36b398cc49bb164f28bb3d4a6, type: 3}
+  - Shaman: {fileID: 9027474480982289940, guid: 7930636562fe2f04985caec641331db8,
+      type: 3}
+  - Sniper: {fileID: 4816888902865708465, guid: d52af932651ccf64fbd576be204ff203,
+      type: 3}
+  - Samurai: {fileID: 2222551357140657598, guid: 520d55ed4bb5afe4dae34c92ade0b5bd,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,11 @@ public abstract class Wave : MonoBehaviour
 
     public abstract void StartWave();
 
+    public string GetWaveName()
+    {
+        return waveInfo.waveName;
+    }
+
     protected void endWave()
     {
         WaveSpawner.Instance.ConcludeWave();
@@ -27,8 +32,13 @@ public abstract class Wave : MonoBehaviour
         return WaveSpawner.Instance.gotEnemiesRemaining();
     }
 
-    public string GetWaveName()
+    protected void Spawn(GameObject enemy, Vector2 pos)
     {
-        return waveInfo.waveName;
+        CombatMechanics.Instance.Spawn(EnemyList.Instance.SprSke, pos);
+    }
+
+    protected Vector2 pos(int position)
+    {
+        return waveInfo.notableSpawnPos[position];
     }
 }

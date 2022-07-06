@@ -39,6 +39,12 @@ public class EnemyMain : EntityMain
         } 
     }
 
+    public override void Die()
+    {
+        base.Die();
+        WaveSpawner.Instance.CurrentEnemyCount--;
+    }
+
     protected bool canAttack()
     {
         return AttackLockoutDuration <= 0 && canAct();

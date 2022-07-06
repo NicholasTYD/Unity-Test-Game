@@ -34,7 +34,7 @@ public abstract class EntityMain : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
         lockoutDuration = 999;

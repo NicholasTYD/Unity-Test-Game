@@ -6,5 +6,5 @@ using UnityEngine;
 public class WaveInfoScriptableObject : ScriptableObject
 {
     public string waveName;
-    public List<GameObject> enemyPrefabs;
+    public List<Vector2> notableSpawnPos;
 }

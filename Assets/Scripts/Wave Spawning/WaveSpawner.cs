@@ -10,13 +10,13 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float waveTextAppearDuration;
     [SerializeField] List<Wave> waves;
 
-    public static bool waveCompleted { get; set; }
-    private static int currentWave;
+    public bool waveCompleted { get; set; }
+    public int currentWave { get; private set; }
 
-    public static int CurrentEnemyCount { get; set; }
+    public int CurrentEnemyCount { get; set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
         Instance = this;
+
+        waveCompleted = true;
     }
 
     // Update is called once per frame
@@ -32,11 +34,19 @@ public class WaveSpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && waveCompleted)
         {
             initiateWave();
+        } else if (Input.GetKeyDown(KeyCode.Space) && !waveCompleted)
+        {
+            Debug.Log("can't start!");
         }
     }
 
     void initiateWave()
     {
+        if (currentWave > waves.Count)
+        {
+            Debug.Log("the end");
+        }
+
         string text = waves[currentWave].GetWaveName();
         StartCoroutine(setWaveText(text));
         waves[currentWave].StartWave();
@@ -48,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         waveCompleted = true;
         string text = waves[currentWave].GetWaveName() + " Complete!";
         StartCoroutine(setWaveText(text));
+        currentWave++;
     }
 
     public bool gotEnemiesRemaining()

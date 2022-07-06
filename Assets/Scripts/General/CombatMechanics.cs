@@ -103,5 +103,13 @@ public class CombatMechanics : MonoBehaviour
     {
         Instantiate(enemy, position, quaternion);
         Instantiate(spawnVfx, position, quaternion);
+        WaveSpawner.Instance.CurrentEnemyCount++;
+    }
+
+    public void Spawn(GameObject enemy, Vector3 position)
+    {
+        Instantiate(enemy, position, Quaternion.identity);
+        Instantiate(spawnVfx, position, Quaternion.identity);
+        WaveSpawner.Instance.CurrentEnemyCount++;
     }
 }

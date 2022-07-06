@@ -10,6 +10,7 @@ public class EnemyCombat : Combat
     [SerializeField] List<EnemySkill> enemySkills;
 
     float currentAttack;
+    float attackScalingPerWave = 1.1f;
     public float CurrentAbilityDamageMultiplier { get; set; }
     
     protected override void Start()
@@ -17,7 +18,7 @@ public class EnemyCombat : Combat
         base.Start();
         this.playerMain = GameObject.FindWithTag("Player").GetComponent<PlayerMain>();
         this.enemyMain = this.GetComponent<EnemyMain>();
-        currentAttack = baseAttack;
+        currentAttack = baseAttack * Mathf.Pow(attackScalingPerWave, WaveSpawner.Instance.currentWave);
         CurrentAbilityDamageMultiplier = 1;
     }
     public override void Attack()

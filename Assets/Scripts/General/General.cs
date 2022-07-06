@@ -29,7 +29,7 @@ public class General : MonoBehaviour
         PlayerHitboxOffset = Player.GetComponent<BoxCollider2D>().offset;
 
         StageXBound = 16;
-        StageYBound = 12;
+        StageYBound = 10;
         StageCenter = new Vector2(0, 0);
     }
 
