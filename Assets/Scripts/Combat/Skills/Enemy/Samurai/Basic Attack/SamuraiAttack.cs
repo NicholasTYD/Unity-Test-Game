@@ -16,7 +16,6 @@ public class SamuraiAttack : EnemySkill
 
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        Debug.Log("casting skill1");
         base.ExecuteSkill(enemy, player);
         if (enemyHealth.isHealthPercentageEqualOrBelow(dashHealthPercentageThreshold))
         {

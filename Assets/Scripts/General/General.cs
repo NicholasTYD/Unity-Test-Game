@@ -58,6 +58,20 @@ public class General : MonoBehaviour
         return Random.Range(0, 2) == 0;
     }
 
+    public Vector2 GetRandomPosition()
+    {
+        float randomX = Random.Range(-StageXBound, StageXBound);
+        float randomY = Random.Range(-StageYBound, StageYBound);
+        return new Vector2(randomX, randomY);
+    }
+
+    public Vector2 GetRandomPosition(float xMin, float xMax, float yMin, float yMax)
+    {
+        float randomX = Random.Range(xMin, xMax);
+        float randomY = Random.Range(yMin, yMax);
+        return new Vector2(randomX, randomY);
+    }
+
     public bool AtStageCenter(Vector2 position)
     {
         return Vector2.Distance(position, StageCenter) <= 0.01;

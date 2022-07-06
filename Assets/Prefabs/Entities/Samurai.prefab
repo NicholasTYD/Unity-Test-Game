@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 8000958344309759917}
   - component: {fileID: 8000958344309759919}
   - component: {fileID: 8000958344309759920}
+  - component: {fileID: 8201349136065870361}
   m_Layer: 7
   m_Name: Samurai
   m_TagString: Untagged
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  enragedSpeed: 0
 --- !u!114 &1803653569117609601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +226,7 @@ MonoBehaviour:
   baseAttack: 0
   EnemyProjectileSpawnPoint: {fileID: 2240081128688023828}
   enemySkills:
+  - {fileID: 8201349136065870361}
   - {fileID: 3280371270690168327}
   - {fileID: 8000958344309759917}
 --- !u!114 &3280371270690168327
@@ -334,6 +337,42 @@ MonoBehaviour:
   attackTimings:
   - 0.25
   - 0.875
+--- !u!114 &8201349136065870361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222551357140657598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe2254ed01eaaf4ea101722d4e8b842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySkillBasicStats: {fileID: 11400000, guid: 9c0e2ea2fcedbf9498b1de89a93fb8ad,
+    type: 2}
+  followupSkill: {fileID: 0}
+  samuraiBossMovementAI: {fileID: 8000958344309759918}
+  healthPercentageThreshold: 0.6
+  glowingEyes: {fileID: 5962704518091067691}
+  blink: Blink
+  blinkDuration: 0.625
+  blinkTeleportTime: 1.25
+  jump: Jump
+  jumpDuration: 0.5
+  plusMeteor: {fileID: 1087466567453841296, guid: 32161c02cf15eca4da0580fb3001eacd,
+    type: 3}
+  crossMeteor: {fileID: 6883563651978259822, guid: 26685bd2d90c00148a6a7b5dcd926fec,
+    type: 3}
+  ultDuration: 10
+  waveCount: 3
+  waveInterval: 3
+  meteorsPerWave: 3
+  shockwaveDamageMultiplier: 0.5
+  shockwaveSpeed: 10
+  shockwaveLifetime: 15
+  fall: Fall
+  fallDuration: 0.5
 --- !u!1 &2240081128688023851
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +607,12 @@ PrefabInstance:
 --- !u!4 &5962704518091067690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5141417828430446592, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1578006360385802538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5962704518091067691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5141417828430446593, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
     type: 3}
   m_PrefabInstance: {fileID: 1578006360385802538}
   m_PrefabAsset: {fileID: 0}

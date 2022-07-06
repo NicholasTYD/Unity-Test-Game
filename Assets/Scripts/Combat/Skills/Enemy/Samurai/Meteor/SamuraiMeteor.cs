@@ -17,10 +17,10 @@ public class SamuraiMeteor : MonoBehaviour
     float circleColliderActiveTime = 0.5f;
     float destroyAfterSecondsPastExplosion = 2;
 
-    float meteorDamage = 10;
-    float shockwaveDamage = 10;
-    float shockwaveSpeed = 10;
-    float shockwaveLifetime = 10;
+    float meteorDamage;
+    float shockwaveDamage;
+    float shockwaveSpeed;
+    float shockwaveLifetime;
 
     private void Start()
     {
@@ -52,7 +52,6 @@ public class SamuraiMeteor : MonoBehaviour
     IEnumerator executeAttack()
     {
         yield return new WaitForSeconds(warningTime);
-        Debug.Log("test1");
 
         fireball.SetActive(true);
 

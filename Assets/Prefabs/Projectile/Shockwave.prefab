@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   envHazard: {fileID: 11400000, guid: 5ac6ed2145fd49e41ad453a6760dd162, type: 2}
-  spawnInterval: 0.05
+  spawnInterval: 0.1
 --- !u!114 &854804266040825454
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ public class EnemySkill : MonoBehaviour
         enemyCombat.CurrentAbilityDamageMultiplier -= amountToAdd;
     }
 
-    private IEnumerator AttemptFollowupSkill(EnemyMain enemy, PlayerMain player)
+    protected IEnumerator AttemptFollowupSkill(EnemyMain enemy, PlayerMain player)
     {
         yield return new WaitForSeconds(enemySkillBasicStats.SkillDuration);
         if (followupSkill.CanUse())
