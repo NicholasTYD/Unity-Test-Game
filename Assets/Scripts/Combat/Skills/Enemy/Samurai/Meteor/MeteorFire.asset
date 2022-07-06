@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MeteorFire
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6237803071505653685, guid: 44d8def876974c94aa0f5b9aa0448d4f, type: 3}
-  Damage: 50
-  Lifetime: 20
+  Damage: 100
+  Lifetime: 1

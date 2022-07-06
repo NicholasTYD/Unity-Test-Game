@@ -5,6 +5,13 @@ using UnityEngine;
 public class SamuraiBossMovementAI : BossMovement
 {
     [SerializeField] float enragedSpeed;
+    private BoxCollider2D enemyBoxCollider;
+
+    protected override void Start()
+    {
+        base.Start();
+        this.enemyBoxCollider = this.GetComponent<BoxCollider2D>();
+    }
 
     public void initiateDashes(EnemyMain enemy, PlayerMain player, float dashForce, List<float> attackTimings)
     {
@@ -25,8 +32,21 @@ public class SamuraiBossMovementAI : BossMovement
         }
     }
 
-    public void enrage()
+    public void SetEnragedSpeed()
     {
         speed = enragedSpeed;
+    }
+
+    public void Jump()
+    {
+        StartCoroutine(temporaryDisableCollision());
+        entityRb.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
+    }
+
+    IEnumerator temporaryDisableCollision()
+    {
+        enemyBoxCollider.enabled = false;
+        yield return new WaitForSeconds(1);
+        enemyBoxCollider.enabled = true;
     }
 }

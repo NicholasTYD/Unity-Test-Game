@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: Samurai
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 3000
+  BaseMaxHealth: 12000
   BaseAttack: 110
   BaseMovementSpeed: 3
   minAllowableDistance: 0
@@ -20,4 +20,4 @@ MonoBehaviour:
   minXDifference: -2
   maxXDifference: 2
   minYDifference: -1
-  maxYDifference: 1
+  maxYDifference: 0.5

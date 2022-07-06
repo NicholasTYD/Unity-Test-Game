@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  enragedSpeed: 0
+  enragedSpeed: 4
 --- !u!114 &1803653569117609601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,24 +355,21 @@ MonoBehaviour:
   samuraiBossMovementAI: {fileID: 8000958344309759918}
   healthPercentageThreshold: 0.6
   glowingEyes: {fileID: 5962704518091067691}
-  blink: Blink
-  blinkDuration: 0.625
-  blinkTeleportTime: 1.25
   jump: Jump
-  jumpDuration: 0.5
+  jumpDuration: 1
+  blink: Blink
+  blinkTeleportTime: 0.25
+  blinkDuration: 0.625
   plusMeteor: {fileID: 1087466567453841296, guid: 32161c02cf15eca4da0580fb3001eacd,
     type: 3}
   crossMeteor: {fileID: 6883563651978259822, guid: 26685bd2d90c00148a6a7b5dcd926fec,
     type: 3}
   ultDuration: 10
-  waveCount: 3
-  waveInterval: 3
-  meteorsPerWave: 3
-  shockwaveDamageMultiplier: 0.5
+  waveCount: 20
+  waveInterval: 0.5
+  meteorsPerWave: 2
   shockwaveSpeed: 10
-  shockwaveLifetime: 15
-  fall: Fall
-  fallDuration: 0.5
+  shockwaveLifetime: 2
 --- !u!1 &2240081128688023851
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +597,11 @@ PrefabInstance:
     - target: {fileID: 5141417828430446593, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141417828430446598, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

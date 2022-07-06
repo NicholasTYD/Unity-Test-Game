@@ -7,16 +7,16 @@ public class SamuraiUlt : EnemySkill
     // Others
     [SerializeField] SamuraiBossMovementAI samuraiBossMovementAI;
     [SerializeField] float healthPercentageThreshold;
-    [SerializeField] GameObject glowingEyes;
-
-    // Blink phase
-    [SerializeField] string blink;
-    [SerializeField] float blinkDuration;
-    [SerializeField] float blinkTeleportTime;
+    [SerializeField] ParticleSystem glowingEyes;
 
     // Jump
     [SerializeField] string jump;
     [SerializeField] float jumpDuration;
+
+    // Blink phase
+    [SerializeField] string blink;
+    [SerializeField] float blinkTeleportTime;
+    [SerializeField] float blinkDuration;
 
     // Ult
     Vector2 afkArea = new Vector2(60, 60);
@@ -26,13 +26,10 @@ public class SamuraiUlt : EnemySkill
     [SerializeField] int waveCount;
     [SerializeField] float waveInterval;
     [SerializeField] int meteorsPerWave;
-    [SerializeField] float shockwaveDamageMultiplier;
     [SerializeField] float shockwaveSpeed;
     [SerializeField] float shockwaveLifetime;
 
-    // Fall
-    [SerializeField] string fall;
-    [SerializeField] float fallDuration;
+    Vector2 prevPos;
 
     public override bool CanUse()
     {
@@ -42,7 +39,7 @@ public class SamuraiUlt : EnemySkill
     // Complete override
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
-        StartCoroutine(blinkToArenaCenter(enemy, player));
+        StartCoroutine(jumpUp(enemy, player));
 
         enemy.lockoutDuration = enemySkillBasicStats.SkillDuration;
         enemy.AttackLockoutDuration = enemySkillBasicStats.SkillDuration +
@@ -52,22 +49,12 @@ public class SamuraiUlt : EnemySkill
         StartCoroutine(adjustDamageMultiplierDuringSkill());
     }
 
-    IEnumerator blinkToArenaCenter(EnemyMain enemy, PlayerMain player)
-    {
-        anim.SetTrigger(blink);
-        yield return new WaitForSeconds(blinkTeleportTime);
-        this.transform.position = General.Instance.StageCenter;
-        yield return new WaitForSeconds(blinkDuration - blinkTeleportTime);
-
-        StartCoroutine(executeUlt(enemy, player));
-    }
-
     IEnumerator jumpUp(EnemyMain enemy, PlayerMain player)
     {
-        anim.applyRootMotion = true;
+        prevPos = this.transform.position;
         anim.SetTrigger(jump);
+        samuraiBossMovementAI.Jump();
         yield return new WaitForSeconds(jumpDuration);
-        anim.applyRootMotion = false;
         this.transform.position = afkArea;
 
         StartCoroutine(executeUlt(enemy, player));
@@ -92,20 +79,18 @@ public class SamuraiUlt : EnemySkill
 
         yield return new WaitForSeconds(ultDuration - (waveCount * waveInterval));
 
-        StartCoroutine(fallDown(enemy, player));
+        StartCoroutine(blinkBack(enemy, player));
     }
 
-    IEnumerator fallDown(EnemyMain enemy, PlayerMain player)
+    IEnumerator blinkBack(EnemyMain enemy, PlayerMain player)
     {
-        glowingEyes.SetActive(true);
-        samuraiBossMovementAI.enrage();
+        glowingEyes.Play();
+        samuraiBossMovementAI.SetEnragedSpeed();
+        anim.SetTrigger(blink);
+        yield return new WaitForSeconds(blinkTeleportTime);
+        this.transform.position = prevPos;
+        yield return new WaitForSeconds(blinkDuration - blinkTeleportTime);
 
-        anim.applyRootMotion = true;
-        anim.SetTrigger(fall);
-        yield return new WaitForSeconds(fallDuration);
-        anim.applyRootMotion = false;
-
-        // Gotta keep subsequent attacks working.
         if (followupSkill != null)
         {
             StartCoroutine(AttemptFollowupSkill(enemy, player));
@@ -133,6 +118,6 @@ public class SamuraiUlt : EnemySkill
             meteor = Instantiate(crossMeteor, spawnPos, Quaternion.identity);
         }
         meteor.GetComponent<SamuraiMeteor>().SetStats(enemyCombat.GetAbilityDamage(),
-            enemyCombat.GetAbilityDamage() * shockwaveDamageMultiplier, shockwaveSpeed, shockwaveLifetime);
+            shockwaveSpeed, shockwaveLifetime);
     }
 }

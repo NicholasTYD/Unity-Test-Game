@@ -18,7 +18,6 @@ public class SamuraiMeteor : MonoBehaviour
     float destroyAfterSecondsPastExplosion = 2;
 
     float meteorDamage;
-    float shockwaveDamage;
     float shockwaveSpeed;
     float shockwaveLifetime;
 
@@ -28,10 +27,9 @@ public class SamuraiMeteor : MonoBehaviour
         StartCoroutine(this.executeAttack());
     }
 
-    public void SetStats(float meteorDamage, float shockwaveDamage, float shockwaveSpeed, float shockwaveLifetime)
+    public void SetStats(float meteorDamage, float shockwaveSpeed, float shockwaveLifetime)
     {
         this.meteorDamage = meteorDamage;
-        this.shockwaveDamage = shockwaveDamage;
         this.shockwaveSpeed = shockwaveSpeed;
         this.shockwaveLifetime = shockwaveLifetime;
     }
@@ -63,7 +61,7 @@ public class SamuraiMeteor : MonoBehaviour
         foreach (Vector2 dir in shockwaveDirections)
         {
             CombatMechanics.Instance.InstantiateProjectile(shockwavePrefab, this.transform.position, dir,
-                shockwaveDamage, shockwaveSpeed, shockwaveLifetime);
+                0, shockwaveSpeed, shockwaveLifetime);
         }
 
         yield return new WaitForSeconds(circleColliderActiveTime);

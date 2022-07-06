@@ -18,6 +18,6 @@ MonoBehaviour:
   StartSkillCooldown: 0
   SkillDuration: 3.25
   MinSkillCooldown: 10
-  MaxSkillCooldown: 20
-  minAttackLockoutDuration: 2
-  maxAttackLockoutDuration: 3
+  MaxSkillCooldown: 15
+  minAttackLockoutDuration: 1
+  maxAttackLockoutDuration: 1.5
