@@ -2602,12 +2602,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &1741368325 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5962704518091067692, guid: 520d55ed4bb5afe4dae34c92ade0b5bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 8201349136065870359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1781379888
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,10 +11173,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
-    - target: {fileID: 8201349136065870361, guid: 520d55ed4bb5afe4dae34c92ade0b5bd,
-        type: 3}
-      propertyPath: glowingEyes
-      value: 
-      objectReference: {fileID: 1741368325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520d55ed4bb5afe4dae34c92ade0b5bd, type: 3}

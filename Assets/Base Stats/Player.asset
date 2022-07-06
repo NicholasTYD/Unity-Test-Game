@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   BaseMaxHealth: 3000
-  BaseAttack: 200
+  BaseAttack: 1000
   BaseMovementSpeed: 5
   minAllowableDistance: 0
   maxAllowableDistance: 0

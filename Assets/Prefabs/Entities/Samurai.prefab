@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2485964695983552064}
   - component: {fileID: 2222551357140657222}
   - component: {fileID: 2222551357140657223}
-  - component: {fileID: 3548373549662613992}
+  - component: {fileID: 6093198361648448337}
   - component: {fileID: 8000958344309759918}
   - component: {fileID: 1803653569117609601}
   - component: {fileID: 3280371270690168327}
@@ -45,6 +45,7 @@ Transform:
   - {fileID: 5968452100247966319}
   - {fileID: 2240081128688023828}
   - {fileID: 5962704518091067690}
+  - {fileID: 6436886284389487065}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicStats: {fileID: 11400000, guid: ae1dafb72e8f15247be5010fc3acb022, type: 2}
   AttackLockoutDuration: 0
---- !u!114 &3548373549662613992
+--- !u!114 &6093198361648448337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,12 +192,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2222551357140657598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21d82cd5d37e5540b910d8897f9a0ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d331da9e3f5344444bcc9cec77d5f4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
   currentHealth: 0
   healthbar: {fileID: 0}
+  lowHealthVfx: {fileID: 6436886284389487071}
+  lowHealthThreshold: 0.25
 --- !u!114 &8000958344309759918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +334,7 @@ MonoBehaviour:
     type: 2}
   followupSkill: {fileID: 8000958344309759920}
   samuraiBossMovementAI: {fileID: 8000958344309759918}
-  healthPercentageThreshold: 0.3
+  healthPercentageThreshold: 0.25
   loopChance: 0.5
   dashForce: 80
   attackTimings:
@@ -354,7 +357,7 @@ MonoBehaviour:
   followupSkill: {fileID: 0}
   samuraiBossMovementAI: {fileID: 8000958344309759918}
   healthPercentageThreshold: 0.6
-  glowingEyes: {fileID: 5962704518091067691}
+  glowingEyes: {fileID: 5962704518091067692}
   jump: Jump
   jumpDuration: 1
   blink: Blink
@@ -612,9 +615,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1578006360385802538}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5962704518091067691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5141417828430446593, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
+--- !u!198 &5962704518091067692 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5141417828430446598, guid: 64c46be72afbc1c459ef95b8fdd3fd6d,
     type: 3}
   m_PrefabInstance: {fileID: 1578006360385802538}
   m_PrefabAsset: {fileID: 0}
@@ -717,4 +720,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5479795799778089202, guid: c82fcd88f5046c14bb6278ac46ac2dd6,
     type: 3}
   m_PrefabInstance: {fileID: 2222551357943286429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8412528491356311083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2222551357140657595}
+    m_Modifications:
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308782262421282803, guid: a6c34701d8891f14899fb703a5b3824f,
+        type: 3}
+      propertyPath: m_Name
+      value: Samurai Low Health Indicator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6c34701d8891f14899fb703a5b3824f, type: 3}
+--- !u!4 &6436886284389487065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3308782262421282802, guid: a6c34701d8891f14899fb703a5b3824f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8412528491356311083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6436886284389487071 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3308782262421282804, guid: a6c34701d8891f14899fb703a5b3824f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8412528491356311083}
   m_PrefabAsset: {fileID: 0}
