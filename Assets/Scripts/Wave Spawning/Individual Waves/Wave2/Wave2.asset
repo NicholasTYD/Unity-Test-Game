@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Wave2
   m_EditorClassIdentifier: 
   waveName: Wave 2
-  notableSpawnPos: []
+  notableSpawnPos:
+  - {x: 8, y: 0}
+  - {x: -8, y: 0}
+  - {x: 0, y: 8}
+  - {x: -4, y: -4}
+  - {x: 4, y: -4}

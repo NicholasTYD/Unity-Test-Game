@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 3000
-  BaseAttack: 1000
-  BaseMovementSpeed: 5
+  BaseMaxHealth: 100
+  BaseAttack: 100
+  BaseMovementSpeed: 3
   minAllowableDistance: 0
   maxAllowableDistance: 0
   minXDifference: 0

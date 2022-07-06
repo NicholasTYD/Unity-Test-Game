@@ -23,8 +23,6 @@ public class Wave1 : Wave
     {
         Spawn(EnemyList.Instance.SprSke, pos(0));
         Spawn(EnemyList.Instance.SprSke, pos(1));
-        Debug.Log(pos(0));
-        Debug.Log(pos(1));
         while (gotEnemiesRemaining())
         {
             yield return new WaitForSeconds(1);

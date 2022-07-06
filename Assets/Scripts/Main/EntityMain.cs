@@ -15,6 +15,8 @@ public abstract class EntityMain : MonoBehaviour
     public bool ForceLockout { get; set; }
     public bool isDead { get; private set; }
 
+    private float postDeathDespawnTime = 10;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -41,6 +43,7 @@ public abstract class EntityMain : MonoBehaviour
         ForceLockout = true;
         health.grantInvulnerability = 999;
         anim.SetBool("IsDead", true);
+        StartCoroutine(destroySelf());
     }
 
     public void SafeSetLockoutDuration(float value)
@@ -81,5 +84,11 @@ public abstract class EntityMain : MonoBehaviour
     public float GetBaseMovementSpeed()
     {
         return BasicStats.BaseMovementSpeed;
+    }
+
+    IEnumerator destroySelf()
+    {
+        yield return new WaitForSeconds(postDeathDespawnTime);
+        Destroy(gameObject);
     }
 }
