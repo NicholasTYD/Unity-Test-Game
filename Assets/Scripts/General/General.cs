@@ -11,7 +11,8 @@ public class General : MonoBehaviour
     public Vector2 PlayerHitboxOffset { get; private set; }
 
     public float StageXBound { get; private set; }
-    public float StageYBound { get; private set; }
+    public float StageMinYBound { get; private set; }
+    public float StageMaxYBound { get; private set; }
 
     public Vector2 StageCenter { get; private set; }
 
@@ -28,8 +29,10 @@ public class General : MonoBehaviour
         playerBoxColliderHeight = Player.GetComponent<BoxCollider2D>().size.y;
         PlayerHitboxOffset = Player.GetComponent<BoxCollider2D>().offset;
 
-        StageXBound = 16;
-        StageYBound = 10;
+        StageXBound = 15;
+
+        StageMinYBound = -10f;
+        StageMaxYBound = 9.2f;
         StageCenter = new Vector2(0, 0);
     }
 
@@ -61,7 +64,7 @@ public class General : MonoBehaviour
     public Vector2 GetRandomPosition()
     {
         float randomX = Random.Range(-StageXBound, StageXBound);
-        float randomY = Random.Range(-StageYBound, StageYBound);
+        float randomY = Random.Range(StageMinYBound, StageMaxYBound);
         return new Vector2(randomX, randomY);
     }
 
