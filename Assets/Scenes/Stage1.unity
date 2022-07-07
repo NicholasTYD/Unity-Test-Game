@@ -279,6 +279,7 @@ MonoBehaviour:
   waves:
   - {fileID: 175715765}
   - {fileID: 175715767}
+  upgradeMenu: {fileID: 629446218}
 --- !u!4 &175715764
 Transform:
   m_ObjectHideFlags: 0
@@ -964,13 +965,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629446217}
+  - component: {fileID: 629446218}
   m_Layer: 5
   m_Name: Upgrade Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &629446217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -994,6 +996,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &629446218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629446216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a69833bbb92d7f4d8f482eca0486069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeButtons:
+  - {fileID: 1520265269}
+  - {fileID: 269679926}
+  - {fileID: 199973927}
+  upgradeTexts:
+  - {fileID: 927853896}
+  - {fileID: 1818463293}
+  - {fileID: 510709691}
+  healthIncrease: 50
+  attackIncrease: 20
+  attackSpeedIncrease: 0.15
+  parryDamageBonusDurationIncrease: 1
+  parryDamageBonusMultiplierIncrease: 0.3
+  movementSpeedIncrease: 0.5
 --- !u!1 &927853894
 GameObject:
   m_ObjectHideFlags: 0
@@ -12055,11 +12083,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave Text
       objectReference: {fileID: 0}
-    - target: {fileID: 8923336933427013886, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8923336933427013887, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12148,7 +12171,7 @@ PrefabInstance:
     - target: {fileID: 8923336933427013887, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -74.5
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8923336933427013887, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
         type: 3}

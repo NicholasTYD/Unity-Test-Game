@@ -5,6 +5,7 @@ using UnityEngine;
 public class General : MonoBehaviour
 {
     public static General Instance;
+    public bool isGamePaused { get; private set; }
     public GameObject Player { get; private set; }
     public float playerBoxColliderWidth { get; private set; }
     public float playerBoxColliderHeight { get; private set; }
@@ -96,5 +97,17 @@ public class General : MonoBehaviour
             return toReturn;
         }
         return globalScale;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        isGamePaused = true;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+        isGamePaused = false;
     }
 }

@@ -9,9 +9,13 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] float waveTextAppearDuration;
     [SerializeField] List<Wave> waves;
+    [SerializeField] UpgradeMenu upgradeMenu;
 
-    public bool waveCompleted { get; set; }
-    public int currentWave { get; private set; }
+    float waveTextTimer;
+
+    public bool WaveCompleted { get; set; }
+    public bool UpgradesChosen { get; set; }
+    public int CurrentWave { get; private set; }
 
     public int CurrentEnemyCount { get; set; }
 
@@ -25,40 +29,61 @@ public class WaveSpawner : MonoBehaviour
         }
         Instance = this;
 
-        waveCompleted = true;
+        WaveCompleted = true;
+        UpgradesChosen = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && waveCompleted)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            initiateWave();
-        } else if (Input.GetKeyDown(KeyCode.Space) && !waveCompleted)
+            if (WaveCompleted && UpgradesChosen)
+            {
+                initiateWave();
+            }
+            else if (!WaveCompleted)
+            {
+                setWaveText("You can't start a wave while its still in progress!");
+            } 
+            else if (!UpgradesChosen)
+            {
+                setWaveText("Choose an upgrade first!");
+            }
+        }
+
+        if (waveTextTimer >= 0)
         {
-            Debug.Log("can't start!");
+            waveTextTimer -= Time.deltaTime;
+        } 
+        else if (waveText.gameObject.activeInHierarchy)
+        {
+            waveText.gameObject.SetActive(false);
         }
     }
 
     void initiateWave()
     {
-        if (currentWave > waves.Count)
+        if (CurrentWave >= waves.Count)
         {
             Debug.Log("the end");
+            return;
         }
 
-        string text = waves[currentWave].GetWaveName();
-        StartCoroutine(setWaveText(text));
-        waves[currentWave].StartWave();
-        waveCompleted = false;
+        string text = waves[CurrentWave].GetWaveName();
+        setWaveText(text);
+        waves[CurrentWave].StartWave();
+        WaveCompleted = false;
+        UpgradesChosen = false;
     }
 
     public void ConcludeWave()
     {
-        waveCompleted = true;
-        string text = waves[currentWave].GetWaveName() + " Complete!";
-        StartCoroutine(setWaveText(text));
-        currentWave++;
+        WaveCompleted = true;
+        string text = waves[CurrentWave].GetWaveName() + " Complete!";
+        CurrentWave++;
+        setWaveText(text);
+        StartCoroutine(PresentUpgrades());
     }
 
     public bool gotEnemiesRemaining()
@@ -66,11 +91,16 @@ public class WaveSpawner : MonoBehaviour
         return CurrentEnemyCount > 0;
     }
 
-    IEnumerator setWaveText(string text)
+    void setWaveText(string text)
     {
         waveText.text = text;
         waveText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(waveTextAppearDuration);
-        waveText.gameObject.SetActive(false);
+        waveTextTimer = waveTextAppearDuration;
+    }
+
+    IEnumerator PresentUpgrades()
+    {
+        yield return new WaitForSeconds(3);
+        upgradeMenu.PresentUpgrades();
     }
 }

@@ -42,6 +42,6 @@ public class PlayerHealth : Health
     public void IncreaseMaxHealth(float amount)
     {
         this.maxHealth += amount;
-        this.currentHealth += amount;
+        changeHealth(amount);
     }
 }

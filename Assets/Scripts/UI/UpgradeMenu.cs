@@ -17,68 +17,106 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] float movementSpeedIncrease;
 
     PlayerMain playerMain;
+    int numberOfUpgradeChoices = 3;
+    int totalAvailableUpgrades = 6;
 
     private void Start()
     {
         playerMain = General.Instance.Player.GetComponent<PlayerMain>();
     }
 
-    void upgradeHealth(int pos)
+    public void PresentUpgrades()
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
+        gameObject.SetActive(true);
+        General.Instance.Pause();
+
+        bool[] alreadyChosen = new bool[totalAvailableUpgrades];
+
+        for (int upgradeSlot = 0; upgradeSlot < numberOfUpgradeChoices; upgradeSlot++)
+        {
+            int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
+            while (alreadyChosen[chosenUpgrade])
+            {
+                chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
+            }
+            alreadyChosen[chosenUpgrade] = true;
+
+            Button button = upgradeButtons[upgradeSlot];
+            TextMeshProUGUI text = upgradeTexts[upgradeSlot];
+
+            switch (chosenUpgrade)
+            {
+                case 0:
+                    upgradeHealth(upgradeSlot, button, text);
+                    break;
+                case 1:
+                    upgradeAttack(upgradeSlot, button, text);
+                    break;
+                case 2:
+                    upgradeAttackSpeed(upgradeSlot, button, text);
+                    break;
+                case 3:
+                    upgradeParryDamageBonusDuration(upgradeSlot, button, text);
+                    break;
+                case 4:
+                    upgradeParryDamageBonusMultiplier(upgradeSlot, button, text);
+                    break;
+                case 5:
+                    upgradeMovementSpeed(upgradeSlot, button, text);
+                    break;
+                default:
+                    Debug.Log("You broke something oops");
+                    break;
+            }
+            button.onClick.AddListener(closeAndResetMenuOnClick);
+        }
+    }
+
+    void upgradeHealth(int pos, Button button, TextMeshProUGUI text)
+    {
         text.text = "Increase max health by " + healthIncrease + ".";
         button.onClick.AddListener(() => playerMain.IncreaseMaxHealth(healthIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void upgradeAttack(int pos)
+    void upgradeAttack(int pos, Button button, TextMeshProUGUI text)
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
         text.text = "Increase base damage by " + attackIncrease + ".";
         button.onClick.AddListener(() => playerMain.IncreaseAttack(attackIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void upgradeAttackSpeed(int pos)
+    void upgradeAttackSpeed(int pos, Button button, TextMeshProUGUI text)
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
         text.text = "Increase attack speed by " + attackSpeedIncrease + ".";
         button.onClick.AddListener(() => playerMain.IncreaseAttackSpeed(attackSpeedIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void upgradeParryDamageBonusDuration(int pos)
+    void upgradeParryDamageBonusDuration(int pos, Button button, TextMeshProUGUI text)
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
         text.text = "Post parry damage bonus duration +" + parryDamageBonusDurationIncrease + "s.";
         button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusDuration(parryDamageBonusDurationIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void upgradeParryDamageBonusMultiplier(int pos)
+    void upgradeParryDamageBonusMultiplier(int pos, Button button, TextMeshProUGUI text)
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
-        text.text = "Post parry damage bonus +" + attackSpeedIncrease + "%.";
+        text.text = "Post parry damage bonus +" + parryDamageBonusMultiplierIncrease * 100 + "%.";
         button.onClick.AddListener(() => playerMain.IncreaseAttackSpeed(parryDamageBonusMultiplierIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void upgradeMovementSpeed(int pos)
+    void upgradeMovementSpeed(int pos, Button button, TextMeshProUGUI text)
     {
-        Button button = upgradeButtons[pos];
-        TextMeshProUGUI text = upgradeTexts[pos];
         text.text = "Movement Speed +" + movementSpeedIncrease + ".";
         button.onClick.AddListener(() => playerMain.IncreaseMovementSpeed(movementSpeedIncrease));
-        button.onClick.RemoveAllListeners();
     }
 
-    void closeMenuOnClick()
+    void closeAndResetMenuOnClick()
     {
+        WaveSpawner.Instance.UpgradesChosen = true;
+        foreach (Button button in upgradeButtons)
+        {
+            button.onClick.RemoveAllListeners();
+        }
         this.gameObject.SetActive(false);
+
+        General.Instance.Unpause();
     }
 }

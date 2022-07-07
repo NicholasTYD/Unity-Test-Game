@@ -10,7 +10,7 @@ public class EnemyHealth : Health
     protected override void Start()
     {
         this.entityMain = this.GetComponent<EntityMain>();
-        maxHealth = entityMain.GetBaseMaxHealth() * Mathf.Pow(healthScalingPerWave, WaveSpawner.Instance.currentWave);
+        maxHealth = entityMain.GetBaseMaxHealth() * Mathf.Pow(healthScalingPerWave, WaveSpawner.Instance.CurrentWave);
         currentHealth = maxHealth;
         healthbar.SetHealth(currentHealth, maxHealth);
     }
