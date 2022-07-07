@@ -6,13 +6,23 @@ using UnityEngine;
 public abstract class Combat : MonoBehaviour
 {
     protected EntityMain entityMain;
-    [SerializeField] protected float baseAttack;
+    [SerializeField] protected float attack;
 
     protected virtual void Start()
     {
         this.entityMain = this.GetComponent<EntityMain>();
-        this.baseAttack = entityMain.GetBaseAttack();
+        this.attack = entityMain.GetBaseAttack();
     }
 
     public abstract void Attack();
+
+    public float GetAttack()
+    {
+        return attack;
+    }
+
+    public void SetAttack(float attack)
+    {
+        this.attack = attack;
+    }
 }

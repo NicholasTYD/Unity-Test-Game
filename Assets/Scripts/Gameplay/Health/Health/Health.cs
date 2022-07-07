@@ -68,9 +68,19 @@ public abstract class Health : MonoBehaviour
         return currentHealth;
     }
 
-    public float GetMaxtHealth()
+    public void SetCurrentHealth(float currentHealth)
+    {
+        this.currentHealth = currentHealth;
+    }
+
+    public float GetMaxHealth()
     {
         return maxHealth;
+    }
+
+    public void SetMaxHealth(float maxHealth)
+    {
+        this.maxHealth = maxHealth;
     }
 
     public float GetHealthPercentage()

@@ -28,7 +28,7 @@ public class UpgradeMenu : MonoBehaviour
     public void PresentUpgrades()
     {
         gameObject.SetActive(true);
-        General.Instance.Pause();
+        GameManager.Instance.Pause();
 
         bool[] alreadyChosen = new bool[totalAvailableUpgrades];
 
@@ -117,6 +117,6 @@ public class UpgradeMenu : MonoBehaviour
         }
         this.gameObject.SetActive(false);
 
-        General.Instance.Unpause();
+        GameManager.Instance.Unpause();
     }
 }

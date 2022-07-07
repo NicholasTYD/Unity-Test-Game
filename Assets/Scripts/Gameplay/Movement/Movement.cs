@@ -22,11 +22,6 @@ public abstract class Movement : MonoBehaviour
 
     public abstract void Move();
 
-    public void SetSpeed(float value)
-    {
-        speed = value;
-    }
-
     protected virtual void flip()
     {
         Vector3 currentScale = this.transform.localScale;
@@ -37,5 +32,15 @@ public abstract class Movement : MonoBehaviour
     protected bool facingRight()
     {
         return this.transform.localScale.x > 0;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public void SetSpeed(float value)
+    {
+        speed = value;
     }
 }

@@ -23,7 +23,7 @@ public class PlayerCombat : Combat
     private float blockCooldownTimer;
 
     private float maxParryDamageBonusDuration = 3;
-    private float additionalParryDamageBonusMultiplier;
+    private float parryDamageBonusMultiplier;
     private float currentParryDamageBonusMultiplier = 1;
     private float parryDamageBonusTimeLeft = 0;
 
@@ -46,6 +46,7 @@ public class PlayerCombat : Combat
         base.Start();
         this.playerAnim = this.GetComponent<Animator>();
         this.playerMovement = this.GetComponent<PlayerMovement>();
+        this.parryDamageBonusMultiplier = playerBlock.parryBonusDamageMultiplier;
     }
 
     // Update is called once per frame
@@ -56,7 +57,7 @@ public class PlayerCombat : Combat
 
     public void IncreaseAttack(float amount)
     {
-        baseAttack += amount;
+        attack += amount;
     }
 
     public void IncreaseAttackSpeed(float amount)
@@ -71,7 +72,37 @@ public class PlayerCombat : Combat
 
     public void IncreaseParryDamageBonusMultiplier(float amount)
     {
-        additionalParryDamageBonusMultiplier += amount;
+        parryDamageBonusMultiplier += amount;
+    }
+
+    public float GetAttackSpeed()
+    {
+        return attackSpeed;
+    }
+
+    public void SetAttackSpeed(float attackSpeed)
+    {
+        this.attackSpeed = attackSpeed;
+    }
+
+    public float GetParryDamageBonusDuration()
+    {
+        return maxParryDamageBonusDuration;
+    }
+
+    public void SetParryDamageBonusDuration(float value)
+    {
+        maxParryDamageBonusDuration = value;
+    }
+
+    public float GetParryDamageBonusMultiplier()
+    {
+        return parryDamageBonusMultiplier;
+    }
+
+    public void SetParryDamageBonusMultiplier(float value)
+    {
+        this.parryDamageBonusMultiplier = value;
     }
 
     public override void Attack()
@@ -104,7 +135,7 @@ public class PlayerCombat : Combat
             CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
                 enemyLayerMask,
-                baseAttack * currentParryDamageBonusMultiplier * currentAttack.damageMultiplier);
+                attack * currentParryDamageBonusMultiplier * currentAttack.damageMultiplier);
 
             comboTimeLeft = maxComboTime;
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
@@ -150,7 +181,7 @@ public class PlayerCombat : Combat
             {
                 entityMain.lockoutDuration = block.baseParryDuration;
                 parryDamageBonusTimeLeft = maxParryDamageBonusDuration + block.baseParryDuration;
-                currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier + additionalParryDamageBonusMultiplier;
+                currentParryDamageBonusMultiplier = parryDamageBonusMultiplier;
                 playerAnim.SetTrigger(block.parryName);
                 inBlockState = false;
                 CombatMechanics.Instance.InstantiateParryText(this.transform.position);

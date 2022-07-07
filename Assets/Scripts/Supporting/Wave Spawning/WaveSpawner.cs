@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
 
     public bool WaveCompleted { get; set; }
     public bool UpgradesChosen { get; set; }
-    public int CurrentWave { get; private set; }
+    public int CurrentWave { get; set; }
 
     public int CurrentEnemyCount { get; set; }
 
@@ -81,9 +81,8 @@ public class WaveSpawner : MonoBehaviour
     {
         WaveCompleted = true;
         string text = waves[CurrentWave].GetWaveName() + " Complete!";
-        CurrentWave++;
         setWaveText(text);
-        StartCoroutine(PresentUpgrades());
+        StartCoroutine(PresentUpgradesAndIncrementWave());
     }
 
     public bool gotEnemiesRemaining()
@@ -98,9 +97,12 @@ public class WaveSpawner : MonoBehaviour
         waveTextTimer = waveTextAppearDuration;
     }
 
-    IEnumerator PresentUpgrades()
+    IEnumerator PresentUpgradesAndIncrementWave()
     {
         yield return new WaitForSeconds(3);
         upgradeMenu.PresentUpgrades();
+
+        yield return new WaitForSeconds(0.01f);
+        CurrentWave++;
     }
 }
