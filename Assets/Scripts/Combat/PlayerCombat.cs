@@ -23,6 +23,7 @@ public class PlayerCombat : Combat
     private float blockCooldownTimer;
 
     private float maxParryDamageBonusDuration = 3;
+    private float additionalParryDamageBonusMultiplier;
     private float currentParryDamageBonusMultiplier = 1;
     private float parryDamageBonusTimeLeft = 0;
 
@@ -51,6 +52,26 @@ public class PlayerCombat : Combat
     void Update()
     {
         this.handleCooldowns();
+    }
+
+    public void IncreaseAttack(float amount)
+    {
+        baseAttack += amount;
+    }
+
+    public void IncreaseAttackSpeed(float amount)
+    {
+        attackSpeed += amount;
+    }
+
+    public void IncreaseParryDamageBonusDuration(float amount)
+    {
+        maxParryDamageBonusDuration += amount;
+    }
+
+    public void IncreaseParryDamageBonusMultiplier(float amount)
+    {
+        additionalParryDamageBonusMultiplier += amount;
     }
 
     public override void Attack()
@@ -129,7 +150,7 @@ public class PlayerCombat : Combat
             {
                 entityMain.lockoutDuration = block.baseParryDuration;
                 parryDamageBonusTimeLeft = maxParryDamageBonusDuration + block.baseParryDuration;
-                currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier;
+                currentParryDamageBonusMultiplier = block.parryBonusDamageMultiplier + additionalParryDamageBonusMultiplier;
                 playerAnim.SetTrigger(block.parryName);
                 inBlockState = false;
                 CombatMechanics.Instance.InstantiateParryText(this.transform.position);

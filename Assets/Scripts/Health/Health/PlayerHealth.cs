@@ -38,4 +38,10 @@ public class PlayerHealth : Health
         }
         return false;
     }
+
+    public void IncreaseMaxHealth(float amount)
+    {
+        this.maxHealth += amount;
+        this.currentHealth += amount;
+    }
 }

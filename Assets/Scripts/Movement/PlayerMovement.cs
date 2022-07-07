@@ -43,6 +43,11 @@ public class PlayerMovement : Movement
         }
     }
 
+    public void IncreaseMovementSpeed(float amount)
+    {
+        speed += amount;
+    }
+
     public override void Move()
     {
         Vector2 position = this.transform.position;
