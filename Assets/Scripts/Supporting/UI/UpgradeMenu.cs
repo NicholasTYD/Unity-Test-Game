@@ -34,7 +34,7 @@ public class UpgradeMenu : MonoBehaviour
 
         for (int upgradeSlot = 0; upgradeSlot < numberOfUpgradeChoices; upgradeSlot++)
         {
-            int chosenUpgrade = Random.Range(1, 1);
+            int chosenUpgrade = Random.Range(0, 0);
             // int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
             while (alreadyChosen[chosenUpgrade])
             {

@@ -29,26 +29,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("scene loaded");
-        if (scene.buildIndex != 1)
-        {
-            return;
-        }
-
-        IEnumerable<ISavable> savableObjects = FindObjectsOfType<MonoBehaviour>().OfType<ISavable>();
-        foreach (ISavable saveableObject in savableObjects)
-        {
-            objectsToSave.Add(saveableObject);
-        }
-
-        if (isNewSave)
-        {
-            SaveGame();
-        }
-        else
-        {
-            LoadGame();
-        }
+        StartCoroutine(saveDataOnSceneChange(scene, mode));
     }
 
     public void SaveGame()
@@ -57,7 +38,6 @@ public class GameManager : MonoBehaviour
         string path = Application.persistentDataPath + "/savefile.json";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        // SaveData data = General.Instance.Player.GetComponent<PlayerMain>().GenerateSaveData();
         SaveData saveData = new SaveData();
 
         foreach (ISavable savable in objectsToSave)
@@ -95,13 +75,32 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene(1);
-        // StartCoroutine(saveDataOnSceneChange());
     }
 
-    IEnumerator saveDataOnSceneChange()
+    IEnumerator saveDataOnSceneChange(Scene scene, LoadSceneMode mode)
     {
         yield return new WaitForSeconds(0.1f);
-        SaveGame();
+
+        Debug.Log("scene loaded");
+        if (scene.buildIndex != 1)
+        {
+            yield break;
+        }
+
+        IEnumerable<ISavable> savableObjects = FindObjectsOfType<MonoBehaviour>().OfType<ISavable>();
+        foreach (ISavable saveableObject in savableObjects)
+        {
+            objectsToSave.Add(saveableObject);
+        }
+
+        if (isNewSave)
+        {
+            SaveGame();
+        }
+        else
+        {
+            LoadGame();
+        }
     }
 
     public void ResumeGame()
