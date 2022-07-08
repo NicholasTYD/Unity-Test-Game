@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 0
+  attack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills:
   - {fileID: 311619065}
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: c8c52906b6e14ea49accba738ab1264f,
     type: 2}
+  followupSkill: {fileID: 0}
 --- !u!114 &564383112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,12 +287,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 724eb8f2f91e1094399ee1c0bbdc6388,
     type: 2}
-  FreKgtCombo2: {fileID: 564383111}
+  followupSkill: {fileID: 564383111}
   maxCastRange: 5
   chargeDelay: 1.75
   chargeDuration: 0.875
   chargeSpeed: 8
-  sfx: {fileID: 0}
 --- !u!114 &564383111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 6b20ac019076767449c1d66de91d5826,
     type: 2}
+  followupSkill: {fileID: 0}
   minXBound: -3
   maxXBound: 3
   minYBound: -0.5
@@ -324,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: db25bb547e7a14f49b0d63629cc1890f,
     type: 2}
+  followupSkill: {fileID: 0}
   isBlocking: 0
 --- !u!114 &311619065
 MonoBehaviour:
@@ -339,6 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 990e2024c10a5fe45a41aea5131a0e4d,
     type: 2}
+  followupSkill: {fileID: 0}
 --- !u!1001 &130124195718738857
 PrefabInstance:
   m_ObjectHideFlags: 0

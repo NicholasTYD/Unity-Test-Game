@@ -15,18 +15,14 @@ public class FreKgtCombo1 : EnemySkill
         return base.CanUse() && enemyMovement.playerDistanceWithin(0, maxCastRange);
     }
 
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
+    public void StartCharge()
     {
-        base.ExecuteSkill(enemy, player);
-        StartCoroutine(ExecuteCombo1(enemy, player));
-    }
-
-    IEnumerator ExecuteCombo1(EnemyMain enemy, PlayerMain player)
-    {
-        yield return new WaitForSeconds(chargeDelay);
         enemyMovement.ToggleForceMove(true);
         enemyMovement.SetSpeed(chargeSpeed);
-        yield return new WaitForSeconds(chargeDuration);
+    }
+
+    public void StopCharge()
+    {
         enemyMovement.SetSpeed(enemyMovement.BaseSpeed);
         enemyMovement.ToggleForceMove(false);
     }

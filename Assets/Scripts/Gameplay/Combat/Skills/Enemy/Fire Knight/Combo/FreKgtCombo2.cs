@@ -14,9 +14,4 @@ public class FreKgtCombo2 : EnemySkill
         return base.CanUse() && enemyMovement.enemyToPlayerXDifferenceWithin(minXBound, maxXBound)
             && enemyMovement.enemyToPlayerYDifferenceWithin(minYBound, maxYBound);
     }
-
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
-    {
-        base.ExecuteSkill(enemy, player);
-    }
 }
