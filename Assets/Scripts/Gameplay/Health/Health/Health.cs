@@ -22,7 +22,7 @@ public abstract class Health : MonoBehaviour
         this.entityMain = this.GetComponent<EntityMain>();
         maxHealth = entityMain.GetBaseMaxHealth();
         currentHealth = maxHealth;
-        healthbar.SetHealth(currentHealth, maxHealth);
+        updateHealthbar();
     }
 
     protected virtual void Update()
@@ -36,7 +36,7 @@ public abstract class Health : MonoBehaviour
     protected virtual void changeHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        healthbar.SetHealth(currentHealth, maxHealth);
+        updateHealthbar();
         if (currentHealth == 0)
         {
             entityMain.Die();
@@ -63,24 +63,17 @@ public abstract class Health : MonoBehaviour
         changeHealth(amount);
     }
 
-    public float GetCurrentHealth()
-    {
-        return currentHealth;
-    }
 
-    public void SetCurrentHealth(float currentHealth)
+    protected void setCurrentHealth(float currentHealth)
     {
         this.currentHealth = currentHealth;
+        updateHealthbar();
     }
 
-    public float GetMaxHealth()
-    {
-        return maxHealth;
-    }
-
-    public void SetMaxHealth(float maxHealth)
+    protected void setMaxHealth(float maxHealth)
     {
         this.maxHealth = maxHealth;
+        updateHealthbar();
     }
 
     public float GetHealthPercentage()
@@ -91,5 +84,10 @@ public abstract class Health : MonoBehaviour
     public bool isHealthPercentageEqualOrBelow(float percentage)
     {
         return GetHealthPercentage() <= percentage;
+    }
+
+    private void updateHealthbar()
+    {
+        healthbar.SetHealth(currentHealth, maxHealth);
     }
 }

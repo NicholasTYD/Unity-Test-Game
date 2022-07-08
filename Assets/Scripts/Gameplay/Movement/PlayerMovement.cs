@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMain))]
-public class PlayerMovement : Movement
+public class PlayerMovement : Movement, ISavable
 {
     private PlayerMain playerMain;
     private Animator playerAnim;
@@ -116,5 +116,15 @@ public class PlayerMovement : Movement
         {
             flip();
         }
+    }
+
+    public void SaveData(SaveData saveData)
+    {
+        saveData.MovementSpeed = speed;
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        this.speed = saveData.MovementSpeed;
     }
 }

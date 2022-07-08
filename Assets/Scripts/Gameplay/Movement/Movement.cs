@@ -34,11 +34,6 @@ public abstract class Movement : MonoBehaviour
         return this.transform.localScale.x > 0;
     }
 
-    public float GetSpeed()
-    {
-        return speed;
-    }
-
     public void SetSpeed(float value)
     {
         speed = value;

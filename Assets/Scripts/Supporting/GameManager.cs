@@ -4,13 +4,16 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool isGamePaused { get; private set; }
 
-
+    private List<ISavable> objectsToSave = new List<ISavable>();
+    private bool isNewSave = true;
+    
     private void Awake()
     {
         if (Instance != null)
@@ -21,6 +24,30 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex != 1)
+        {
+            return;
+        }
+
+        IEnumerable<ISavable> savableObjects = FindObjectsOfType<MonoBehaviour>().OfType<ISavable>();
+        foreach (ISavable saveableObject in savableObjects)
+        {
+            objectsToSave.Add(saveableObject);
+        }
+
+        if (isNewSave)
+        {
+            SaveGame();
+        }
+        else
+        {
+            LoadGame();
+        }
     }
 
     public void SaveGame()
@@ -29,13 +56,19 @@ public class GameManager : MonoBehaviour
         string path = Application.persistentDataPath + "/savefile.json";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        SaveData data = General.Instance.Player.GetComponent<PlayerMain>().GenerateSaveData();
+        // SaveData data = General.Instance.Player.GetComponent<PlayerMain>().GenerateSaveData();
+        SaveData saveData = new SaveData();
 
-        formatter.Serialize(stream, data);
+        foreach (ISavable savable in objectsToSave)
+        {
+            savable.SaveData(saveData);
+        }
+
+        formatter.Serialize(stream, saveData);
         stream.Close();
     }
 
-    public SaveData LoadGame()
+    public void LoadGame()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
@@ -43,15 +76,18 @@ public class GameManager : MonoBehaviour
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            SaveData data = formatter.Deserialize(stream) as SaveData;
+            SaveData saveData = formatter.Deserialize(stream) as SaveData;
             stream.Close();
 
-            return data;
+            foreach (ISavable savable in objectsToSave)
+            {
+                savable.LoadData(saveData);
+            }
         }
         else
         {
             Debug.Log("Error, save file not found!");
-            return null;
+            return;
         }
     }
 
@@ -69,8 +105,8 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        isNewSave = false;
         SceneManager.LoadScene(1);
-        General.Instance.Player.GetComponent<PlayerMain>().LoadSaveData(LoadGame());
     }
 
     public void Pause()
@@ -83,5 +119,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isGamePaused = false;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

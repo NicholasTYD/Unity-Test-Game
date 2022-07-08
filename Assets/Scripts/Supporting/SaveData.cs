@@ -7,14 +7,15 @@ public class SaveData
 {
     public int CurrentWave;
 
-    public float MaxHealth { get; private set; }
-    public float CurrentHealth { get; private set; }
-    public float Attack { get; private set; }
-    public float AttackSpeed { get; private set; }
-    public float ParryDamageBonusDuration { get; private set; }
-    public float ParryDamageBonusMultiplier { get; private set; }
-    public float MovementSpeed { get; private set; }
+    public float MaxHealth { get; set; }
+    public float CurrentHealth { get; set; }
+    public float Attack { get; set; }
+    public float AttackSpeed { get; set; }
+    public float ParryDamageBonusDuration { get; set; }
+    public float ParryDamageBonusMultiplier { get; set; }
+    public float MovementSpeed { get; set; }
 
+    /*
     public SaveData(int currentWave,
         float maxHealth,
         float currentHealth,
@@ -32,6 +33,6 @@ public class SaveData
         this.ParryDamageBonusDuration = parryDamageBonusDuration;
         this.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
         this.MovementSpeed = movementSpeed;
-        Debug.Log(currentWave);
     }
+    */
 }

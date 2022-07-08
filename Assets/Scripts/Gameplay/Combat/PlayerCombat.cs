@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMain))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerHealth))]
-public class PlayerCombat : Combat
+public class PlayerCombat : Combat, ISavable
 {
     private Animator playerAnim;
     private PlayerMovement playerMovement;
@@ -73,36 +73,6 @@ public class PlayerCombat : Combat
     public void IncreaseParryDamageBonusMultiplier(float amount)
     {
         parryDamageBonusMultiplier += amount;
-    }
-
-    public float GetAttackSpeed()
-    {
-        return attackSpeed;
-    }
-
-    public void SetAttackSpeed(float attackSpeed)
-    {
-        this.attackSpeed = attackSpeed;
-    }
-
-    public float GetParryDamageBonusDuration()
-    {
-        return maxParryDamageBonusDuration;
-    }
-
-    public void SetParryDamageBonusDuration(float value)
-    {
-        maxParryDamageBonusDuration = value;
-    }
-
-    public float GetParryDamageBonusMultiplier()
-    {
-        return parryDamageBonusMultiplier;
-    }
-
-    public void SetParryDamageBonusMultiplier(float value)
-    {
-        this.parryDamageBonusMultiplier = value;
     }
 
     public override void Attack()
@@ -230,5 +200,21 @@ public class PlayerCombat : Combat
         {
             blockCooldownTimer -= Time.deltaTime;
         }
+    }
+
+    public void SaveData(SaveData saveData)
+    {
+        saveData.Attack = attack;
+        saveData.AttackSpeed = attackSpeed;
+        saveData.ParryDamageBonusDuration = maxParryDamageBonusDuration;
+        saveData.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        this.attack = saveData.Attack;
+        this.attackSpeed = saveData.AttackSpeed;
+        this.maxParryDamageBonusDuration = saveData.ParryDamageBonusDuration;
+        this.parryDamageBonusMultiplier = saveData.ParryDamageBonusMultiplier;
     }
 }

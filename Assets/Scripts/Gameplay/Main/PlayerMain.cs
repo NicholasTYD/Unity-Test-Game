@@ -92,32 +92,24 @@ public class PlayerMain : EntityMain
         playerMovement.IncreaseMovementSpeed(amount);
     }
 
+    /*
     public SaveData GenerateSaveData()
     {
-        int currentWave = WaveSpawner.Instance.CurrentWave;
-        float maxHealth = playerHealth.GetMaxHealth();
-        float currentHealth = playerHealth.GetCurrentHealth();
-        float attack = playerCombat.GetAttack();
-        float attackSpeed = playerCombat.GetAttackSpeed();
-        float parryDamageBonusDuration = playerCombat.GetParryDamageBonusDuration();
-        float parryDamageBonusMultiplier = playerCombat.GetParryDamageBonusMultiplier();
-        float movementSpeed = playerMovement.GetSpeed();
-        return new SaveData(currentWave, maxHealth, currentHealth, attack, attackSpeed,
-            parryDamageBonusDuration, parryDamageBonusMultiplier, movementSpeed);
+        //float parryDamageBonusDuration = playerCombat.GetParryDamageBonusDuration();
+        //float parryDamageBonusMultiplier = playerCombat.GetParryDamageBonusMultiplier();
+        // float movementSpeed = playerMovement.GetSpeed();
+        //return new SaveData(currentWave, maxHealth, currentHealth, attack, attackSpeed,
+           // parryDamageBonusDuration, parryDamageBonusMultiplier, movementSpeed);
     }
 
     public void LoadSaveData(SaveData saveData)
     {
-        WaveSpawner.Instance.LoadData(saveData);
-        playerHealth.SetMaxHealth(saveData.MaxHealth);
-        playerHealth.SetCurrentHealth(saveData.CurrentHealth);
-        playerCombat.SetAttack(saveData.Attack);
-        playerCombat.SetAttackSpeed(saveData.AttackSpeed);
-        playerCombat.SetParryDamageBonusDuration(saveData.ParryDamageBonusDuration);
-        playerCombat.SetParryDamageBonusMultiplier(saveData.ParryDamageBonusMultiplier);
-        playerMovement.SetSpeed(saveData.MovementSpeed);
+        // /playerCombat.SetParryDamageBonusDuration(saveData.ParryDamageBonusDuration);
+        //playerCombat.SetParryDamageBonusMultiplier(saveData.ParryDamageBonusMultiplier);
+        // playerMovement.SetSpeed(saveData.MovementSpeed);
         Debug.Log(WaveSpawner.Instance.CurrentWave);
     }
+    */
 
     protected override IEnumerator handleDeath()
     {

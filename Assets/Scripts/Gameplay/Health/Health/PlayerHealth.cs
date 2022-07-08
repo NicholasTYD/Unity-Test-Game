@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMain))]
-public class PlayerHealth : Health
+public class PlayerHealth : Health, ISavable
 {
     private Animator playerAnim;
     private PlayerCombat playerCombat;
@@ -43,5 +43,17 @@ public class PlayerHealth : Health
     {
         this.maxHealth += amount;
         changeHealth(amount);
+    }
+
+    public void SaveData(SaveData saveData)
+    {
+        saveData.MaxHealth = maxHealth;
+        saveData.CurrentHealth = currentHealth;
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        setMaxHealth(saveData.MaxHealth);
+        setCurrentHealth(saveData.CurrentHealth);
     }
 }

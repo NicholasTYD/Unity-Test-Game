@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveSpawner : MonoBehaviour, ISavable
 {
     public static WaveSpawner Instance;
     [SerializeField] TextMeshProUGUI waveText;
@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
     public int CurrentEnemyCount { get; set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -61,7 +61,7 @@ public class WaveSpawner : MonoBehaviour
             waveText.gameObject.SetActive(false);
         }
 
-        Debug.Log(CurrentWave);
+        // Debug.Log(CurrentWave);
     }
 
     void initiateWave()
@@ -107,6 +107,11 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         CurrentWave++;
         GameManager.Instance.SaveGame();
+    }
+
+    public void SaveData(SaveData saveData)
+    {
+        saveData.CurrentWave = WaveSpawner.Instance.CurrentWave;
     }
 
     public void LoadData(SaveData saveData)
