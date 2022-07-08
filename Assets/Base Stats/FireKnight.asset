@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: FireKnight
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 4000
+  BaseMaxHealth: 5000
   BaseAttack: 30
   BaseMovementSpeed: 3
+  minAllowableDistance: 0
   maxAllowableDistance: 1.5
   minXDifference: -1.5
   maxXDifference: 1.5

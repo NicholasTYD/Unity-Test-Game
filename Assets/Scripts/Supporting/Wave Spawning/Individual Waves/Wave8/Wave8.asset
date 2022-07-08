@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e18525eff5be4195bff9a7a73f091, type: 3}
   m_Name: Wave8
   m_EditorClassIdentifier: 
-  waveName: 
-  notableSpawnPos: []
+  waveName: Wave 8
+  notableSpawnPos:
+  - {x: -4, y: 0}
+  - {x: -10, y: 8}
+  - {x: -10, y: 4}
+  - {x: -10, y: 0}
+  - {x: -10, y: -4}
+  - {x: -10, y: -8}
+  - {x: -10, y: -8}
+  - {x: -10, y: 0}
+  - {x: 10, y: 0}

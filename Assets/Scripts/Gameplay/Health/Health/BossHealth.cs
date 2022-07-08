@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : EnemyHealth
+public class BossHealth : Health
 {
     private BossHealthbar enemyHealthbar;
 
-    // NOTE: COMPLETE OVERRIDE OF START IN HEALTH.
+    // Complete override
     protected override void Start()
     {
         enemyHealthbar = CombatMechanics.Instance.Bosshealthbar;

@@ -32,7 +32,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         UpgradesChosen = true;
 
-        CurrentWave = 5;
+        CurrentWave = 4;
     }
 
     // Update is called once per frame

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PurpleWizard
   m_EditorClassIdentifier: 
   BaseMaxHealth: 700
-  BaseAttack: 50
+  BaseAttack: 40
   BaseMovementSpeed: 3
+  minAllowableDistance: 0
   maxAllowableDistance: 999
   minXDifference: 0.5
   maxXDifference: 2.5

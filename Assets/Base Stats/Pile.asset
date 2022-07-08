@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pile
   m_EditorClassIdentifier: 
   BaseMaxHealth: 400
-  BaseAttack: 30
+  BaseAttack: 28
   BaseMovementSpeed: 3
+  minAllowableDistance: 0
   maxAllowableDistance: 999
   minXDifference: -999
   maxXDifference: 999
