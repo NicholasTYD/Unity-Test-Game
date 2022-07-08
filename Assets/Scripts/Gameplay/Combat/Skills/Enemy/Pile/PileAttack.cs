@@ -12,9 +12,4 @@ public class PileAttack : EnemySkill
         return base.CanUse() && enemyMovement.enemyToPlayerXDifferenceWithin(-xBounds, xBounds) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-yBounds, yBounds);
     }
-
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
-    {
-        base.ExecuteSkill(enemy, player);
-    }
 }

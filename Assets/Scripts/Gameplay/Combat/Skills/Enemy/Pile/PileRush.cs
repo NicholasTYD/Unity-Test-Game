@@ -15,7 +15,7 @@ public class PileRush : EnemySkill
     IEnumerator helper(EnemyMain enemy, PlayerMain player)
     {
         enemyMovement.ToggleForceMove(true);
-        while (!StopCriteraFufilled())
+        while (!RushStopCriteraFufilled())
         {
             yield return new WaitForSeconds(0.01f);
         }
@@ -24,7 +24,7 @@ public class PileRush : EnemySkill
         base.ExecuteSkill(enemy, player);
     }
 
-    private bool StopCriteraFufilled()
+    private bool RushStopCriteraFufilled()
     {
         return enemyMovement.enemyToPlayerXDifferenceWithin(-xStopBounds, xStopBounds) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-yStopBounds, yStopBounds);

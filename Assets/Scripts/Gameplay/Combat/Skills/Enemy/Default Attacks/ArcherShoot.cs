@@ -7,7 +7,6 @@ public class ArcherShoot : EnemySkill
     [SerializeField] GameObject spawnable;
     [SerializeField] float projectileSpeed;
     [SerializeField] float projectileLifetime;
-    [SerializeField] float shootDelay;
 
     public override bool CanUse()
     {
@@ -17,13 +16,11 @@ public class ArcherShoot : EnemySkill
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
         base.ExecuteSkill(enemy, player);
-        StartCoroutine(ShootProjectile());
     }
 
-    protected virtual IEnumerator ShootProjectile()
+    public void ShootProjectile()
     {
-        yield return new WaitForSeconds(shootDelay);
-        CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(), 
+        CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(),
             getRangedAimDirection(),
             enemyCombat.GetAbilityDamage(), projectileSpeed, projectileLifetime);
     }
