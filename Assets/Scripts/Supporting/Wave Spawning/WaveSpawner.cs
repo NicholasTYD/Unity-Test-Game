@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
     public int CurrentEnemyCount { get; set; }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         if (Instance != null)
         {
@@ -31,8 +31,6 @@ public class WaveSpawner : MonoBehaviour
 
         WaveCompleted = true;
         UpgradesChosen = true;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
