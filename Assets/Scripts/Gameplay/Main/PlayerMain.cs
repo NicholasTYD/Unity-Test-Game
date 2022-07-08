@@ -10,6 +10,7 @@ public class PlayerMain : EntityMain
     PlayerCombat playerCombat;
     PlayerMovement playerMovement;
     PlayerHealth playerHealth;
+    float timeBeforeRespawn = 3;
 
     protected override void Start()
     {
@@ -17,6 +18,8 @@ public class PlayerMain : EntityMain
         this.playerCombat = this.GetComponent<PlayerCombat>();
         this.playerMovement = this.GetComponent<PlayerMovement>();
         this.playerHealth = this.GetComponent<PlayerHealth>();
+
+        General.Instance.Player = this.gameObject;
     }
 
     protected override void Update()
@@ -51,6 +54,12 @@ public class PlayerMain : EntityMain
         {
             movement.Move();
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        StartCoroutine(handleDeath());
     }
 
     public void IncreaseMaxHealth(float amount)
@@ -99,7 +108,7 @@ public class PlayerMain : EntityMain
 
     public void LoadSaveData(SaveData saveData)
     {
-        WaveSpawner.Instance.CurrentWave = saveData.CurrentWave;
+        WaveSpawner.Instance.LoadData(saveData);
         playerHealth.SetMaxHealth(saveData.MaxHealth);
         playerHealth.SetCurrentHealth(saveData.CurrentHealth);
         playerCombat.SetAttack(saveData.Attack);
@@ -107,5 +116,12 @@ public class PlayerMain : EntityMain
         playerCombat.SetParryDamageBonusDuration(saveData.ParryDamageBonusDuration);
         playerCombat.SetParryDamageBonusMultiplier(saveData.ParryDamageBonusMultiplier);
         playerMovement.SetSpeed(saveData.MovementSpeed);
+        Debug.Log(WaveSpawner.Instance.CurrentWave);
+    }
+
+    protected override IEnumerator handleDeath()
+    {
+        yield return new WaitForSeconds(timeBeforeRespawn);
+        GameManager.Instance.ResumeGame();
     }
 }

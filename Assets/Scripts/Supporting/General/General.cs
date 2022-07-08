@@ -5,7 +5,7 @@ using UnityEngine;
 public class General : MonoBehaviour
 {
     public static General Instance;
-    public GameObject Player { get; private set; }
+    public GameObject Player { get; set; }
     public float playerBoxColliderWidth { get; private set; }
     public float playerBoxColliderHeight { get; private set; }
     public Vector2 PlayerHitboxOffset { get; private set; }
@@ -16,7 +16,7 @@ public class General : MonoBehaviour
 
     public Vector2 StageCenter { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         if (Instance != null)
         {

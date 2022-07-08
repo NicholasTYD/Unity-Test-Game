@@ -7,6 +7,7 @@ public class EnemyMain : EntityMain
     public float AttackLockoutDuration;
     protected PlayerMain playerMain;
     private EnemyCombat enemyCombat;
+    float postDeathDespawnTime = 10;
 
     protected override void Start()
     {
@@ -48,5 +49,11 @@ public class EnemyMain : EntityMain
     protected bool canAttack()
     {
         return AttackLockoutDuration <= 0 && canAct();
+    }
+
+    protected override IEnumerator handleDeath()
+    {
+        yield return new WaitForSeconds(postDeathDespawnTime);
+        Destroy(gameObject);
     }
 }

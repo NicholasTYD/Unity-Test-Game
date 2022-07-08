@@ -32,5 +32,6 @@ public class SaveData
         this.ParryDamageBonusDuration = parryDamageBonusDuration;
         this.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
         this.MovementSpeed = movementSpeed;
+        Debug.Log(currentWave);
     }
 }

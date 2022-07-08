@@ -31,6 +31,8 @@ public class WaveSpawner : MonoBehaviour
 
         WaveCompleted = true;
         UpgradesChosen = true;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -60,6 +62,8 @@ public class WaveSpawner : MonoBehaviour
         {
             waveText.gameObject.SetActive(false);
         }
+
+        Debug.Log(CurrentWave);
     }
 
     void initiateWave()
@@ -104,5 +108,13 @@ public class WaveSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(0.01f);
         CurrentWave++;
+        GameManager.Instance.SaveGame();
+    }
+
+    public void LoadData(SaveData saveData)
+    {
+        CurrentWave = saveData.CurrentWave;
+        WaveCompleted = true;
+        UpgradesChosen = true;
     }
 }

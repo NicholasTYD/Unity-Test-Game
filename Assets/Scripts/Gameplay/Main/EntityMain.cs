@@ -13,9 +13,7 @@ public abstract class EntityMain : MonoBehaviour
     private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
     public bool ForceLockout { get; set; }
-    public bool isDead { get; private set; }
-
-    private float postDeathDespawnTime = 10;
+    public bool isDead { get; protected set; }
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -43,7 +41,7 @@ public abstract class EntityMain : MonoBehaviour
         ForceLockout = true;
         health.grantInvulnerability = 999;
         anim.SetBool("IsDead", true);
-        StartCoroutine(destroySelf());
+        StartCoroutine(handleDeath());
     }
 
     public void SafeSetLockoutDuration(float value)
@@ -86,9 +84,5 @@ public abstract class EntityMain : MonoBehaviour
         return BasicStats.BaseMovementSpeed;
     }
 
-    IEnumerator destroySelf()
-    {
-        yield return new WaitForSeconds(postDeathDespawnTime);
-        Destroy(gameObject);
-    }
+    protected abstract IEnumerator handleDeath();
 }

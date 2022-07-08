@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SaveGame(PlayerMain player)
+    public void SaveGame()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/savefile.json";
@@ -52,6 +53,24 @@ public class GameManager : MonoBehaviour
             Debug.Log("Error, save file not found!");
             return null;
         }
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(1);
+        // StartCoroutine(saveDataOnSceneChange());
+    }
+
+    IEnumerator saveDataOnSceneChange()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SaveGame();
+    }
+
+    public void ResumeGame()
+    {
+        SceneManager.LoadScene(1);
+        General.Instance.Player.GetComponent<PlayerMain>().LoadSaveData(LoadGame());
     }
 
     public void Pause()
