@@ -25,14 +25,15 @@ public class HntrssAttack3 : EnemySkill
         yield return new WaitForSeconds(runTime);
         huntressMovementAI.RunningAway = false;
 
+        // Shoot
         enemyMovement.FaceTowards(player.transform.position);
         base.ExecuteSkill(enemy, player);
-        yield return new WaitForSeconds(shootDelay);
-        if (!enemy.isDead)
-        {
-            CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(),
+    }
+
+    public void Shoot()
+    {
+        CombatMechanics.Instance.InstantiateProjectile(spawnable, getProjectileSpawnPoint(),
             getRangedAimDirection(),
             enemyCombat.GetAbilityDamage(), projectileSpeed, projectileLifetime);
-        }
     }
 }

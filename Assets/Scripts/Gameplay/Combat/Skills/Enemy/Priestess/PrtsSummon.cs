@@ -40,7 +40,7 @@ public class PrtsSummon : EnemySkill
         base.ExecuteSkill(enemy, player);
         yield return new WaitForSeconds(spawnTime);
         Vector2 spawnOffset = new Vector2(spawnXOffset, 0);
-        CombatMechanics.Instance.Spawn(enemy1, (Vector2)this.transform.position - spawnOffset, Quaternion.identity); 
+        CombatMechanics.Instance.Spawn(enemy1, (Vector2)this.transform.position - spawnOffset, Quaternion.identity);
         CombatMechanics.Instance.Spawn(enemy2, (Vector2)this.transform.position + spawnOffset, Quaternion.identity);
     }
 }

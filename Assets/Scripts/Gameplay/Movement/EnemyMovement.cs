@@ -67,6 +67,11 @@ public class EnemyMovement : Movement
         }
     }
 
+    public void FacePlayer()
+    {
+        FaceTowards(General.Instance.Player.transform.position);
+    }
+
     public virtual bool StopCriteraFufilled()
     {
         return playerDistanceWithin(baseStats.minAllowableDistance, baseStats.maxAllowableDistance) &&
