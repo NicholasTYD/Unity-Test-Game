@@ -72,7 +72,7 @@ public class UpgradeMenu : MonoBehaviour
         }
     }
 
-    public void PresentEnchancedUpgrades()
+    public void PresentEnhancedUpgrades()
     {
         gameObject.SetActive(true);
         GameManager.Instance.Pause();

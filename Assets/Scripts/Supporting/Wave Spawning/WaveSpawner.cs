@@ -96,7 +96,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         string text = "Boss wave" + " Complete!";
         setWaveText(text);
-        StartCoroutine(PresentEnchancedUpgrades());
+        StartCoroutine(PresentEnhancedUpgrades());
     }
 
     IEnumerator PresentUpgrades()
@@ -107,10 +107,10 @@ public class WaveSpawner : MonoBehaviour, ISavable
         StartCoroutine(IncrementWaveAndSave());
     }
 
-    IEnumerator PresentEnchancedUpgrades()
+    IEnumerator PresentEnhancedUpgrades()
     {
         yield return new WaitForSeconds(3);
-        upgradeMenu.PresentEnchancedUpgrades();
+        upgradeMenu.PresentEnhancedUpgrades();
 
         StartCoroutine(IncrementWaveAndSave());
     }
