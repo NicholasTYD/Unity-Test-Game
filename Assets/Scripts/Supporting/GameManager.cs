@@ -79,9 +79,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator saveDataOnSceneChange(Scene scene, LoadSceneMode mode)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
 
-        Debug.Log("scene loaded");
         if (scene.buildIndex != 1)
         {
             yield break;

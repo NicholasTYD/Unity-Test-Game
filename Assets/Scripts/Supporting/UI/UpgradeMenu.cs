@@ -34,14 +34,12 @@ public class UpgradeMenu : MonoBehaviour
 
         for (int upgradeSlot = 0; upgradeSlot < numberOfUpgradeChoices; upgradeSlot++)
         {
-            int chosenUpgrade = Random.Range(0, 0);
-            // int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
+            int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
             while (alreadyChosen[chosenUpgrade])
             {
                 chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
             }
-            // alreadyChosen[chosenUpgrade] = true;
-            alreadyChosen[chosenUpgrade] = false;
+            alreadyChosen[chosenUpgrade] = true;
 
             Button button = upgradeButtons[upgradeSlot];
             TextMeshProUGUI text = upgradeTexts[upgradeSlot];
@@ -101,7 +99,7 @@ public class UpgradeMenu : MonoBehaviour
     void upgradeParryDamageBonusMultiplier(int pos, Button button, TextMeshProUGUI text)
     {
         text.text = "Post parry damage bonus +" + parryDamageBonusMultiplierIncrease * 100 + "%.";
-        button.onClick.AddListener(() => playerMain.IncreaseAttackSpeed(parryDamageBonusMultiplierIncrease));
+        button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusMultiplier(parryDamageBonusMultiplierIncrease));
     }
 
     void upgradeMovementSpeed(int pos, Button button, TextMeshProUGUI text)

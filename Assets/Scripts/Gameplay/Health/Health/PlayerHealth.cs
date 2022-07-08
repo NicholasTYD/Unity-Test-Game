@@ -55,11 +55,5 @@ public class PlayerHealth : Health, ISavable
     {
         setMaxHealth(saveData.MaxHealth);
         setCurrentHealth(saveData.CurrentHealth);
-        Debug.Log("test");
-    }
-
-    private void OnDestroy()
-    {
-        Debug.Log("Destroyed");
     }
 }
