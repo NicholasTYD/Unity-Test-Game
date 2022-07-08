@@ -5,8 +5,6 @@ using UnityEngine;
 public class FreKgtCombo1 : EnemySkill
 {
     [SerializeField] float maxCastRange;
-    [SerializeField] float chargeDelay;
-    [SerializeField] float chargeDuration;
     [SerializeField] float chargeSpeed;
 
 

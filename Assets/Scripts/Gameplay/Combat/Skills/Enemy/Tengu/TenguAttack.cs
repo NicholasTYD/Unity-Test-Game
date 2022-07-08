@@ -5,8 +5,6 @@ using UnityEngine;
 public class TenguAttack : EnemySkill
 {
     [SerializeField] TenguMovementAI tenguMovementAI;
-    [SerializeField] float chargeStart;
-    [SerializeField] float chargeEnd;
     [SerializeField] float chargeSpeed;
 
     public override bool CanUse()
@@ -14,18 +12,13 @@ public class TenguAttack : EnemySkill
         return base.CanUse() && withinIdleRange();
     }
 
-    public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
+    public void StartCharge()
     {
-        tenguMovementAI.FaceTowards(player.transform.position);
-        base.ExecuteSkill(enemy, player);
-        StartCoroutine(ExecuteCharge(enemy, player));
+        tenguMovementAI.ToggleCharge(true, chargeSpeed);
     }
 
-    IEnumerator ExecuteCharge(EnemyMain enemy, PlayerMain player)
+    public void StopCharge()
     {
-        yield return new WaitForSeconds(chargeStart);
-        tenguMovementAI.ToggleCharge(true, chargeSpeed);
-        yield return new WaitForSeconds(chargeEnd - chargeStart);
         tenguMovementAI.ToggleCharge(false, chargeSpeed);
     }
 }
