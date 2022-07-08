@@ -16,15 +16,6 @@ public abstract class Health : MonoBehaviour
         set { invulnerabilityTimeLeft = Mathf.Max(invulnerabilityTimeLeft, value); }
     }
 
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        this.entityMain = this.GetComponent<EntityMain>();
-        maxHealth = entityMain.GetBaseMaxHealth();
-        currentHealth = maxHealth;
-        updateHealthbar();
-    }
-
     protected virtual void Update()
     {
         if (isInvulnerable())
@@ -86,7 +77,7 @@ public abstract class Health : MonoBehaviour
         return GetHealthPercentage() <= percentage;
     }
 
-    private void updateHealthbar()
+    protected void updateHealthbar()
     {
         healthbar.SetHealth(currentHealth, maxHealth);
     }

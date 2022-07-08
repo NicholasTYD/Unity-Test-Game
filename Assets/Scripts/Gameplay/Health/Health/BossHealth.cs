@@ -6,8 +6,7 @@ public class BossHealth : Health
 {
     private BossHealthbar enemyHealthbar;
 
-    // Complete override
-    protected override void Start()
+    protected virtual void Start()
     {
         enemyHealthbar = CombatMechanics.Instance.Bosshealthbar;
         toggleBossHealthbar(true);
