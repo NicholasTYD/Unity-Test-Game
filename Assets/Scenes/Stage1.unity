@@ -321,6 +321,9 @@ GameObject:
   - component: {fileID: 175715766}
   - component: {fileID: 175715765}
   - component: {fileID: 175715767}
+  - component: {fileID: 175715768}
+  - component: {fileID: 175715769}
+  - component: {fileID: 175715770}
   m_Layer: 0
   m_Name: Wave Spawner
   m_TagString: Untagged
@@ -345,6 +348,9 @@ MonoBehaviour:
   waves:
   - {fileID: 175715765}
   - {fileID: 175715767}
+  - {fileID: 175715768}
+  - {fileID: 175715769}
+  - {fileID: 175715770}
   upgradeMenu: {fileID: 629446218}
 --- !u!4 &175715764
 Transform:
@@ -416,6 +422,53 @@ MonoBehaviour:
   sw3Enemies:
   - {fileID: 4308603603948249689, guid: 8f35b348121a04c4983414f9ef96f62e, type: 3}
   - {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20, type: 3}
+--- !u!114 &175715768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175715762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2feb13a876c38144995f2dedaaff1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfo: {fileID: 11400000, guid: 558bfb4698d33e349ab92d3b35c9e6a2, type: 2}
+--- !u!114 &175715769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175715762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5502e14e77f5f4dbe72d4c9fcdebdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfo: {fileID: 11400000, guid: af1d6de6aa3234543ae23ee1d33b4cc7, type: 2}
+  sw1Enemies:
+  - {fileID: 4308603603948249689, guid: 8f35b348121a04c4983414f9ef96f62e, type: 3}
+  - {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20, type: 3}
+  - {fileID: 1658787313697375864, guid: 8692fdf22bd1e674b89e71915cdc8746, type: 3}
+  sw2Enemies:
+  - {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20, type: 3}
+  - {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20, type: 3}
+  - {fileID: 1658787313697375864, guid: 8692fdf22bd1e674b89e71915cdc8746, type: 3}
+--- !u!114 &175715770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175715762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297b955976a8dc94fb419e358e1d35fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfo: {fileID: 11400000, guid: 427c0e26d273aae408cfc7a432ad04e1, type: 2}
 --- !u!1 &199973925
 GameObject:
   m_ObjectHideFlags: 0

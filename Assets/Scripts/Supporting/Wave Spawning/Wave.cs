@@ -6,7 +6,15 @@ public abstract class Wave : MonoBehaviour
 {
     public WaveInfoScriptableObject waveInfo;
 
-    public abstract void StartWave();
+    float bossWaveEndSlowdownTime = 3;
+    float bossWaveEndTimeScale = 0.25f;
+
+    public virtual void StartWave()
+    {
+        StartCoroutine(sw1());
+    }
+
+    protected abstract IEnumerator sw1();
 
     public string GetWaveName()
     {
@@ -18,6 +26,11 @@ public abstract class Wave : MonoBehaviour
         WaveSpawner.Instance.ConcludeWave();
     }
 
+    protected void endBossWave()
+    {
+        WaveSpawner.Instance.ConcludeBossWave();
+    }
+
     protected IEnumerator concludeWaveOnKill()
     {
         while (gotEnemiesRemaining())
@@ -25,6 +38,22 @@ public abstract class Wave : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         endWave();
+    }
+
+    protected IEnumerator concludeBossWaveOnKill()
+    {
+        while (gotEnemiesRemaining())
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Time.timeScale = bossWaveEndTimeScale;
+
+        yield return new WaitForSecondsRealtime(bossWaveEndSlowdownTime);
+
+        Time.timeScale = 1;
+
+        endBossWave();
     }
 
     protected bool gotEnemiesRemaining()
@@ -37,19 +66,18 @@ public abstract class Wave : MonoBehaviour
         return waveInfo.notableSpawnPos[position];
     }
 
-    protected void Spawn(GameObject enemy, Vector2 pos)
+    protected void spawn(GameObject enemy, Vector2 pos)
     {
         CombatMechanics.Instance.Spawn(enemy, pos);
     }
 
     // Spawns an enemy on all the positions inputted once.
-    protected IEnumerator spawnAllOnce(GameObject enemy, List<Vector2> posList)
+    protected void spawnAllOnce(GameObject enemy, List<Vector2> posList)
     {
         foreach (Vector2 pos in posList)
         {
-            Spawn(enemy, pos);
+            spawn(enemy, pos);
         }
-        yield return null;
     }
 
     // Spawns an enemy on all the positions inputted a specified number of times at a specified interval.
@@ -59,8 +87,19 @@ public abstract class Wave : MonoBehaviour
         {
             foreach (Vector2 pos in posList)
             {
-                Spawn(enemy, pos);
+                spawn(enemy, pos);
             }
+            float spawnInterval = Random.Range(minInterval, maxInterval);
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    // Spawns a random enemy a specified number of times at a specified interval.
+    protected IEnumerator spawnRandom(GameObject enemy, int amount, float minInterval, float maxInterval)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            spawn(enemy, General.Instance.GetRandomPosition());
             float spawnInterval = Random.Range(minInterval, maxInterval);
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -73,7 +112,7 @@ public abstract class Wave : MonoBehaviour
         {
             GameObject selectedEnemy = enemies[Random.Range(0, enemies.Count)];
             Vector2 selectedPos = posList[Random.Range(0, posList.Count)];
-            Spawn(selectedEnemy, selectedPos);
+            spawn(selectedEnemy, selectedPos);
             float spawnInterval = Random.Range(minInterval, maxInterval);
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -86,7 +125,7 @@ public abstract class Wave : MonoBehaviour
         {
             GameObject selectedEnemy = enemies[Random.Range(0, enemies.Count)];
             Vector2 selectedPos = General.Instance.GetRandomPosition();
-            Spawn(selectedEnemy, selectedPos);
+            spawn(selectedEnemy, selectedPos);
             float spawnInterval = Random.Range(minInterval, maxInterval);
             yield return new WaitForSeconds(spawnInterval);
         }

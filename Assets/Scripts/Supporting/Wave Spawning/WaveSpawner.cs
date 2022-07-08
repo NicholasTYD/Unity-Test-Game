@@ -31,6 +31,8 @@ public class WaveSpawner : MonoBehaviour, ISavable
 
         WaveCompleted = true;
         UpgradesChosen = true;
+
+        //CurrentWave = 4;
     }
 
     // Update is called once per frame
@@ -61,6 +63,10 @@ public class WaveSpawner : MonoBehaviour, ISavable
             waveText.gameObject.SetActive(false);
         }
     }
+    public bool gotEnemiesRemaining()
+    {
+        return CurrentEnemyCount > 0;
+    }
 
     void initiateWave()
     {
@@ -82,12 +88,38 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         string text = waves[CurrentWave].GetWaveName() + " Complete!";
         setWaveText(text);
-        StartCoroutine(PresentUpgradesAndIncrementWave());
+        StartCoroutine(PresentUpgrades());
     }
 
-    public bool gotEnemiesRemaining()
+    public void ConcludeBossWave()
     {
-        return CurrentEnemyCount > 0;
+        WaveCompleted = true;
+        string text = "Boss wave" + " Complete!";
+        setWaveText(text);
+        StartCoroutine(PresentEnchancedUpgrades());
+    }
+
+    IEnumerator PresentUpgrades()
+    {
+        yield return new WaitForSeconds(3);
+        upgradeMenu.PresentUpgrades();
+
+        StartCoroutine(IncrementWaveAndSave());
+    }
+
+    IEnumerator PresentEnchancedUpgrades()
+    {
+        yield return new WaitForSeconds(3);
+        upgradeMenu.PresentEnchancedUpgrades();
+
+        StartCoroutine(IncrementWaveAndSave());
+    }
+
+    IEnumerator IncrementWaveAndSave()
+    {
+        yield return new WaitForSeconds(0.01f);
+        CurrentWave++;
+        GameManager.Instance.SaveGame();
     }
 
     void setWaveText(string text)
@@ -95,16 +127,6 @@ public class WaveSpawner : MonoBehaviour, ISavable
         waveText.text = text;
         waveText.gameObject.SetActive(true);
         waveTextTimer = waveTextAppearDuration;
-    }
-
-    IEnumerator PresentUpgradesAndIncrementWave()
-    {
-        yield return new WaitForSeconds(3);
-        upgradeMenu.PresentUpgrades();
-
-        yield return new WaitForSeconds(0.01f);
-        CurrentWave++;
-        GameManager.Instance.SaveGame();
     }
 
     public void SaveData(SaveData saveData)

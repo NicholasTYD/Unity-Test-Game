@@ -12,7 +12,7 @@ public class PlayerMovement : Movement, ISavable
 
     public float horizontalInput { get; private set; }
     public float verticalInput { get; private set; }
-    private bool inRollState;
+    public bool inRollState { get; private set; }
     private bool rollReady = true;
     [SerializeField] PlayerRollScriptableObject playerRoll;
 

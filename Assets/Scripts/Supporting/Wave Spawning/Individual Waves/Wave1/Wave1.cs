@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Wave1 : Wave
 {
-    public override void StartWave()
+    protected override IEnumerator sw1()
     {
-        StartCoroutine(sw1());
-    }
-
-    IEnumerator sw1()
-    {
-        Spawn(EnemyList.Instance.SprSke, pos(0));
+        spawn(EnemyList.Instance.SprSke, pos(0));
         while (gotEnemiesRemaining())
         {
             yield return new WaitForSeconds(1);
@@ -21,8 +16,8 @@ public class Wave1 : Wave
 
     IEnumerator sw2()
     {
-        Spawn(EnemyList.Instance.SprSke, pos(0));
-        Spawn(EnemyList.Instance.SprSke, pos(1));
+        spawn(EnemyList.Instance.SprSke, pos(0));
+        spawn(EnemyList.Instance.SprSke, pos(1));
         while (gotEnemiesRemaining())
         {
             yield return new WaitForSeconds(1);
@@ -32,9 +27,9 @@ public class Wave1 : Wave
 
     IEnumerator sw3()
     {
-        Spawn(EnemyList.Instance.SprSke, pos(0));
-        Spawn(EnemyList.Instance.SprSke, pos(1));
-        Spawn(EnemyList.Instance.SprSke, pos(2));
+        spawn(EnemyList.Instance.SprSke, pos(0));
+        spawn(EnemyList.Instance.SprSke, pos(1));
+        spawn(EnemyList.Instance.SprSke, pos(2));
 
         yield return null;
         StartCoroutine(concludeWaveOnKill());
