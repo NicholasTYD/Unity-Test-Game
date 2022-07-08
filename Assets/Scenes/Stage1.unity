@@ -324,6 +324,8 @@ GameObject:
   - component: {fileID: 175715768}
   - component: {fileID: 175715769}
   - component: {fileID: 175715770}
+  - component: {fileID: 175715772}
+  - component: {fileID: 175715771}
   m_Layer: 0
   m_Name: Wave Spawner
   m_TagString: Untagged
@@ -351,6 +353,8 @@ MonoBehaviour:
   - {fileID: 175715768}
   - {fileID: 175715769}
   - {fileID: 175715770}
+  - {fileID: 175715772}
+  - {fileID: 175715771}
   upgradeMenu: {fileID: 629446218}
 --- !u!4 &175715764
 Transform:
@@ -469,6 +473,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveInfo: {fileID: 11400000, guid: 427c0e26d273aae408cfc7a432ad04e1, type: 2}
+--- !u!114 &175715771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175715762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ae5d1343791fb4a9d37d6a1ec973e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfo: {fileID: 11400000, guid: c1e139730c787ae469931336aa5bf02e, type: 2}
+  sw1Enemies:
+  - {fileID: 7079988691572583983, guid: 8bfe3d6d4d14c0e40aad9c44a8d99def, type: 3}
+  - {fileID: 1914412182751866433, guid: 3e3b1f974a1b557478e77e857fe9f471, type: 3}
+--- !u!114 &175715772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175715762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0740276de0077254daa14e044dbfa197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveInfo: {fileID: 11400000, guid: 65cfdbd9ee4a8c4499fed58210754298, type: 2}
 --- !u!1 &199973925
 GameObject:
   m_ObjectHideFlags: 0

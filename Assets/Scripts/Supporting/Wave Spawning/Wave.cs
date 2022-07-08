@@ -105,6 +105,18 @@ public abstract class Wave : MonoBehaviour
         }
     }
 
+    // Spawns a enemy on a random pos in the posList for a specified number of times at a specified interval.
+    protected IEnumerator spawnRandom(GameObject enemy, List<Vector2> posList, int amount, float minInterval, float maxInterval)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Vector2 selectedPos = posList[Random.Range(0, posList.Count)];
+            spawn(enemy, selectedPos);
+            float spawnInterval = Random.Range(minInterval, maxInterval);
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
     // Spawns a random enemy on a random pos in the posList for a specified number of times at a specified interval.
     protected IEnumerator spawnRandom(List<GameObject> enemies, List<Vector2> posList, int amount, float minInterval, float maxInterval)
     {
