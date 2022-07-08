@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("scene loaded");
         if (scene.buildIndex != 1)
         {
             return;

@@ -11,6 +11,10 @@ public abstract class Healthbar : MonoBehaviour
 
     public virtual void SetHealth(float health, float maxHealth)
     {
+        if (healthIndicator == null)
+        {
+            return;
+        }
         float healthPercentage = health / maxHealth;
         healthIndicator.color = Color.Lerp(low, high, healthPercentage);
         healthIndicator.transform.localScale = new Vector3(healthPercentage, 1, 1);

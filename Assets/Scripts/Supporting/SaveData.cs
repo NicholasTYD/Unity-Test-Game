@@ -14,25 +14,4 @@ public class SaveData
     public float ParryDamageBonusDuration { get; set; }
     public float ParryDamageBonusMultiplier { get; set; }
     public float MovementSpeed { get; set; }
-
-    /*
-    public SaveData(int currentWave,
-        float maxHealth,
-        float currentHealth,
-        float attack, 
-        float attackSpeed,
-        float parryDamageBonusDuration,
-        float parryDamageBonusMultiplier,
-        float movementSpeed)
-    {
-        this.CurrentWave = currentWave;
-        this.MaxHealth = maxHealth;
-        this.CurrentHealth = currentHealth;
-        this.Attack = attack;
-        this.AttackSpeed = attackSpeed;
-        this.ParryDamageBonusDuration = parryDamageBonusDuration;
-        this.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
-        this.MovementSpeed = movementSpeed;
-    }
-    */
 }

@@ -92,25 +92,6 @@ public class PlayerMain : EntityMain
         playerMovement.IncreaseMovementSpeed(amount);
     }
 
-    /*
-    public SaveData GenerateSaveData()
-    {
-        //float parryDamageBonusDuration = playerCombat.GetParryDamageBonusDuration();
-        //float parryDamageBonusMultiplier = playerCombat.GetParryDamageBonusMultiplier();
-        // float movementSpeed = playerMovement.GetSpeed();
-        //return new SaveData(currentWave, maxHealth, currentHealth, attack, attackSpeed,
-           // parryDamageBonusDuration, parryDamageBonusMultiplier, movementSpeed);
-    }
-
-    public void LoadSaveData(SaveData saveData)
-    {
-        // /playerCombat.SetParryDamageBonusDuration(saveData.ParryDamageBonusDuration);
-        //playerCombat.SetParryDamageBonusMultiplier(saveData.ParryDamageBonusMultiplier);
-        // playerMovement.SetSpeed(saveData.MovementSpeed);
-        Debug.Log(WaveSpawner.Instance.CurrentWave);
-    }
-    */
-
     protected override IEnumerator handleDeath()
     {
         yield return new WaitForSeconds(timeBeforeRespawn);

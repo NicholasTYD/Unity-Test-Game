@@ -60,8 +60,6 @@ public class WaveSpawner : MonoBehaviour, ISavable
         {
             waveText.gameObject.SetActive(false);
         }
-
-        // Debug.Log(CurrentWave);
     }
 
     void initiateWave()

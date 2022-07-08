@@ -34,12 +34,14 @@ public class UpgradeMenu : MonoBehaviour
 
         for (int upgradeSlot = 0; upgradeSlot < numberOfUpgradeChoices; upgradeSlot++)
         {
-            int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
+            int chosenUpgrade = Random.Range(1, 1);
+            // int chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
             while (alreadyChosen[chosenUpgrade])
             {
                 chosenUpgrade = Random.Range(0, totalAvailableUpgrades);
             }
-            alreadyChosen[chosenUpgrade] = true;
+            // alreadyChosen[chosenUpgrade] = true;
+            alreadyChosen[chosenUpgrade] = false;
 
             Button button = upgradeButtons[upgradeSlot];
             TextMeshProUGUI text = upgradeTexts[upgradeSlot];
