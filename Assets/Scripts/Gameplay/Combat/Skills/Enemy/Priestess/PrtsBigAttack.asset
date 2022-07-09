@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PrtsBigAttack
   m_EditorClassIdentifier: 
   name: BigAttack
-  DamageMultiplier: 2
+  DamageMultiplier: 1.5
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 4

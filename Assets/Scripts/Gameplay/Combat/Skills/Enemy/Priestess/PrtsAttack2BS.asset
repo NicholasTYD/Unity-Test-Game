@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PrtsAttack2BS
   m_EditorClassIdentifier: 
   name: Attack2
-  DamageMultiplier: 1.2
+  DamageMultiplier: 1.15
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 1.625

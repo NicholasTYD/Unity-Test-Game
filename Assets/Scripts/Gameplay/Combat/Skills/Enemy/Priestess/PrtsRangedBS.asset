@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PrtsRangedBS
   m_EditorClassIdentifier: 
   name: Ranged
-  DamageMultiplier: 1.5
+  DamageMultiplier: 1.15
   DurationPerFrame: 0.125
   StartSkillCooldown: 15
   SkillDuration: 3.875

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: Tengu
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 1000
-  BaseAttack: 55
+  BaseMaxHealth: 850
+  BaseAttack: 27
   BaseMovementSpeed: 1
   minAllowableDistance: 3
   maxAllowableDistance: 5

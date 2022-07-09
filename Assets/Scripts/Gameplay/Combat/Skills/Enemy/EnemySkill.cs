@@ -11,7 +11,7 @@ public class EnemySkill : MonoBehaviour
 
     protected EnemyCombat enemyCombat;
     protected EnemyMovement enemyMovement;
-    protected EnemyHealth enemyHealth;
+    protected Health enemyHealth;
     protected GameObject player;
     
 
@@ -19,7 +19,7 @@ public class EnemySkill : MonoBehaviour
     {
         this.anim = this.GetComponent<Animator>();
         this.enemyCombat = this.GetComponent<EnemyCombat>();
-        this.enemyHealth = this.GetComponent<EnemyHealth>();
+        this.enemyHealth = this.GetComponent<Health>();
 
         this.enemyMovement = this.GetComponent<EnemyMovement>();
         this.player = GameObject.FindWithTag("Player");

@@ -1584,8 +1584,8 @@ MonoBehaviour:
   - {fileID: 510709691}
   healthIncrease: 100
   attackIncrease: 20
-  attackSpeedIncrease: 0.15
-  parryDamageBonusDurationIncrease: 1
+  attackSpeedIncrease: 0.2
+  parryDamageBonusDurationIncrease: 1.5
   parryDamageBonusMultiplierIncrease: 0.3
   movementSpeedIncrease: 1
 --- !u!1 &700706610

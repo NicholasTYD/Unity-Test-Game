@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Summon
   DamageMultiplier: 1
   DurationPerFrame: 0.125
-  StartSkillCooldown: 8
+  StartSkillCooldown: 4
   SkillDuration: 1.5
   MinSkillCooldown: 25
   MaxSkillCooldown: 35
