@@ -29,8 +29,6 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        GameManager.Instance.Unpause();
-        Time.timeScale = 1;
         GameManager.Instance.BackToMainMenu();
     }
 }

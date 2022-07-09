@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private List<ISavable> objectsToSave = new List<ISavable>();
     private bool isNewSave = true;
-    private float prePauseTimeScale;
+    private float prePauseTimeScale = 1;
 
     private void Awake()
     {
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadGameData()
     {
-        Debug.Log("test2");
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
@@ -71,17 +70,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Error, save file not found!");
         }
-    }
-
-    public void StartNewGame()
-    {
-        isNewSave = true;
-        SceneManager.LoadScene(1);
-    }
-
-    public void ResumeGame()
-    {
-        SceneManager.LoadScene(1);
     }
 
     IEnumerator saveDataOnSceneChange(Scene scene, LoadSceneMode mode)
@@ -110,6 +98,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartNewGame()
+    {
+        isNewSave = true;
+        SceneManager.LoadScene(1);
+    }
+
+    public void ResumeGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void Pause()
     {
         prePauseTimeScale = Time.timeScale;
@@ -125,6 +124,8 @@ public class GameManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Instance.Unpause();
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
