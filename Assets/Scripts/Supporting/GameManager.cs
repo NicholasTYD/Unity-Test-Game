@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
 
     private List<ISavable> objectsToSave = new List<ISavable>();
     private bool isNewSave = true;
-    
+    private float prePauseTimeScale;
+
     private void Awake()
     {
         if (Instance != null)
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(saveDataOnSceneChange(scene, mode));
     }
 
-    public void SaveGame()
+    public void SaveGameData()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/savefile.json";
@@ -49,8 +50,9 @@ public class GameManager : MonoBehaviour
         stream.Close();
     }
 
-    public void LoadGame()
+    public void LoadGameData()
     {
+        Debug.Log("test2");
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
@@ -68,11 +70,16 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Error, save file not found!");
-            return;
         }
     }
 
-    public void NewGame()
+    public void StartNewGame()
+    {
+        isNewSave = true;
+        SceneManager.LoadScene(1);
+    }
+
+    public void ResumeGame()
     {
         SceneManager.LoadScene(1);
     }
@@ -94,30 +101,31 @@ public class GameManager : MonoBehaviour
 
         if (isNewSave)
         {
-            SaveGame();
+            isNewSave = false;
+            SaveGameData();
         }
         else
         {
-            LoadGame();
+            LoadGameData();
         }
-    }
-
-    public void ResumeGame()
-    {
-        isNewSave = false;
-        SceneManager.LoadScene(1);
     }
 
     public void Pause()
     {
+        prePauseTimeScale = Time.timeScale;
         Time.timeScale = 0;
         isGamePaused = true;
     }
 
     public void Unpause()
     {
-        Time.timeScale = 1;
+        Time.timeScale = prePauseTimeScale;
         isGamePaused = false;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void OnDestroy()

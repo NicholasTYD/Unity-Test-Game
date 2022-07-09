@@ -32,7 +32,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         UpgradesChosen = true;
 
-        CurrentWave = 4;
+        // CurrentWave = 4;
     }
 
     // Update is called once per frame
@@ -119,7 +119,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     {
         yield return new WaitForSeconds(0.01f);
         CurrentWave++;
-        GameManager.Instance.SaveGame();
+        GameManager.Instance.SaveGameData();
     }
 
     void setWaveText(string text)

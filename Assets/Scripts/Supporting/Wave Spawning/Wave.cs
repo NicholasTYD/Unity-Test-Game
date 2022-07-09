@@ -6,8 +6,8 @@ public abstract class Wave : MonoBehaviour
 {
     public WaveInfoScriptableObject waveInfo;
 
-    float bossWaveEndSlowdownTime = 3;
-    float bossWaveEndTimeScale = 0.25f;
+    float bossWaveEndSlowdownTime = 1;
+    float bossWaveEndTimeScale = 0.33f;
 
     public virtual void StartWave()
     {
@@ -49,7 +49,7 @@ public abstract class Wave : MonoBehaviour
 
         Time.timeScale = bossWaveEndTimeScale;
 
-        yield return new WaitForSecondsRealtime(bossWaveEndSlowdownTime);
+        yield return new WaitForSeconds(bossWaveEndSlowdownTime);
 
         Time.timeScale = 1;
 
