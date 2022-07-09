@@ -8,7 +8,7 @@ public class Wave8 : Wave
 
     protected override IEnumerator sw1()
     {
-        spawn(EnemyList.Instance.PpeWzd, waveInfo.notableSpawnPos[0]);
+        spawn(EnemyList.Instance.PpeWzd, pos(0));
 
         while (gotEnemiesRemaining())
         {

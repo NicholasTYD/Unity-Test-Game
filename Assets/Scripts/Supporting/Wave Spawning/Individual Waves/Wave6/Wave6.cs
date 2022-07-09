@@ -44,7 +44,7 @@ public class Wave6 : Wave
 
     IEnumerator sw3()
     {
-        spawnAllOnce(EnemyList.Instance.Witch, waveInfo.notableSpawnPos.GetRange(1, 3));
+        spawnAllOnce(EnemyList.Instance.Witch, waveInfo.notableSpawnPos.GetRange(1, 2));
 
         yield return new WaitForSeconds(2);
 

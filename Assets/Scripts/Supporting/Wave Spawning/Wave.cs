@@ -66,6 +66,11 @@ public abstract class Wave : MonoBehaviour
         return waveInfo.notableSpawnPos[position];
     }
 
+    protected void spawn(GameObject enemy)
+    {
+        spawn(enemy, General.Instance.GetRandomPosition());
+    }
+
     protected void spawn(GameObject enemy, Vector2 pos)
     {
         CombatMechanics.Instance.Spawn(enemy, pos);

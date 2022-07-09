@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShamanAttackBS
   m_EditorClassIdentifier: 
   name: Attack
-  DamageMultiplier: 0.333
+  DamageMultiplier: 0.5
   DurationPerFrame: 0.0625
   StartSkillCooldown: 0
   SkillDuration: 0.75

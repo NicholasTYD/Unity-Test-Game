@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
-  m_Name: Shaman
+  m_Script: {fileID: 11500000, guid: d89e18525eff5be4195bff9a7a73f091, type: 3}
+  m_Name: Wave11
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 4000
-  BaseAttack: 60
-  BaseMovementSpeed: 8
-  minAllowableDistance: 0
-  maxAllowableDistance: 999
-  minXDifference: -2
-  maxXDifference: 2
-  minYDifference: -1
-  maxYDifference: 1
+  waveName: Challenge Wave 1
+  notableSpawnPos:
+  - {x: 8, y: 0}
+  - {x: -8, y: 0}
+  - {x: 0, y: 5}
+  - {x: 0, y: -5}
+  - {x: 0, y: 20}
