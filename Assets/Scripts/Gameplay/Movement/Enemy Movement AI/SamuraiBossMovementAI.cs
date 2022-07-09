@@ -49,4 +49,9 @@ public class SamuraiBossMovementAI : BossMovement
         yield return new WaitForSeconds(1);
         enemyBoxCollider.enabled = true;
     }
+
+    public void StopDashes()
+    {
+        entityRb.simulated = false;
+    }
 }
