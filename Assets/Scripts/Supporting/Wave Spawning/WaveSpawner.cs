@@ -40,7 +40,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (WaveCompleted && UpgradesChosen)
+            if (WaveCompleted && UpgradesChosen && !GameManager.Instance.isGamePaused)
             {
                 initiateWave();
             }
