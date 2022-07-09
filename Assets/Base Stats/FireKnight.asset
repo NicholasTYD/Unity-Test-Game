@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireKnight
   m_EditorClassIdentifier: 
   BaseMaxHealth: 5000
-  BaseAttack: 30
+  BaseAttack: 25
   BaseMovementSpeed: 3
   minAllowableDistance: 0
   maxAllowableDistance: 1.5

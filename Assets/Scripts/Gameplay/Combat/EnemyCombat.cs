@@ -10,7 +10,7 @@ public class EnemyCombat : Combat
     [SerializeField] List<EnemySkill> enemySkills;
 
     float currentAttack;
-    float ATTACK_SCALING_PER_WAVE = 1.05f;
+    float ATTACK_SCALING_PER_WAVE = 1.1f;
     public float CurrentAbilityDamageMultiplier { get; set; }
     
     protected override void Start()

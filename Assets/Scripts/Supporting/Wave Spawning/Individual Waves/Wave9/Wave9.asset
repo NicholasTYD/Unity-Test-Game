@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: d89e18525eff5be4195bff9a7a73f091, type: 3}
+  m_Name: Wave9
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 300
-  BaseAttack: 200
-  BaseMovementSpeed: 3
-  minAllowableDistance: 0
-  maxAllowableDistance: 0
-  minXDifference: 0
-  maxXDifference: 0
-  minYDifference: 0
-  maxYDifference: 0
+  waveName: Wave 9
+  notableSpawnPos:
+  - {x: 0, y: 8}
+  - {x: 0, y: -8}

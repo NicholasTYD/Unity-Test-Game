@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: Huntress
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 800
-  BaseAttack: 35
+  BaseMaxHealth: 650
+  BaseAttack: 23
   BaseMovementSpeed: 2.5
+  minAllowableDistance: 0
   maxAllowableDistance: 999
   minXDifference: -1
   maxXDifference: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedWizard
   m_EditorClassIdentifier: 
   BaseMaxHealth: 800
-  BaseAttack: 35
+  BaseAttack: 25
   BaseMovementSpeed: 2.5
   minAllowableDistance: 0
   maxAllowableDistance: 999

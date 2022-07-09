@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Witch
   m_EditorClassIdentifier: 
   BaseMaxHealth: 650
-  BaseAttack: 30
+  BaseAttack: 24
   BaseMovementSpeed: 0
   minAllowableDistance: 0
   maxAllowableDistance: 999

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   BaseMaxHealth: 250
-  BaseAttack: 20
+  BaseAttack: 21
   BaseMovementSpeed: 1.8
+  minAllowableDistance: 0
   maxAllowableDistance: 8
   minXDifference: -999
   maxXDifference: 999

@@ -19,9 +19,11 @@ public class PrtsSummon : EnemySkill
 
     public override bool CanUse()
     {
+        Debug.Log(enemyHealth);
         return base.CanUse() && 
             (enemyHealth.isHealthPercentageEqualOrBelow(healthPercentageThreshold));
     }
+
     public override void ExecuteSkill(EnemyMain enemy, PlayerMain player)
     {
         StartCoroutine(helper(enemy, player));

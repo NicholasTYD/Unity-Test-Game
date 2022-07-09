@@ -74,6 +74,8 @@ public abstract class Health : MonoBehaviour
 
     public bool isHealthPercentageEqualOrBelow(float percentage)
     {
+        Debug.Log("test");
+
         return GetHealthPercentage() <= percentage;
     }
 
