@@ -14,4 +14,6 @@ public class SaveData
     public float ParryDamageBonusDuration { get; set; }
     public float ParryDamageBonusMultiplier { get; set; }
     public float MovementSpeed { get; set; }
+    public float MaxComboTime { get; set; }
+    public bool ParryStrikeUnlocked { get; set; }
 }

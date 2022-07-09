@@ -27,7 +27,10 @@ public class PlayerHealth : Health, ISavable
         // If something with parry breaks shift the parry code into the isInvul block. Shouldn't break tho
         if (playerCombat.Parried())
         {
-            grantInvulnerability = blockInvulnerabilityDuration;
+            if (!isInvulnerable())
+            {
+                grantInvulnerability = blockInvulnerabilityDuration;
+            }
             return false;
         }
         else if (!isInvulnerable())

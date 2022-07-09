@@ -442,7 +442,7 @@ MonoBehaviour:
   followupSkill: {fileID: 0}
   enemy1: {fileID: 1756295444528713267, guid: 63fa9ee4533d5a54687210c67d76dade, type: 3}
   enemy2: {fileID: 2190003332176663817, guid: f369db596513dd74f8ec36251bbc9b92, type: 3}
-  healthPercentageThreshold: 0.75
+  healthPercentageThreshold: 0.7
   spawnXOffset: 6
   spawnTime: 1.25
 --- !u!114 &1148296494299204604

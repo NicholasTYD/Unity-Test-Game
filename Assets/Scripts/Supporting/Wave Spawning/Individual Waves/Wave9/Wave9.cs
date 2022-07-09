@@ -27,16 +27,16 @@ public class Wave9 : Wave
 
         yield return new WaitForSeconds(5);
 
-        StartCoroutine(spawnRandom(EnemyList.Instance.Archer, 10, 0, 2));
-        StartCoroutine(spawnRandom(EnemyList.Instance.Pile, 2, 5, 5));
+        StartCoroutine(spawnRandom(EnemyList.Instance.Archer, 5, 0, 4));
+        StartCoroutine(spawnRandom(EnemyList.Instance.Pile, 2, 10, 10));
 
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(16);
 
         while (gotEnemiesRemaining())
         {
             yield return new WaitForSeconds(1);
         }
-        StartCoroutine(sw2());
+        StartCoroutine(sw3());
     }
 
     IEnumerator sw3()

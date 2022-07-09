@@ -223,6 +223,8 @@ public class PlayerCombat : Combat, ISavable
         saveData.AttackSpeed = attackSpeed;
         saveData.ParryDamageBonusDuration = maxParryDamageBonusDuration;
         saveData.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
+        saveData.MaxComboTime = maxComboTime;
+        saveData.ParryStrikeUnlocked = parryStrikeUnlocked;
     }
 
     public void LoadData(SaveData saveData)
@@ -231,5 +233,7 @@ public class PlayerCombat : Combat, ISavable
         this.attackSpeed = saveData.AttackSpeed;
         this.maxParryDamageBonusDuration = saveData.ParryDamageBonusDuration;
         this.parryDamageBonusMultiplier = saveData.ParryDamageBonusMultiplier;
+        this.maxComboTime = saveData.MaxComboTime;
+        this.parryStrikeUnlocked = saveData.ParryStrikeUnlocked;
     }
 }
