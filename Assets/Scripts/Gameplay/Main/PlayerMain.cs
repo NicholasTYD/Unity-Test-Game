@@ -92,6 +92,16 @@ public class PlayerMain : EntityMain
         playerMovement.IncreaseMovementSpeed(amount);
     }
 
+    public void IncreaseComboTime()
+    {
+        playerCombat.UpgradeComboTime();
+    }
+
+    public void UnlockParryStrike()
+    {
+        playerCombat.parryStrikeUnlocked = true;
+    }
+
     protected override IEnumerator handleDeath()
     {
         yield return new WaitForSeconds(timeBeforeRespawn);

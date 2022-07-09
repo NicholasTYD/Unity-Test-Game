@@ -15,6 +15,7 @@ public class PlayerBlockScriptableObject : ScriptableObject
     public float parryDurationPerFrame;
     public float baseParryDuration;
     public float parryBonusDamageMultiplier;
+    public float parryStrikeBonusMultiplier;
 
     public Vector2 hurtboxCenterOffset;
     public float hurtboxRadius;

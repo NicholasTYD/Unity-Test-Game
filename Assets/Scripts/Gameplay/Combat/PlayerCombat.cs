@@ -14,7 +14,8 @@ public class PlayerCombat : Combat, ISavable
     private bool isInterrupted;
 
     [SerializeField] private float attackSpeed = 1;
-    private float maxComboTime = 0.5f; // Time given to continue the attack string before combo resets
+    private float maxComboTime = 0.5f; // Time given to continue the attack string before combo reset
+    private float UPGRADED_COMBO_TIME = 1.5f;
     private int currentAttackSequence = 0;
     private float comboTimeLeft = 0;
 
@@ -26,6 +27,9 @@ public class PlayerCombat : Combat, ISavable
     private float parryDamageBonusMultiplier;
     private float currentParryDamageBonusMultiplier = 1;
     private float parryDamageBonusTimeLeft = 0;
+
+    public bool parryStrikeUnlocked { get; set; }
+    private float currentParryStrikeBonus = 1;
 
     // Center offset of the player's sprite
     private Vector2 playerCenterOffset = new Vector2(0, 0.65f);
@@ -75,6 +79,11 @@ public class PlayerCombat : Combat, ISavable
         parryDamageBonusMultiplier += amount;
     }
 
+    public void UpgradeComboTime()
+    {
+        maxComboTime = UPGRADED_COMBO_TIME;
+    }
+
     public override void Attack()
     {
         basicAttack();
@@ -105,12 +114,14 @@ public class PlayerCombat : Combat, ISavable
             CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
                 enemyLayerMask,
-                attack * currentParryDamageBonusMultiplier * currentAttack.damageMultiplier);
+                attack * currentParryDamageBonusMultiplier * currentParryStrikeBonus * currentAttack.damageMultiplier);
 
             comboTimeLeft = maxComboTime;
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
+            currentParryStrikeBonus = 1;
         }
     }
+
     public void Block()
     {
         if (blockCooldownTimer > 0 || inBlockState)
@@ -155,6 +166,10 @@ public class PlayerCombat : Combat, ISavable
                 playerAnim.SetTrigger(block.parryName);
                 inBlockState = false;
                 CombatMechanics.Instance.InstantiateParryText(this.transform.position);
+                if (parryStrikeUnlocked)
+                {
+                    currentParryStrikeBonus = block.parryStrikeBonusMultiplier;
+                }
                 return true;
             }
         }

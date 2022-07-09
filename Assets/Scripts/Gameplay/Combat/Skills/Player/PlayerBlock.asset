@@ -19,5 +19,6 @@ MonoBehaviour:
   parryDurationPerFrame: 0.083333336
   baseParryDuration: 0.3
   parryBonusDamageMultiplier: 1.2
+  parryStrikeBonusMultiplier: 3
   hurtboxCenterOffset: {x: 0.4, y: 0}
   hurtboxRadius: 0.4

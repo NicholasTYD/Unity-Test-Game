@@ -72,7 +72,7 @@ public class UpgradeMenu : MonoBehaviour
         }
     }
 
-    public void PresentEnhancedUpgrades()
+    public void PresentEnhancedUpgrades(int level)
     {
         gameObject.SetActive(true);
         GameManager.Instance.Pause();
@@ -82,21 +82,45 @@ public class UpgradeMenu : MonoBehaviour
             Button button = upgradeButtons[upgradeSlot];
             TextMeshProUGUI text = upgradeTexts[upgradeSlot];
 
-            switch (upgradeSlot)
+            // Fire knight
+            if (level == 0)
             {
-                case 0:
-                    upgradeHealthAndSpeed(upgradeSlot, button, text);
-                    break;
-                case 1:
-                    upgradeAttackAndAttackSpeed(upgradeSlot, button, text);
-                    break;
-                case 2:
-                    upgradeParryBonusDurationAndMultiplier(upgradeSlot, button, text);
-                    break;
-                default:
-                    Debug.Log("You broke something oops");
-                    break;
+                switch (upgradeSlot)
+                {
+                    case 0:
+                        upgradeHealthAndSpeed(upgradeSlot, button, text);
+                        break;
+                    case 1:
+                        upgradeAttackAndAttackSpeed(upgradeSlot, button, text);
+                        break;
+                    case 2:
+                        upgradeParryBonusDurationAndMultiplier(upgradeSlot, button, text);
+                        break;
+                    default:
+                        Debug.Log("You broke something oops");
+                        break;
+                }
             }
+            // Priestess
+            else
+            {
+                switch (upgradeSlot)
+                {
+                    case 0:
+                        increaseComboTime(upgradeSlot, button, text);
+                        break;
+                    case 1:
+                        unlockParryStrike(upgradeSlot, button, text);
+                        break;
+                    case 2:
+                        upgradeAllStats(upgradeSlot, button, text);
+                        break;
+                    default:
+                        Debug.Log("You broke something oops");
+                        break;
+                }
+            }
+            
             button.onClick.AddListener(closeAndResetMenuOnClick);
         }
     }
@@ -159,6 +183,30 @@ public class UpgradeMenu : MonoBehaviour
     {
         text.text = "Post parry damage bonus duration +" + parryDamageBonusDurationIncrease + "s.\n" +
             "Post parry damage bonus +" + parryDamageBonusMultiplierIncrease * 100 + "%.";
+        button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusDuration(parryDamageBonusDurationIncrease));
+        button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusMultiplier(parryDamageBonusMultiplierIncrease));
+    }
+
+    // Super Enchanced Upgrades
+    void increaseComboTime(int pos, Button button, TextMeshProUGUI text)
+    {
+        text.text = "Your attack combo takes much longer to reset.";
+        button.onClick.AddListener(() => playerMain.IncreaseComboTime());
+    }
+
+    void unlockParryStrike(int pos, Button button, TextMeshProUGUI text)
+    {
+        text.text = "Your next attack after a successful parry does massive damage.";
+        button.onClick.AddListener(() => playerMain.UnlockParryStrike());
+    }
+
+    void upgradeAllStats(int pos, Button button, TextMeshProUGUI text)
+    {
+        text.text = "Upgrade ALL your stats!";
+        button.onClick.AddListener(() => playerMain.IncreaseMaxHealth(healthIncrease));
+        button.onClick.AddListener(() => playerMain.IncreaseMovementSpeed(movementSpeedIncrease));
+        button.onClick.AddListener(() => playerMain.IncreaseAttack(attackIncrease));
+        button.onClick.AddListener(() => playerMain.IncreaseAttackSpeed(attackSpeedIncrease));
         button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusDuration(parryDamageBonusDurationIncrease));
         button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusMultiplier(parryDamageBonusMultiplierIncrease));
     }
