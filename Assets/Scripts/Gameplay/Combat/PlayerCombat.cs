@@ -11,8 +11,6 @@ public class PlayerCombat : Combat, ISavable
     private Animator playerAnim;
     private PlayerMovement playerMovement;
 
-    private bool isInterrupted;
-
     [SerializeField] private float attackSpeed = 1;
     private float maxComboTime = 0.5f; // Time given to continue the attack string before combo reset
     private float UPGRADED_COMBO_TIME = 1.5f;
@@ -36,7 +34,7 @@ public class PlayerCombat : Combat, ISavable
     private Vector2 playerWorldCenterPosition;
     Vector2 mouseWorldPosition;
     Vector2 playerToMouseUnitDirection;
-    float angleOfAttack;
+    
     [SerializeField] LayerMask enemyLayerMask;
     [SerializeField] LayerMask enemyProjectileLayerMask;
 
@@ -94,40 +92,9 @@ public class PlayerCombat : Combat, ISavable
 
         PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
         float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
-        isInterrupted = false;
         entityMain.lockoutDuration = currentAttackDuration;
         playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
         playerAnim.SetTrigger(currentAttack.name);
-
-        /*
-        PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
-        float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
-        float currentTimeBeforeHit = currentAttack.timeBeforeHit / attackSpeed;
-        Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (currentAttack.hurtboxCenterOffset * playerToMouseUnitDirection);
-
-        StartCoroutine(executeAttack());
-
-        IEnumerator executeAttack()
-        {
-            isInterrupted = false;
-            entityMain.lockoutDuration = currentAttackDuration;
-            playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
-            playerAnim.SetTrigger(currentAttack.name);
-            yield return new WaitForSeconds(currentTimeBeforeHit);
-            if (isInterrupted)
-            {
-                yield break;
-            }
-            CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
-                currentAttack.hurtboxRadius,
-                enemyLayerMask,
-                attack * currentParryDamageBonusMultiplier * currentParryStrikeBonus * currentAttack.damageMultiplier);
-
-            comboTimeLeft = maxComboTime;
-            currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
-            currentParryStrikeBonus = 1;
-        }
-        */
     }
 
     public void CreateHurtbox()
@@ -201,7 +168,6 @@ public class PlayerCombat : Combat, ISavable
 
     public void interruptCombat()
     {
-        this.isInterrupted = true;
         inBlockState = false;
         currentAttackSequence = 0;
     }
@@ -212,7 +178,6 @@ public class PlayerCombat : Combat, ISavable
         this.playerWorldCenterPosition = this.transform.position + (Vector3)this.playerCenterOffset;
         this.mouseWorldPosition = General.Instance.GetCurrentMouseWorldPosition();
         this.playerToMouseUnitDirection = General.Instance.GetDirectionUnitVector(playerWorldCenterPosition, mouseWorldPosition);
-        this.angleOfAttack = Vector2.SignedAngle(Vector2.right, playerToMouseUnitDirection);
     }
 
     private void handleCooldowns()
