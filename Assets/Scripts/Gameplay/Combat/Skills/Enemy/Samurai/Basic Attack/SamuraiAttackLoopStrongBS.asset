@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SamuraiAttackLoopStrongBS
   m_EditorClassIdentifier: 
   name: AttackLoop
-  DamageMultiplier: 1.3
+  DamageMultiplier: 1.15
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 1.125

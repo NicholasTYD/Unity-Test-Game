@@ -8,6 +8,7 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] VictoryScreen victoryScreen;
     public static GameManager Instance { get; private set; }
     public bool isGamePaused { get; private set; }
 

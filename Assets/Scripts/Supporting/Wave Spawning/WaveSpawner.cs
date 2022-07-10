@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     [SerializeField] UpgradeMenu upgradeMenu;
 
     float waveTextTimer;
+    float INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS = 3;
 
     public bool WaveCompleted { get; set; }
     public bool UpgradesChosen { get; set; }
@@ -32,7 +33,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         UpgradesChosen = true;
 
-        CurrentWave = 12;
+        CurrentWave = 14;
     }
 
     // Update is called once per frame
@@ -100,9 +101,18 @@ public class WaveSpawner : MonoBehaviour, ISavable
         StartCoroutine(PresentSpecialUpgrades());
     }
 
+    public void ConcludeGame()
+    {
+        WaveCompleted = true;
+        string text = "Final Wave Complete!";
+        setWaveText(text);
+
+        StartCoroutine(PresentVictoryScreen());
+    }
+
     IEnumerator PresentUpgrades()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS);
         upgradeMenu.PresentUpgrades();
 
         StartCoroutine(IncrementWaveAndSave());
@@ -110,7 +120,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
 
     IEnumerator PresentSpecialUpgrades()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS);
 
         // Fire knight
         if (CurrentWave == 4)
@@ -124,6 +134,13 @@ public class WaveSpawner : MonoBehaviour, ISavable
         }
 
         StartCoroutine(IncrementWaveAndSave());
+    }
+
+    IEnumerator PresentVictoryScreen()
+    {
+        yield return new WaitForSeconds(INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS);
+
+        VictoryScreen.Instance.EnableVictoryScreen();
     }
 
     IEnumerator IncrementWaveAndSave()

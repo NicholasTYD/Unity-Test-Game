@@ -21,23 +21,13 @@ public abstract class Wave : MonoBehaviour
         return waveInfo.waveName;
     }
 
-    protected void endWave()
-    {
-        WaveSpawner.Instance.ConcludeWave();
-    }
-
-    protected void endBossWave()
-    {
-        WaveSpawner.Instance.ConcludeBossWave();
-    }
-
     protected IEnumerator concludeWaveOnKill()
     {
         while (gotEnemiesRemaining())
         {
             yield return new WaitForSeconds(1);
         }
-        endWave();
+        WaveSpawner.Instance.ConcludeWave();
     }
 
     protected IEnumerator concludeBossWaveOnKill()
@@ -53,7 +43,23 @@ public abstract class Wave : MonoBehaviour
 
         Time.timeScale = 1;
 
-        endBossWave();
+        WaveSpawner.Instance.ConcludeBossWave();
+    }
+
+    protected IEnumerator concludeGame()
+    {
+        while (gotEnemiesRemaining())
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Time.timeScale = bossWaveEndTimeScale;
+
+        yield return new WaitForSeconds(bossWaveEndSlowdownTime);
+
+        Time.timeScale = 1;
+
+        WaveSpawner.Instance.ConcludeGame();
     }
 
     protected bool gotEnemiesRemaining()
