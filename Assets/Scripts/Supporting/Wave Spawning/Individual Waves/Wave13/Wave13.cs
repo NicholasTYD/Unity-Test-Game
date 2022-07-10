@@ -46,7 +46,7 @@ public class Wave13 : Wave
     {
         spawn(EnemyList.Instance.Sniper, pos(4));
         spawn(EnemyList.Instance.Tengu, pos(4));
-        spawn(EnemyList.Instance.Hntrss, pos(4));
+        spawn(EnemyList.Instance.Shaman, pos(4));
 
         while (gotEnemiesRemaining())
         {
@@ -59,8 +59,7 @@ public class Wave13 : Wave
     {
         spawn(EnemyList.Instance.Sniper, pos(5));
         spawn(EnemyList.Instance.Tengu, pos(5));
-        spawn(EnemyList.Instance.RedWzd, pos(5));
-        spawn(EnemyList.Instance.PpeWzd, pos(5));
+        spawn(EnemyList.Instance.Hntrss, pos(5));
 
         while (gotEnemiesRemaining())
         {
@@ -73,7 +72,8 @@ public class Wave13 : Wave
     {
         spawn(EnemyList.Instance.Sniper, pos(6));
         spawn(EnemyList.Instance.Tengu, pos(6));
-        spawn(EnemyList.Instance.Shaman, pos(6));
+        spawn(EnemyList.Instance.RedWzd, pos(6));
+        spawn(EnemyList.Instance.PpeWzd, pos(6));
 
         while (gotEnemiesRemaining())
         {
@@ -84,12 +84,12 @@ public class Wave13 : Wave
 
     IEnumerator sw7()
     {
-        spawn(EnemyList.Instance.Sniper, pos(7));
-        spawn(EnemyList.Instance.Sniper, pos(8));   
+        spawn(EnemyList.Instance.Sniper, pos(1));
+        spawn(EnemyList.Instance.Sniper, pos(2));   
 
-        StartCoroutine(spawnRandom(sw7Enemies, 4, 10, 15));
+        StartCoroutine(spawnRandom(sw7Enemies, 2, 17, 22));
 
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(23);
         StartCoroutine(concludeWaveOnKill());
     }
 }

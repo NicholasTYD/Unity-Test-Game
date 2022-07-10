@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   BaseMaxHealth: 1000
-  BaseAttack: 80
+  BaseAttack: 26
   BaseMovementSpeed: 2
   minAllowableDistance: 15
   maxAllowableDistance: 19
