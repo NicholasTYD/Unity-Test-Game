@@ -10,8 +10,6 @@ public class PlayerBasicAttackScriptableObject : ScriptableObject
     public float durationPerFrame;
     // How long the entire animation lasts.
     public float baseAttackDuration;
-    // Time to wait before creating the hurtbox.
-    public float timeBeforeHit;
 
     public Vector2 hurtboxCenterOffset;
     public float hurtboxRadius;
