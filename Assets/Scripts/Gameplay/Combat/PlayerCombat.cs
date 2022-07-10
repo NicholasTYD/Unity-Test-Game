@@ -122,6 +122,11 @@ public class PlayerCombat : Combat, ISavable
         }
     }
 
+    public void CreateHurtbox()
+    {
+
+    }
+
     public void Block()
     {
         if (blockCooldownTimer > 0 || inBlockState)

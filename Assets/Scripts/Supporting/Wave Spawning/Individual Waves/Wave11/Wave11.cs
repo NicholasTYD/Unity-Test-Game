@@ -34,9 +34,9 @@ public class Wave11 : Wave
     IEnumerator sw3()
     {
         spawnAllOnce(EnemyList.Instance.Tengu, waveInfo.notableSpawnPos.GetRange(0, 4));
-        StartCoroutine(spawnRandom(EnemyList.Instance.Witch, waveInfo.notableSpawnPos.GetRange(4, 1), 3, 15, 20));
+        StartCoroutine(spawnRandom(EnemyList.Instance.Witch, waveInfo.notableSpawnPos.GetRange(4, 1), 4, 10, 15));
 
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(45);
 
         spawn(EnemyList.Instance.Hntrss);
 

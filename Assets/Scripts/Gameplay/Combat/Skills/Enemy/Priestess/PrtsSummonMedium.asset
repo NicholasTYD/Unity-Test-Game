@@ -17,7 +17,7 @@ MonoBehaviour:
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 1.5
-  MinSkillCooldown: 35
+  MinSkillCooldown: 38
   MaxSkillCooldown: 45
   minAttackLockoutDuration: 0
   maxAttackLockoutDuration: 0
