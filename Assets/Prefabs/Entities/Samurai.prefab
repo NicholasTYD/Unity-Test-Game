@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 0
+  attack: 0
   EnemyProjectileSpawnPoint: {fileID: 2240081128688023828}
   enemySkills:
   - {fileID: 8201349136065870361}
@@ -267,7 +267,7 @@ MonoBehaviour:
   followupSkill: {fileID: 0}
   spawnable: {fileID: 2497135971873650676, guid: cd5ce8eb4e734334eaef4b3e905ccdf0,
     type: 3}
-  healthPercentageThreshold: 0.6
+  healthPercentageThreshold: 0.5
   projectileSpeed: 15
   projectileLifetime: 2
   attackTimings:
@@ -312,7 +312,7 @@ MonoBehaviour:
     type: 2}
   followupSkill: {fileID: 8000958344309759920}
   samuraiBossMovementAI: {fileID: 8000958344309759918}
-  healthPercentageThreshold: 0.6
+  healthPercentageThreshold: 0.5
   loopChance: 0.75
   dashForce: 50
   attackTimings:
@@ -356,7 +356,7 @@ MonoBehaviour:
     type: 2}
   followupSkill: {fileID: 0}
   samuraiBossMovementAI: {fileID: 8000958344309759918}
-  healthPercentageThreshold: 0.6
+  healthPercentageThreshold: 0.5
   glowingEyes: {fileID: 5962704518091067692}
   jump: Jump
   jumpDuration: 1
