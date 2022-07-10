@@ -54,6 +54,11 @@ public abstract class Health : MonoBehaviour
         changeHealth(amount);
     }
 
+    public void HealToFull()
+    {
+        setCurrentHealth(maxHealth);
+    }
+
 
     protected void setCurrentHealth(float currentHealth)
     {

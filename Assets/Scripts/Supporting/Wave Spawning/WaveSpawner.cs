@@ -6,11 +6,13 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour, ISavable
 {
     public static WaveSpawner Instance;
+
     [SerializeField] TextMeshProUGUI waveText;
     [SerializeField] float waveTextAppearDuration;
     [SerializeField] List<Wave> waves;
     [SerializeField] UpgradeMenu upgradeMenu;
     [SerializeField] VictoryScreen victoryScreen;
+    [SerializeField] PlayerHealth playerHealth;
 
     float waveTextTimer;
     float INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS = 3;
@@ -149,6 +151,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     {
         yield return new WaitForSeconds(0.01f);
         CurrentWave++;
+        playerHealth.HealToFull();
         GameManager.Instance.SaveGameData();
     }
 

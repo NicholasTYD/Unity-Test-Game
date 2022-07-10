@@ -60,10 +60,6 @@ public class PlayerHealth : Health, ISavable
     public void LoadData(SaveData saveData)
     {
         setMaxHealth(saveData.MaxHealth);
-
-        // Restores character to full health on death/save load.
-        // Too punishing to just restore back to almost death levels of health.
-        setCurrentHealth(saveData.MaxHealth);
-        // setCurrentHealth(saveData.CurrentHealth);
+        setCurrentHealth(saveData.CurrentHealth);
     }
 }
