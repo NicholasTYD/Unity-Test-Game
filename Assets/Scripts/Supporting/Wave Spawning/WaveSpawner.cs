@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     [SerializeField] float waveTextAppearDuration;
     [SerializeField] List<Wave> waves;
     [SerializeField] UpgradeMenu upgradeMenu;
+    [SerializeField] VictoryScreen victoryScreen;
 
     float waveTextTimer;
     float INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS = 3;
@@ -104,6 +105,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     public void ConcludeGame()
     {
         WaveCompleted = true;
+        UpgradesChosen = true;
         string text = "Final Wave Complete!";
         setWaveText(text);
 
@@ -140,7 +142,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
     {
         yield return new WaitForSeconds(INTERVAL_BEFORE_POST_WAVE_MENU_APPEARS);
 
-        VictoryScreen.Instance.EnableVictoryScreen();
+        victoryScreen.EnableVictoryScreen();
     }
 
     IEnumerator IncrementWaveAndSave()

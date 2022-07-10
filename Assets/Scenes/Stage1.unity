@@ -521,6 +521,7 @@ MonoBehaviour:
   - {fileID: 175715779}
   - {fileID: 175715780}
   upgradeMenu: {fileID: 629446218}
+  victoryScreen: {fileID: 1397711067}
 --- !u!4 &175715764
 Transform:
   m_ObjectHideFlags: 0
@@ -13809,7 +13810,7 @@ PrefabInstance:
     - target: {fileID: 8923336933427013887, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 8923336933427013887, guid: 2ecdfcb44cee79b4da88fcfee7dbf3ab,
         type: 3}
