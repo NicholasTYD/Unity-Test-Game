@@ -6,5 +6,6 @@ using UnityEngine;
 public class WaveInfoScriptableObject : ScriptableObject
 {
     public string waveName;
+    public AudioClip waveBGM;
     public List<Vector2> notableSpawnPos;
 }

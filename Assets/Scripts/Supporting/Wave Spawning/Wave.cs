@@ -21,6 +21,11 @@ public abstract class Wave : MonoBehaviour
         return waveInfo.waveName;
     }
 
+    public AudioClip GetWaveBGM()
+    {
+        return waveInfo.waveBGM;
+    }
+
     protected IEnumerator concludeWaveOnKill()
     {
         while (gotEnemiesRemaining())

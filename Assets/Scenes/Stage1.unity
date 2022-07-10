@@ -522,6 +522,7 @@ MonoBehaviour:
   - {fileID: 175715780}
   upgradeMenu: {fileID: 629446218}
   victoryScreen: {fileID: 1397711067}
+  playerHealth: {fileID: 1716009926}
 --- !u!4 &175715764
 Transform:
   m_ObjectHideFlags: 0
@@ -1568,7 +1569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
@@ -1577,14 +1577,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5043,6 +5035,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713714527}
   m_CullTransparentMesh: 1
+--- !u!114 &1716009926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7689998204045113688, guid: b29306470820b154197d0d9202ac15a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7689998204945482258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e3668ab719bfa44a87e18d2b03610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781379888
 GameObject:
   m_ObjectHideFlags: 0
@@ -11934,7 +11938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979e13925fb88374b92bf94c582803f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreen: {fileID: 0}
 --- !u!1 &1958132001
 GameObject:
   m_ObjectHideFlags: 0

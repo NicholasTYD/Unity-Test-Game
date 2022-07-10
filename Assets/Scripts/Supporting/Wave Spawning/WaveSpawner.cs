@@ -85,6 +85,16 @@ public class WaveSpawner : MonoBehaviour, ISavable
         waves[CurrentWave].StartWave();
         WaveCompleted = false;
         UpgradesChosen = false;
+        playWaveBGM(waves[CurrentWave]);
+    }
+
+    void playWaveBGM(Wave wave)
+    {
+        AudioClip waveBGM = wave.GetWaveBGM();
+        if (wave.GetWaveBGM() != null)
+        {
+            MusicPlayer.Instance.PlayClip(waveBGM);
+        }
     }
 
     public void ConcludeWave()
@@ -100,6 +110,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         WaveCompleted = true;
         string text = "Boss Wave Complete!";
         setWaveText(text);
+        MusicPlayer.Instance.RevertBackToNormalBGM();
 
         StartCoroutine(PresentSpecialUpgrades());
     }
@@ -110,6 +121,7 @@ public class WaveSpawner : MonoBehaviour, ISavable
         UpgradesChosen = true;
         string text = "Final Wave Complete!";
         setWaveText(text);
+        MusicPlayer.Instance.RevertBackToNormalBGM();
 
         StartCoroutine(PresentVictoryScreen());
     }
