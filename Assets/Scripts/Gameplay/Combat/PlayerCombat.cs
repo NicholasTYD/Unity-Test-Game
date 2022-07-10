@@ -43,7 +43,6 @@ public class PlayerCombat : Combat, ISavable
     [SerializeField] List<PlayerBasicAttackScriptableObject> playerBasicAttacks;
     [SerializeField] PlayerBlockScriptableObject playerBlock;
 
-
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -95,6 +94,14 @@ public class PlayerCombat : Combat, ISavable
 
         PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
         float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
+        isInterrupted = false;
+        entityMain.lockoutDuration = currentAttackDuration;
+        playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
+        playerAnim.SetTrigger(currentAttack.name);
+
+        /*
+        PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
+        float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
         float currentTimeBeforeHit = currentAttack.timeBeforeHit / attackSpeed;
         Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (currentAttack.hurtboxCenterOffset * playerToMouseUnitDirection);
 
@@ -120,11 +127,22 @@ public class PlayerCombat : Combat, ISavable
             currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
             currentParryStrikeBonus = 1;
         }
+        */
     }
 
     public void CreateHurtbox()
     {
+        PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
+        Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (currentAttack.hurtboxCenterOffset * playerToMouseUnitDirection);
 
+        CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
+                currentAttack.hurtboxRadius,
+                enemyLayerMask,
+                attack * currentParryDamageBonusMultiplier * currentParryStrikeBonus * currentAttack.damageMultiplier);
+
+        comboTimeLeft = maxComboTime;
+        currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
+        currentParryStrikeBonus = 1;
     }
 
     public void Block()
