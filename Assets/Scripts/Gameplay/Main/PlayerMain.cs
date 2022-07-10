@@ -31,6 +31,11 @@ public class PlayerMain : EntityMain
             return;
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            playerCombat.Block();
+        }
+
         if (Input.GetMouseButton(0))
         {
             playerCombat.Attack();
@@ -40,11 +45,6 @@ public class PlayerMain : EntityMain
         {
             // Roll cooldowns governed by the playerMovement script.
             playerMovement.Roll();
-        }
-
-        if (Input.GetMouseButton(1))
-        {
-            playerCombat.Block();
         }
     }
 

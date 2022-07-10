@@ -1210,6 +1210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 567396318681418107, guid: b9e9824a5fc2c5441a39125e355a6d20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 567396318681418110, guid: b9e9824a5fc2c5441a39125e355a6d20,
         type: 3}
       propertyPath: m_RootOrder
@@ -1337,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: 9027474480982289940, guid: 7930636562fe2f04985caec641331db8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7930636562fe2f04985caec641331db8, type: 3}

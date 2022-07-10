@@ -18,7 +18,7 @@ public class PlayerCombat : Combat, ISavable
     private float comboTimeLeft = 0;
 
     private bool inBlockState;
-    private float maxBlockCooldown = 0.5f;
+    private float MAX_BLOCK_COOLDOWN = 0.5f;
     private float blockCooldownTimer;
 
     private float maxParryDamageBonusDuration = 3;
@@ -132,7 +132,7 @@ public class PlayerCombat : Combat, ISavable
             yield return new WaitForSeconds(block.baseBlockDuration);
             if (inBlockState)
             {
-                blockCooldownTimer = maxBlockCooldown;
+                blockCooldownTimer = MAX_BLOCK_COOLDOWN;
                 inBlockState = false;
             }
         }
@@ -140,6 +140,7 @@ public class PlayerCombat : Combat, ISavable
 
     public bool Parried()
     {
+        blockCooldownTimer = MAX_BLOCK_COOLDOWN;
         if (inBlockState)
         {
             PlayerBlockScriptableObject block = playerBlock;
