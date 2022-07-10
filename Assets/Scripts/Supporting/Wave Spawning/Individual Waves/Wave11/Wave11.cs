@@ -19,10 +19,10 @@ public class Wave11 : Wave
     IEnumerator sw2()
     {
         spawn(EnemyList.Instance.Tengu, pos(2));
-        StartCoroutine(spawnRandom(EnemyList.Instance.RedWzd, 3, 15, 15));
-        StartCoroutine(spawnRandom(EnemyList.Instance.PpeWzd, 3, 15, 15));
+        StartCoroutine(spawnRandom(EnemyList.Instance.RedWzd, 2, 15, 15));
+        StartCoroutine(spawnRandom(EnemyList.Instance.PpeWzd, 2, 15, 15));
 
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(15);
 
         while (gotEnemiesRemaining())
         {

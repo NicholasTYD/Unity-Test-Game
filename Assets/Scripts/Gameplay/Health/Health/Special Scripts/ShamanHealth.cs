@@ -8,7 +8,10 @@ public class ShamanHealth : NormalEnemyHealth
 
     protected override void Update()
     {
-        changeHealth(-(percentageHealthDecayPerSecond * maxHealth) * Time.deltaTime);
+        if (currentHealth > 0)
+        {
+            changeHealth(-(percentageHealthDecayPerSecond * maxHealth) * Time.deltaTime);
+        }
         base.Update();
     }
 }
