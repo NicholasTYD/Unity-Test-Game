@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SamuraiRangedBS
   m_EditorClassIdentifier: 
   name: Ranged
-  DamageMultiplier: 1.4
+  DamageMultiplier: 1.35
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 3.25
