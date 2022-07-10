@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Samurai
   m_EditorClassIdentifier: 
   BaseMaxHealth: 18000
-  BaseAttack: 24
+  BaseAttack: 23
   BaseMovementSpeed: 3
   minAllowableDistance: 0
   maxAllowableDistance: 999
