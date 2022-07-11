@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1756295444528713269}
   - component: {fileID: 6700679088679786115}
   - component: {fileID: 2269909408797816076}
-  - component: {fileID: 2038442223147483359}
+  - component: {fileID: 140370441834498427}
   m_Layer: 7
   m_Name: Red Wizard
   m_TagString: Untagged
@@ -216,11 +216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 0
+  attack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills:
-  - {fileID: 2038442223147483359}
---- !u!114 &2038442223147483359
+  - {fileID: 140370441834498427}
+--- !u!114 &140370441834498427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,11 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756295444528713267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780f83c7c8bb5af4fa17af8804bf220c, type: 3}
+  m_Script: {fileID: 11500000, guid: 22be498de14c39c45a81a13fd41a37e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 1ae1b7be1e7023d4faa978f6d4f14e07,
     type: 2}
+  followupSkill: {fileID: 0}
 --- !u!1001 &1756295444314647601
 PrefabInstance:
   m_ObjectHideFlags: 0
