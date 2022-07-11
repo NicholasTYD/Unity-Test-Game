@@ -358,6 +358,7 @@ MonoBehaviour:
   samuraiBossMovementAI: {fileID: 8000958344309759918}
   healthPercentageThreshold: 0.5
   glowingEyes: {fileID: 5962704518091067692}
+  BGMChange: {fileID: 8300000, guid: f0e7a183d7af70649b7916438f9846a3, type: 3}
   jump: Jump
   jumpDuration: 1
   blink: Blink

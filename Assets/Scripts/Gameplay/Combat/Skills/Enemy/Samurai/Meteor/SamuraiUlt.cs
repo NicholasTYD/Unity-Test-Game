@@ -8,6 +8,7 @@ public class SamuraiUlt : EnemySkill
     [SerializeField] SamuraiBossMovementAI samuraiBossMovementAI;
     [SerializeField] float healthPercentageThreshold;
     [SerializeField] ParticleSystem glowingEyes;
+    [SerializeField] AudioClip BGMChange;
 
     // Jump
     [SerializeField] string jump;
@@ -47,6 +48,8 @@ public class SamuraiUlt : EnemySkill
         skillCooldownTimer = enemySkillBasicStats.SkillDuration +
             Random.Range(enemySkillBasicStats.MinSkillCooldown, enemySkillBasicStats.MaxSkillCooldown);
         StartCoroutine(adjustDamageMultiplierDuringSkill());
+
+        MusicPlayer.Instance.PlayClip(BGMChange);
     }
 
     IEnumerator jumpUp(EnemyMain enemy, PlayerMain player)

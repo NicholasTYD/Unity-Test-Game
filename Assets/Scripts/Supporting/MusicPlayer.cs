@@ -11,7 +11,8 @@ public class MusicPlayer : MonoBehaviour
     AudioListener audioListener;
     [SerializeField] AudioClip defaultBGM;
 
-    float MUSIC_FADE_OUT_TIME = 2;
+    float MUSIC_FADE_OUT_TIME = 1;
+    float MUSIC_FADE_IN_TIME = 0.5f;
 
     private void Awake()
     {
@@ -62,18 +63,30 @@ public class MusicPlayer : MonoBehaviour
 
     IEnumerator fadeAndSwitch(AudioClip audioClip)
     {
+        if (audioClip == audioSource.clip)
+        {
+            yield break;
+        }
+
         float startVolume = audioSource.volume;
 
         while (audioSource.volume > 0)
         {
+            Debug.Log(audioSource.volume);
             audioSource.volume -= startVolume * Time.deltaTime / MUSIC_FADE_OUT_TIME;
+            yield return null;
         }
-        yield return null;
 
         audioSource.Stop();
         audioSource.clip = audioClip;
-        audioSource.volume = startVolume;
+        
         audioSource.Play();
+
+        while (audioSource.volume < startVolume)
+        {
+            audioSource.volume += startVolume * Time.deltaTime / MUSIC_FADE_IN_TIME;
+            yield return null;
+        }
     }
 
     private void OnDestroy()
