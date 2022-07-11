@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 311619063}
   - component: {fileID: 2902097745210177583}
   - component: {fileID: 437272159784855477}
-  - component: {fileID: 564383110}
+  - component: {fileID: 294335198661254329}
   - component: {fileID: 564383112}
   - component: {fileID: 564383111}
   - component: {fileID: 311619064}
@@ -257,8 +257,8 @@ MonoBehaviour:
   enemySkills:
   - {fileID: 311619065}
   - {fileID: 564383112}
-  - {fileID: 564383110}
---- !u!114 &564383110
+  - {fileID: 294335198661254329}
+--- !u!114 &294335198661254329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 130124194910592138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fa5c1d8aa67f4418ad764ece03b138, type: 3}
+  m_Script: {fileID: 11500000, guid: 22be498de14c39c45a81a13fd41a37e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: c8c52906b6e14ea49accba738ab1264f,
@@ -289,8 +289,6 @@ MonoBehaviour:
     type: 2}
   followupSkill: {fileID: 564383111}
   maxCastRange: 5
-  chargeDelay: 1.75
-  chargeDuration: 0.875
   chargeSpeed: 8
 --- !u!114 &564383111
 MonoBehaviour:
