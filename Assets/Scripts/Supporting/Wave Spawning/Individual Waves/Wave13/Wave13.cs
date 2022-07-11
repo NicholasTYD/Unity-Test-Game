@@ -89,7 +89,7 @@ public class Wave13 : Wave
 
         spawn(EnemyList.Instance.Hntrss);
 
-        yield return new WaitForSeconds(23);
+        yield return null;
         StartCoroutine(concludeWaveOnKill());
     }
 }

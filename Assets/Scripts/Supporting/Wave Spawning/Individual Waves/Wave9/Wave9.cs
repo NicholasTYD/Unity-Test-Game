@@ -41,9 +41,9 @@ public class Wave9 : Wave
 
     IEnumerator sw3()
     {
-        StartCoroutine(spawnRandom(sw3Enemies, 10, 7, 8));
+        StartCoroutine(spawnRandom(sw3Enemies, 7, 7, 8));
 
-        yield return new WaitForSeconds(80);
+        yield return new WaitForSeconds(60);
 
         StartCoroutine(concludeWaveOnKill());
     }
