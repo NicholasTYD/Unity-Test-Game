@@ -162,7 +162,6 @@ public class WaveSpawner : MonoBehaviour, ISavable
         yield return new WaitForSeconds(0.01f);
         CurrentWave++;
         CombatMechanics.Instance.Heal(General.Instance.Player, 999);
-        // playerHealth.HealToFull();
         GameManager.Instance.SaveGameData();
     }
 

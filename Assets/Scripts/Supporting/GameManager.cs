@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused { get; private set; }
 
     private List<ISavable> objectsToSave = new List<ISavable>();
-    private bool isNewSave = true;
+    private bool isNewSave;
     private float prePauseTimeScale = 1;
 
     private void Awake()
