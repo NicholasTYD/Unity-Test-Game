@@ -10,7 +10,6 @@ public abstract class EntityMain : MonoBehaviour
     protected Health health;
     protected Movement movement;
     protected Animator anim;
-    private Rigidbody2D rb;
     public float lockoutDuration { get; set; }
     public bool ForceLockout { get; set; }
     public bool isDead { get; protected set; }
@@ -21,7 +20,6 @@ public abstract class EntityMain : MonoBehaviour
         this.health = this.GetComponent<Health>();
         this.movement = this.GetComponent<Movement>();
         this.anim = this.GetComponent<Animator>();
-        this.rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
