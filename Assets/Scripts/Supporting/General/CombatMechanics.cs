@@ -52,6 +52,14 @@ public class CombatMechanics : MonoBehaviour
         }
     }
 
+    public void Heal(GameObject entity, float value)
+    {
+        Vector2 offset = new Vector2(0, 1);
+        EntityMain temp = entity.GetComponent<EntityMain>();
+        entity.GetComponent<EntityMain>().HealDamage(value);
+        InstantiateHealText(value, (Vector2)entity.transform.position + offset);
+    }
+
     public void InstantiateDamageText(float value, Vector2 position)
     {
         TextPopup indicator = Instantiate(DamageText, position, Quaternion.identity).GetComponent<TextPopup>();
