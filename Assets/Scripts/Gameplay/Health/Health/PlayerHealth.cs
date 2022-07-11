@@ -24,7 +24,6 @@ public class PlayerHealth : Health, ISavable
 
     public override bool TakeDamage(float amount)
     {
-        // If something with parry breaks shift the parry code into the isInvul block. Shouldn't break tho
         if (playerCombat.Parried())
         {
             if (!isInvulnerable())
