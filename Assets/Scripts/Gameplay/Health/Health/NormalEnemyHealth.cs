@@ -9,11 +9,10 @@ public class NormalEnemyHealth : Health
 
     void Start()
     {
-        // base.Start();
         this.entityMain = this.GetComponent<EntityMain>();
         maxHealth = entityMain.GetBaseMaxHealth() * Mathf.Pow(HEALTH_SCALING_PER_WAVE, WaveSpawner.Instance.CurrentWave);
         currentHealth = maxHealth;
-        healthbar.SetHealth(currentHealth, maxHealth);
+        updateHealthbar();
         enemyHealthbar = (EnemyHealthbar) base.healthbar;
     }
 

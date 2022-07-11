@@ -15,7 +15,7 @@ public class BossHealth : Health
         this.entityMain = this.GetComponent<EntityMain>();
         maxHealth = entityMain.GetBaseMaxHealth();
         currentHealth = maxHealth;
-        healthbar.SetHealth(currentHealth, maxHealth);
+        updateHealthbar();
     }
 
     protected override void changeHealth(float amount)
