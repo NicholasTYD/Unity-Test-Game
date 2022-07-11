@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class NormalEnemyHealth : Health
 {
-    float HEALTH_SCALING_PER_WAVE = 1.1f;
+    float HEALTH_SCALING_PER_WAVE = 10.1f;
     EnemyHealthbar enemyHealthbar;
 
-    void Start()
+    protected override void Start()
     {
-        this.entityMain = this.GetComponent<EntityMain>();
-        maxHealth = entityMain.GetBaseMaxHealth() * Mathf.Pow(HEALTH_SCALING_PER_WAVE, WaveSpawner.Instance.CurrentWave);
-        currentHealth = maxHealth;
-        updateHealthbar();
         enemyHealthbar = (EnemyHealthbar) base.healthbar;
+        base.Start();
     }
 
     public void AlignHealthbar()
     {
         enemyHealthbar.AlignHealthbar();
+    }
+
+    protected override float GetStartingMaxHealth()
+    {
+        return base.GetStartingMaxHealth() * Mathf.Pow(HEALTH_SCALING_PER_WAVE, WaveSpawner.Instance.CurrentWave);
     }
 }

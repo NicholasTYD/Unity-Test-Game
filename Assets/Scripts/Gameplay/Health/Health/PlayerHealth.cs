@@ -12,14 +12,12 @@ public class PlayerHealth : Health, ISavable
     [SerializeField] private float hurtInvulnerabilityDuration;
     [SerializeField] private float blockInvulnerabilityDuration;
 
-    protected void Start()
+    protected override void Start()
     {
-        this.entityMain = this.GetComponent<EntityMain>();
-        maxHealth = entityMain.GetBaseMaxHealth();
         this.playerAnim = this.GetComponent<Animator>();
         this.playerCombat = this.GetComponent<PlayerCombat>();
-        currentHealth = maxHealth;
-        updateHealthbar();
+        base.Start();
+
     }
 
     public override bool TakeDamage(float amount)

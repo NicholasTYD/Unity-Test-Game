@@ -9,6 +9,15 @@ public abstract class Health : MonoBehaviour
     [SerializeField] protected float currentHealth;
     [SerializeField] protected Healthbar healthbar;
     protected float invulnerabilityTimeLeft = 0;
+
+    protected virtual void Start()
+    {
+        this.entityMain = this.GetComponent<EntityMain>();
+        maxHealth = GetStartingMaxHealth();
+        currentHealth = maxHealth;
+        updateHealthbar();
+    }
+
     // Safe way for external methods to grant invul but not decrease the current invul time.
     public float grantInvulnerability
     {
@@ -54,6 +63,10 @@ public abstract class Health : MonoBehaviour
         changeHealth(amount);
     }
 
+    protected virtual float GetStartingMaxHealth()
+    {
+        return entityMain.GetBaseMaxHealth();
+    }
 
     protected void setCurrentHealth(float currentHealth)
     {

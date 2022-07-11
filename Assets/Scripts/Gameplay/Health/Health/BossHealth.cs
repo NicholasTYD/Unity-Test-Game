@@ -6,16 +6,12 @@ public class BossHealth : Health
 {
     private BossHealthbar enemyHealthbar;
 
-    protected virtual void Start()
+    protected override void Start()
     {
         enemyHealthbar = CombatMechanics.Instance.Bosshealthbar;
         toggleBossHealthbar(true);
-
         this.healthbar = enemyHealthbar;
-        this.entityMain = this.GetComponent<EntityMain>();
-        maxHealth = entityMain.GetBaseMaxHealth();
-        currentHealth = maxHealth;
-        updateHealthbar();
+        base.Start();
     }
 
     protected override void changeHealth(float amount)
