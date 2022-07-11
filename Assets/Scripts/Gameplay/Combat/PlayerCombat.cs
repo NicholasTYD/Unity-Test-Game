@@ -15,6 +15,7 @@ public class PlayerCombat : Combat, ISavable
     private float maxComboTime = 0.5f; // Time given to continue the attack string before combo reset
     private float UPGRADED_COMBO_TIME = 1.5f;
     private int currentAttackSequence = 0;
+    private int currentHurtboxSequence = 0;
     private float comboTimeLeft = 0;
 
     private bool inBlockState;
@@ -90,26 +91,34 @@ public class PlayerCombat : Combat, ISavable
     {
         updateAimDirection();
 
+        currentHurtboxSequence = currentAttackSequence;
         PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
         float currentAttackDuration = currentAttack.baseAttackDuration / attackSpeed;
         entityMain.lockoutDuration = currentAttackDuration;
         playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
         playerAnim.SetTrigger(currentAttack.name);
+        currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
+        // Small leeway of 0.01s to account for uneven time ticks.
+        comboTimeLeft = Mathf.Max(comboTimeLeft, currentAttackDuration + 0.01f);
     }
 
     public void CreateHurtbox()
     {
-        PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentAttackSequence];
+        PlayerBasicAttackScriptableObject currentAttack = playerBasicAttacks[currentHurtboxSequence];
         Vector2 hurtboxWorldCenterPostiion = playerWorldCenterPosition + (currentAttack.hurtboxCenterOffset * playerToMouseUnitDirection);
 
         CombatMechanics.Instance.DamageCircleAll(hurtboxWorldCenterPostiion,
                 currentAttack.hurtboxRadius,
                 enemyLayerMask,
                 attack * currentParryDamageBonusMultiplier * currentParryStrikeBonus * currentAttack.damageMultiplier);
-
-        comboTimeLeft = maxComboTime;
-        currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
         currentParryStrikeBonus = 1;
+    }
+
+    public void RefreshComboTime()
+    {
+        comboTimeLeft = maxComboTime;
+
+        Debug.Log(currentAttackSequence);
     }
 
     public void Block()

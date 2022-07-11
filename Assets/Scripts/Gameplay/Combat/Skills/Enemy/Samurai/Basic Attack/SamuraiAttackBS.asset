@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SamuraiAttackBS
   m_EditorClassIdentifier: 
   name: Attack
-  DamageMultiplier: 1
+  DamageMultiplier: 0.6
   DurationPerFrame: 0.125
   StartSkillCooldown: 0
   SkillDuration: 1.375

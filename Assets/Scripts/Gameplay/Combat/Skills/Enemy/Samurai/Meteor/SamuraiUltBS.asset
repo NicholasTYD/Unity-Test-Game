@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SamuraiUltBS
   m_EditorClassIdentifier: 
   name: Ult
-  DamageMultiplier: 1.5
+  DamageMultiplier: 1.25
   DurationPerFrame: 0.25
   StartSkillCooldown: 0
   SkillDuration: 12.625
