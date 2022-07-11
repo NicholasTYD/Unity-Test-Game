@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a0d0e42ebbfcd48bebf0c6eca06ed8, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  BaseMaxHealth: 1000
-  BaseAttack: 26
+  BaseMaxHealth: 800
+  BaseAttack: 24
   BaseMovementSpeed: 2
   minAllowableDistance: 15
   maxAllowableDistance: 19
