@@ -16,7 +16,7 @@ MonoBehaviour:
   DamageMultiplier: 1.5
   DurationPerFrame: 0.25
   StartSkillCooldown: 0
-  SkillDuration: 11.625
+  SkillDuration: 12.625
   MinSkillCooldown: 20
   MaxSkillCooldown: 30
   minAttackLockoutDuration: 1

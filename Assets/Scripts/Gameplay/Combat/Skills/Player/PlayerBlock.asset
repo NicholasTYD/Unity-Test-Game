@@ -21,4 +21,4 @@ MonoBehaviour:
   parryBonusDamageMultiplier: 1.2
   parryStrikeBonusMultiplier: 3.3
   hurtboxCenterOffset: {x: 0.4, y: 0}
-  hurtboxRadius: 0.4
+  hurtboxRadius: 0.45

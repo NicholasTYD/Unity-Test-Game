@@ -368,9 +368,9 @@ MonoBehaviour:
     type: 3}
   crossMeteor: {fileID: 6883563651978259822, guid: 26685bd2d90c00148a6a7b5dcd926fec,
     type: 3}
-  ultDuration: 10
+  ultDuration: 11
   waveCount: 20
-  waveInterval: 0.5
+  waveInterval: 0.55
   meteorsPerWave: 2
   shockwaveSpeed: 10
   shockwaveLifetime: 2

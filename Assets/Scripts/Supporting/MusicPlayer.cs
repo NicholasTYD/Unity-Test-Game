@@ -32,7 +32,6 @@ public class MusicPlayer : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("test");
         if (scene.buildIndex != 1)
         {
             audioSource.Stop();
@@ -41,7 +40,6 @@ public class MusicPlayer : MonoBehaviour
 
         if (audioSource.clip != defaultBGM)
         {
-            Debug.Log("differentMusic");
             audioSource.clip = defaultBGM;
             
         }
@@ -72,7 +70,6 @@ public class MusicPlayer : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            Debug.Log(audioSource.volume);
             audioSource.volume -= startVolume * Time.deltaTime / MUSIC_FADE_OUT_TIME;
             yield return null;
         }

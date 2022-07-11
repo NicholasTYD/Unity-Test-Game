@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Wave10
   m_EditorClassIdentifier: 
   waveName: 'Boss Wave: Priestess'
+  waveBGM: {fileID: 8300000, guid: 644cf6b35c501594a8faa1411215becd, type: 3}
   notableSpawnPos:
   - {x: 8, y: 0}

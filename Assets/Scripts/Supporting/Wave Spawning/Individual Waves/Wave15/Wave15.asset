@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Wave15
   m_EditorClassIdentifier: 
   waveName: 'Final Wave: Samurai'
+  waveBGM: {fileID: 8300000, guid: 644cf6b35c501594a8faa1411215becd, type: 3}
   notableSpawnPos:
   - {x: 8, y: 0}
