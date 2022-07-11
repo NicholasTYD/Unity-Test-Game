@@ -85,9 +85,9 @@ public class Wave13 : Wave
     IEnumerator sw7()
     {
         spawn(EnemyList.Instance.Sniper, pos(1));
-        spawn(EnemyList.Instance.Sniper, pos(2));   
+        spawn(EnemyList.Instance.Sniper, pos(2));
 
-        StartCoroutine(spawnRandom(sw7Enemies, 2, 17, 22));
+        spawn(EnemyList.Instance.Hntrss);
 
         yield return new WaitForSeconds(23);
         StartCoroutine(concludeWaveOnKill());

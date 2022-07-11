@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] GameObject MainMenu;
     [SerializeField] GameObject ControlsMenu;
+    [SerializeField] GameObject CreditsMenu;
 
     public void NewGame()
     {
@@ -26,9 +27,16 @@ public class MainMenuManager : MonoBehaviour
         ControlsMenu.SetActive(true);
     }
 
+    public void ShowCredits()
+    {
+        MainMenu.SetActive(false);
+        CreditsMenu.SetActive(true);
+    }
+
     public void Back()
     {
         ControlsMenu.SetActive(false);
+        CreditsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }
 

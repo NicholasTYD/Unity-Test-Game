@@ -117,8 +117,6 @@ public class PlayerCombat : Combat, ISavable
     public void RefreshComboTime()
     {
         comboTimeLeft = maxComboTime;
-
-        Debug.Log(currentAttackSequence);
     }
 
     public void Block()
