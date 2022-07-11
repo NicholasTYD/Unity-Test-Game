@@ -1794,7 +1794,7 @@ MonoBehaviour:
   attackIncrease: 20
   attackSpeedIncrease: 0.2
   parryDamageBonusDurationIncrease: 1.5
-  parryDamageBonusMultiplierIncrease: 0.3
+  parryDamageBonusMultiplierIncrease: 0.35
   movementSpeedIncrease: 1
 --- !u!1 &700706610
 GameObject:

@@ -12,8 +12,9 @@ public class PlayerCombat : Combat, ISavable
     private PlayerMovement playerMovement;
 
     [SerializeField] private float attackSpeed = 1;
+    private bool infiniteComboTimeUnlocked;
     private float maxComboTime = 0.5f; // Time given to continue the attack string before combo reset
-    private float UPGRADED_COMBO_TIME = 1.5f;
+    private float INFINITE_COMBO_TIME = 999;
     private int currentAttackSequence = 0;
     private int currentHurtboxSequence = 0;
     private float comboTimeLeft = 0;
@@ -77,9 +78,10 @@ public class PlayerCombat : Combat, ISavable
         parryDamageBonusMultiplier += amount;
     }
 
-    public void UpgradeComboTime()
+    public void UnlockInfiniteComboTime()
     {
-        maxComboTime = UPGRADED_COMBO_TIME;
+        infiniteComboTimeUnlocked = true;
+        maxComboTime = INFINITE_COMBO_TIME;
     }
 
     public override void Attack()
@@ -177,7 +179,10 @@ public class PlayerCombat : Combat, ISavable
     public void interruptCombat()
     {
         inBlockState = false;
-        currentAttackSequence = 0;
+        if (!infiniteComboTimeUnlocked)
+        {
+            currentAttackSequence = 0;
+        }
     }
 
     private void updateAimDirection()
@@ -221,6 +226,7 @@ public class PlayerCombat : Combat, ISavable
         saveData.ParryDamageBonusMultiplier = parryDamageBonusMultiplier;
         saveData.MaxComboTime = maxComboTime;
         saveData.ParryStrikeUnlocked = parryStrikeUnlocked;
+        saveData.InfiniteComboTimeUnlocked = infiniteComboTimeUnlocked;
     }
 
     public void LoadData(SaveData saveData)
@@ -231,5 +237,6 @@ public class PlayerCombat : Combat, ISavable
         this.parryDamageBonusMultiplier = saveData.ParryDamageBonusMultiplier;
         this.maxComboTime = saveData.MaxComboTime;
         this.parryStrikeUnlocked = saveData.ParryStrikeUnlocked;
+        this.infiniteComboTimeUnlocked = saveData.InfiniteComboTimeUnlocked;
     }
 }

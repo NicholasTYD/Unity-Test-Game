@@ -107,7 +107,7 @@ public class UpgradeMenu : MonoBehaviour
                 switch (upgradeSlot)
                 {
                     case 0:
-                        increaseComboTime(upgradeSlot, button, text);
+                        unlockInfiniteComboTime(upgradeSlot, button, text);
                         break;
                     case 1:
                         unlockParryStrike(upgradeSlot, button, text);
@@ -188,10 +188,10 @@ public class UpgradeMenu : MonoBehaviour
     }
 
     // Super Enchanced Upgrades
-    void increaseComboTime(int pos, Button button, TextMeshProUGUI text)
+    void unlockInfiniteComboTime(int pos, Button button, TextMeshProUGUI text)
     {
-        text.text = "Your attack combo takes much longer to reset.";
-        button.onClick.AddListener(() => playerMain.IncreaseComboTime());
+        text.text = "Your attack combo will no longer reset.";
+        button.onClick.AddListener(() => playerMain.UnlockInfiniteComboTime());
     }
 
     void unlockParryStrike(int pos, Button button, TextMeshProUGUI text)

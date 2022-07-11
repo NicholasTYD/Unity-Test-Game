@@ -92,9 +92,9 @@ public class PlayerMain : EntityMain
         playerMovement.IncreaseMovementSpeed(amount);
     }
 
-    public void IncreaseComboTime()
+    public void UnlockInfiniteComboTime()
     {
-        playerCombat.UpgradeComboTime();
+        playerCombat.UnlockInfiniteComboTime();
     }
 
     public void UnlockParryStrike()
