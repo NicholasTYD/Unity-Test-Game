@@ -48,8 +48,8 @@ GameObject:
   - component: {fileID: 1956205736915187026}
   - component: {fileID: 717996982896613655}
   - component: {fileID: 2088013480981007979}
-  - component: {fileID: 8575348630455449390}
-  - component: {fileID: 5670618115908211932}
+  - component: {fileID: 8798344536288345596}
+  - component: {fileID: 3609115670834555979}
   - component: {fileID: 8021583011133549236}
   m_Layer: 7
   m_Name: Huntress
@@ -249,11 +249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 0
+  attack: 0
   EnemyProjectileSpawnPoint: {fileID: 873949588082717752}
   enemySkills:
-  - {fileID: 8575348630455449390}
---- !u!114 &8575348630455449390
+  - {fileID: 8798344536288345596}
+--- !u!114 &8798344536288345596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,13 +262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956205736915187028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844a565e497bbbe4fbea79937624aba8, type: 3}
+  m_Script: {fileID: 11500000, guid: 22be498de14c39c45a81a13fd41a37e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 3a0440e95aee4514abd6013fd3fb39ed,
     type: 2}
-  followupSkill: {fileID: 5670618115908211932}
---- !u!114 &5670618115908211932
+  followupSkill: {fileID: 3609115670834555979}
+--- !u!114 &3609115670834555979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956205736915187028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1bac2659df5d774c90245fb57dee236, type: 3}
+  m_Script: {fileID: 11500000, guid: 991f566b0b28b6e4b981671c4d6936b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: bdc1708a714c71f418c8789ca25f8532,
