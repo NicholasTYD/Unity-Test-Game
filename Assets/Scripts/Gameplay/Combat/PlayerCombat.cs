@@ -99,9 +99,25 @@ public class PlayerCombat : Combat, ISavable
         entityMain.lockoutDuration = currentAttackDuration;
         playerAnim.SetFloat("AttackSpeedMultiplier", attackSpeed);
         playerAnim.SetTrigger(currentAttack.name);
-        currentAttackSequence = currentAttackSequence != 2 ? ++currentAttackSequence : 0;
+        updateAttackSequence();
         // Small leeway of 0.01s to account for uneven time ticks.
         comboTimeLeft = Mathf.Max(comboTimeLeft, currentAttackDuration + 0.01f);
+    }
+
+    void updateAttackSequence()
+    {
+        if (currentAttackSequence != 2)
+        {
+            ++currentAttackSequence;
+        } 
+        else if (!infiniteComboTimeUnlocked)
+        {
+            currentAttackSequence = 0;
+        }
+        else
+        {
+            currentAttackSequence = 2;
+        }
     }
 
     public void CreateHurtbox()
@@ -179,10 +195,7 @@ public class PlayerCombat : Combat, ISavable
     public void interruptCombat()
     {
         inBlockState = false;
-        if (!infiniteComboTimeUnlocked)
-        {
-            currentAttackSequence = 0;
-        }
+        currentAttackSequence = 0;
     }
 
     private void updateAimDirection()

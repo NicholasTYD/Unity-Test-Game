@@ -162,7 +162,7 @@ public class UpgradeMenu : MonoBehaviour
         button.onClick.AddListener(() => playerMain.IncreaseMovementSpeed(movementSpeedIncrease));
     }
 
-    // Enchanced Upgrades
+    // Enhanced Upgrades
     void upgradeHealthAndSpeed(int pos, Button button, TextMeshProUGUI text)
     {
         text.text = "Increase max health by " + healthIncrease + ".\n" +
@@ -187,10 +187,10 @@ public class UpgradeMenu : MonoBehaviour
         button.onClick.AddListener(() => playerMain.IncreaseParryDamageBonusMultiplier(parryDamageBonusMultiplierIncrease));
     }
 
-    // Super Enchanced Upgrades
+    // Super Enhanced Upgrades
     void unlockInfiniteComboTime(int pos, Button button, TextMeshProUGUI text)
     {
-        text.text = "Your attack combo will no longer reset.";
+        text.text = "Your attack combo will only reset if you take damage";
         button.onClick.AddListener(() => playerMain.UnlockInfiniteComboTime());
     }
 
