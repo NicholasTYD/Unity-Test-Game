@@ -34,4 +34,9 @@ public class SamuraiRanged : EnemySkill
             prevAttackTime = time;
         }
     }
+
+    public void StopBladeWaves()
+    {
+        StopAllCoroutines();
+    }
 }

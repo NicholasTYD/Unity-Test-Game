@@ -29,4 +29,9 @@ public class PileRush : EnemySkill
         return enemyMovement.enemyToPlayerXDifferenceWithin(-xStopBounds, xStopBounds) &&
             enemyMovement.enemyToPlayerYDifferenceWithin(-yStopBounds, yStopBounds);
     }
+
+    public void StopMovingOnDeath()
+    {
+        enemyMovement.ToggleForceMove(false);
+    }
 }
