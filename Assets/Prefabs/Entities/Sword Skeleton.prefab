@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 567396318681418109}
   - component: {fileID: -7962151857346591695}
   - component: {fileID: 1907257924}
-  - component: {fileID: -3937076121522103220}
+  - component: {fileID: 7562233262257475802}
   m_Layer: 7
   m_Name: Sword Skeleton
   m_TagString: Untagged
@@ -215,11 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfae9e5e74e1c3a40b3a11b28fe9a05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: 0
+  attack: 0
   EnemyProjectileSpawnPoint: {fileID: 0}
   enemySkills:
-  - {fileID: -3937076121522103220}
---- !u!114 &-3937076121522103220
+  - {fileID: 7562233262257475802}
+--- !u!114 &7562233262257475802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,11 +228,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 567396318681418107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b177eced9791e0f49abffdb74aa2613e, type: 3}
+  m_Script: {fileID: 11500000, guid: 22be498de14c39c45a81a13fd41a37e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkillBasicStats: {fileID: 11400000, guid: 4356cf621d9df1c4ab0972f4a34ddd74,
     type: 2}
+  followupSkill: {fileID: 0}
 --- !u!1001 &567396318951319128
 PrefabInstance:
   m_ObjectHideFlags: 0
