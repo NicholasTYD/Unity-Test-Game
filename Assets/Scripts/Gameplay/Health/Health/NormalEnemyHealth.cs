@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NormalEnemyHealth : Health
 {
-    float HEALTH_SCALING_PER_WAVE = 10.1f;
+    float HEALTH_SCALING_PER_WAVE = 1.1f;
     EnemyHealthbar enemyHealthbar;
 
     protected override void Start()
