@@ -1,7 +1,7 @@
-# MFAAMAUGSICKHGDFL
-My first attempt at making a unity game so i can know how game development feels like.
+# MFAAMAUGSICKHGDFL/Unity Test Game
+My First Attempt At Making A Unity Game So I Can Know How Game Development Feels Like.
 
 
 and its not easy.
 
-You can try it [here](https://mfaamaugsickhgdfl.itch.io/mfaamaugsickhgdfl). There are 15 waves in total.
+Try it [here](https://mfaamaugsickhgdfl.itch.io/mfaamaugsickhgdfl). There are 15 waves in total.
