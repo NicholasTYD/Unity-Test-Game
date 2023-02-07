@@ -2,6 +2,6 @@
 My First Attempt At Making A Unity Game So I Can Know How Game Development Feels Like.
 
 
-and its not easy.
+And its not easy.
 
 You may try it [here](https://mfaamaugsickhgdfl.itch.io/mfaamaugsickhgdfl). There are 15 waves in total.
